@@ -1,0 +1,83 @@
+body{
+    background-color: #4C5B5C;
+}
+
+h1{
+    color: rgb(34, 33, 33); 
+    text-align: center;
+}
+
+.navegacio{
+    background-color: #A81414;
+    color: white;
+    padding: 10px;
+   
+    box-shadow: 5px 5px 5px #888888;
+
+}
+
+.card{
+    background-color: #A81414;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow:  5px 5px #888888;
+    ;
+
+}
+
+.btn{
+    background-color: #A81414;
+    color: white;
+  
+    width: 100px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .sala{
+        background-image: url("../img/fondos/drac.png");
+        background-size: cover;
+        width: auto;
+        height: 200px;
+    }
+
+    .card{
+        background-color: #A81414;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow:  5px 5px #888888;
+        width: 100%;
+    }
+
+    .mercat{
+        background-image: url("../img/fondos/drac2.png");
+        background-size: cover;
+        width: auto;
+        height: 200px;
+    }
+    
+}
+
+@media screen and (min-width: 768px){
+    
+    .sala{
+        background-image: url("../img/fondos/drac.png");
+        background-size: cover;
+        width: auto;
+        height: 500px;
+    }
+
+    
+
+    .mercat{
+        background-image: url("../img/fondos/drac2.png");
+        background-size: cover;
+        width: auto;
+        height: 500px;
+    }
+    
+}
+
+
