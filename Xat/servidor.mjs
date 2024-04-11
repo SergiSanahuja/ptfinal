@@ -34,7 +34,7 @@ wsServer.on('connection', (client, peticio) => {
     }
 	// Enviar salutació al nou client
 	//	i avisar a tots els altres que s'ha afegit un nou client
-	client.send(`Benvingut <strong>${id}</strong>`);
+	
 	
 
 	// Al rebre un missatge d'aques client
@@ -57,6 +57,8 @@ wsServer.on('connection', (client, peticio) => {
                         broadcast(`<strong>${client.nomJugador}: </strong>${missatge.msg}`);
                         console.log(`Missatge de ${id} --> ${missatge.msg}`);
                     }
+
+                    break;
         
             default:
                 break;

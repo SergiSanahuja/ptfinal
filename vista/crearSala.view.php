@@ -59,16 +59,18 @@
     </nav>
 
     <aside>
-        <div class="container ">
-            <div class="row" style="float: left;">
-                <div class="col">
-                <div id="XatGlobal"></div>
-                    <form onsubmit="enviar(event)">
-                        <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
-                    </form>
-                </div>
+        
+            
+    <div class="d-flex">
+        <div id="XatGlobal"></div>
+        
+        <form onsubmit="enviar(event)">
+            <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
+        </form>
+    </div>
+</div>
                 
-            </div>
+         
             
             
             

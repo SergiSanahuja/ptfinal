@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Futurista</title>
+    <title>Login</title>
 
 
 
@@ -36,13 +36,29 @@
             }
         ?>
 
-        <h2>Login</h2>
+        <div class="row">
+            <div class="col-10">
+                </div>
+                <div class="col-1 d-flex" style="    display: flex!important; flex-direction: row; align-items: center;">
+                    <a href="index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
+                </div>
+            </div>
+            <h2>Login</h2>
         <form id="login-form" action="../controlador/login.controler.php" method="post">
             <input type="text" id="email" name="email" placeholder="Email" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" required>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <hr>
+
+            <a href="registre.php">Regístrate</a>
+            <hr>
+
             <button type="submit">Iniciar sesión</button>
          </form>
     </div>
+
+
+
 
 
 </body>

@@ -19,6 +19,13 @@
     
 
 <div class="login-container">
+        <div class="row">
+            <div class="col-10">
+                </div>
+                <div class="col-1 d-flex" style="    display: flex!important; flex-direction: row; align-items: center;">
+                    <a href="index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
+                </div>
+            </div>
         <h2>Registre</h2>
         <?php
             if(isset($_SESSION['error'])){
@@ -31,6 +38,12 @@
             <input type="text" id="email" name="email" placeholder="Email" required>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
             <input type="password" id="confirmPsw" name="confirmPsw" placeholder="Confirmar Contrasenya" required>
+            
+            <hr>
+            
+            <a href="login.php">Iniciar Sessió</a>
+            
+            <hr>
             <button type="submit">Registrar</button>
         </form>
         
