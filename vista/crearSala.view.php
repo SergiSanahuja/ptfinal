@@ -32,10 +32,13 @@
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
+                    <div id="name" class="nav-link" ">'.$_SESSION['username'].'</div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
                 </li>
                 </ul>
-            </div>';
+                </div>';
             }else{
                 echo '<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav
@@ -56,8 +59,8 @@
     </nav>
 
     <aside>
-        <div class="container bg-danger">
-            <div class="row">
+        <div class="container ">
+            <div class="row" style="float: left;">
                 <div class="col">
                 <div id="XatGlobal"></div>
                     <form onsubmit="enviar(event)">
@@ -69,6 +72,17 @@
             
             
             
+            
+        </div>
+        <div class="bg-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Sala</h1>
+                        <div id="personatges"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </aside>
 

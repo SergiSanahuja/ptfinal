@@ -4,6 +4,7 @@
 
 // Afegir el mòdul 'ws'
 import WebSocket, {WebSocketServer} from 'ws';
+let admin = null;
 
 // Crear servidor WebSockets i escoltar en el port 8180
 const wsServer = new WebSocketServer({ port:8180 })
@@ -24,18 +25,43 @@ wsServer.on('connection', (client, peticio) => {
 	// Guardar identificador (IP i Port) del nou client
 	let id = peticio.socket.remoteAddress + ":" + peticio.socket.remotePort;
 
+    if (admin === null) {
+        admin = client;
+        client.send(`Benvingut <strong>${id}</strong>. Eres el administrador de la sala.`);
+        console.log(`El administrador de la sala es: ${id}`);
+    } else {
+        client.send(`Benvingut <strong>${id}</strong>`);
+    }
 	// Enviar salutació al nou client
 	//	i avisar a tots els altres que s'ha afegit un nou client
 	client.send(`Benvingut <strong>${id}</strong>`);
-	broadcast(`Nou client afegit: ${id}`, client);
-	console.log(`Benvingut ${id}`);
-	console.log(`Nou client afegit: ${id}`);
+	
 
 	// Al rebre un missatge d'aques client
 	//	reenviar-lo a tothom (inclòs ell mateix)
 	client.on('message', missatge => {
-		broadcast(`<strong>${id}: </strong>${missatge}`);
-		console.log(`Missatge de ${id} --> ${missatge}`);
+        missatge = JSON.parse(missatge);
+
+        switch (missatge.accio) {
+              case  'nouJugador':
+                    
+               client.nomJugador = missatge.nom;
+               broadcast(`<strong>${client.nomJugador}</strong> s'ha connectat`);
+
+                break;
+
+                case 'missatge':
+                    if (missatge.msg.length > 200) { // Limitar a 200 caracteres
+                        client.send('El teu missatge és massa llarg. Limita els teus missatges a 200 caràcters.');
+                    } else {
+                        broadcast(`<strong>${client.nomJugador}: </strong>${missatge.msg}`);
+                        console.log(`Missatge de ${id} --> ${missatge.msg}`);
+                    }
+        
+            default:
+                break;
+        }
+
 	});
 });
 

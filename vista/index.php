@@ -26,6 +26,9 @@
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
+                    <div id="name" class="nav-link" ">'.$_SESSION['username'].'</div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
                 </li>
                 </ul>

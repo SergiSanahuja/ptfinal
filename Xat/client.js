@@ -3,6 +3,9 @@
 
     function init() {
         // Local o remot
+
+        let nomJugador = document.getElementById("name").textContent;
+
         let domini;
         if (window.location.protocol == "file:") domini = "localhost";
         else domini = window.location.hostname;
@@ -13,8 +16,11 @@
 
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
-            connexio.send("Hola a tothom!");
+            connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
+            
         }
+
+        
 
         // Quan arriba un missatge, mostrar-lo per consola
         connexio.onmessage = e => {
@@ -32,7 +38,7 @@
     // Enviar missatge
     function enviar(ev) {
         let missatge = document.getElementById("missatge");
-        connexio.send(missatge.value.replace(/\r\n|\r|\n/g,"<br>"));
+        connexio.send(JSON.stringify({msg: missatge.value.replace(/\r\n|\r|\n/g,"<br>"), accio: "missatge"}));
         missatge.value = "";
         missatge.focus();
         if (ev) ev.preventDefault();

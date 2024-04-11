@@ -22,7 +22,8 @@ if(isset($_POST['email']) && isset($_POST['password'])){
 
     if($result){
         if(password_verify($password, $result['Password'])){
-            $_SESSION['username'] = $result['email'];
+            $_SESSION['useremail'] = $result['email'];
+            $_SESSION['username'] = $result['nom'];
             $_SESSION['user'] = $result['id'];
             header('Location: ../controlador/index.controler.php');
         }else{
