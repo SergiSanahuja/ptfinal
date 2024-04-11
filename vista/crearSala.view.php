@@ -5,6 +5,7 @@
     <title>Document</title>
 
     <!-- Bootstrap CSS -->
+    <script defer src="../Xat/client.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="../css/index.css">
@@ -58,7 +59,10 @@
         <div class="container bg-danger">
             <div class="row">
                 <div class="col">
-                    <h1>Crear Sala</h1>
+                <div id="XatGlobal"></div>
+                    <form onsubmit="enviar(event)">
+                        <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
+                    </form>
                 </div>
                 
             </div>
