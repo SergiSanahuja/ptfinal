@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
@@ -13,7 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+</head>
 <body>
+    
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
         <a class="navbar-brand" href="#">FinalD</a>
@@ -21,6 +24,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <?php
+            session_start();
+
             if(isset($_SESSION['user'])){
                 echo '<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav
@@ -46,48 +51,25 @@
             }
 
         ?>
-        
-    </nav>
-    <section class="sala d-flex flex-column justify-content-center align-items-center">
-        <div class="card">
 
-            <h1>Sala de JOC</h1>
+    </nav>
+
+    <aside>
+        <div class="container bg-danger">
             <div class="row">
                 <div class="col">
-                    <?php
-                    if (isset($_SESSION['username'])) {
-                        echo '<a href="../controlador/crearSala.controller.php" class="btn">Crear Sala</a>';
-                    }else{
-                        echo '<a href="login.php" class="btn">Crear Sala</a>';
-                    }
-
-                    ?>
-                    
-                    
+                    <h1>Crear Sala</h1>
                 </div>
-                <div class="col">
-                    <button class="btn">Unir-se</button>
-                </div>
-
-                <div class="col">
-                    <?php
-                    if (isset($_SESSION['username'])) {
-                        echo '<a href="../controlador/crearPersonatje.controller.php" class="btn">Crear Personaje</a>';
-                    }
-                    ?>
-                    
-                </div>
+                
             </div>
-
-
+            
+            
+            
         </div>
-    </section>
-    <section class="Mercat">
-        
-    </section>
+    </aside>
 
-    <section class="sala">
         
-    </section>
+
+
 </body>
 </html>
