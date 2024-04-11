@@ -13,7 +13,7 @@ class Personatje extends DB{
     }
 
     public function crearPersonatje($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen){
-        $sql = "INSERT INTO personatje (id, raza, clase, nombre, fuerza, vida, iniciativa, constitucion, destreza, inteligencia, sabiduria, carisma, imagen) VALUES ('$id', '$raza', '$clase', '$nombre', '$fuerza', '$vida', '$iniciativa', '$constitucion', '$destreza', '$inteligencia', '$sabiduria', '$carisma', '$imagen')";
+        $sql = "INSERT INTO personatges (id_Usuari, raza, clase, nom, Fuerza, Vida, Iniciativa, Constitucion, Destreza, Inteligencia, Sabiduria, Carisma, Img) VALUES ('$id', '$raza', '$clase', '$nombre', '$fuerza', '$vida', '$iniciativa', '$constitucion', '$destreza', '$inteligencia', '$sabiduria', '$carisma', '$imagen')";
         $this->connect()->query($sql);
     }
 
