@@ -27,10 +27,20 @@ if (isset($_POST['submit'])) {
        
 
         //depenent de que la img hagi sigut pujada o no, guardem la ruta de la img
-        if (isset($_POST['imgPerfil'])) {
-            $imagen = $_POST['imgPerfil'];
+ 
 
+        if (isset($_FILES['imgPerfil'])) {
+            $imagen = $_FILES['imgPerfil'];
+        
+            $infoImagen = getimagesize($imagen['tmp_name']);
+            $tipoImagen = $infoImagen[2];
+        
+            if ($tipoImagen != IMAGETYPE_JPEG || $tipoImagen != IMAGETYPE_PNG) {
+                $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
+            }
+        
         }else if(isset($_POST['nomImgPerfil'])){
+
             $imagen = $_POST['nomImgPerfil'];
         }else{
             $_SESSION['error'] = 'Has de tenir una imatge de perfol';
@@ -54,7 +64,7 @@ if (isset($_POST['submit'])) {
             $personatje = new Personatje();
             $personatje->crearPersonatje($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
             $_SESSION['success'] = 'Personatje creat correctament';
-            header('Location: ../vista/personatjes.view.php');
+            header('Location: ../controlador/index.controler.php');
             die();
         }
         

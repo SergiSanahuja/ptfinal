@@ -60,11 +60,13 @@ wsServer.on('connection', (client, peticio) => {
 					break;
 
 				case 'unirseSala':
+					if(!missatge.codigoSala) return client.send(JSON.stringify({ accio: "introduirCodi"}));
+
 					if (salas[missatge.codigoSala]) {
 						salas[missatge.codigoSala].push(client);
-						client.send(`Te has unido a la sala ${missatge.codigoSala}`);
+						client.send(JSON.stringify({msg:`T'has unit a la sala ${missatge.codigoSala}`,accio: "missatge"}));
 					} else {
-						client.send(`La sala ${missatge.codigoSala} no existe`);
+						client.send(JSON.stringify({msg:`La sala ${missatge.codigoSala} no existeix`,accio: "missatge"}));
 					}
 					break;
 

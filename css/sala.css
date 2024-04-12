@@ -18,6 +18,10 @@
     
 }
 
+#ContenidorMapa{
+    margin-top: -53px;
+}
+
 #missatge{
     width: 100%;
     height: 50px;
@@ -29,6 +33,7 @@
 
 #fondo{
     border-radius: 5px;
-    height: 700px;
+    height: 85%;
+    width: 100%;
   
 }

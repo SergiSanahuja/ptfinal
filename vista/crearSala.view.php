@@ -73,24 +73,32 @@
                 
                 
             </div>
-            <div id="fondo" class="col-md-9  bg-danger col-sm-7">                
-                <div class="bg-info">
+            <div id="ContenidorMapa" class="col-md-9   col-sm-7">                
+                <div class="">
                     
-                        <div class="row mt-2">
-                            <div class="col">
-                                <h1>Sala</h1>
-                                
-                            </div>
-                            <div class="col align-self-center ">
-                                <select name="mapa" id="mapa">
-                                    <option value="volcan">Volcán</option>
-                                    <option value="llanura">Llanura</option>
-                                    <option value="mar">Mar</option>
-                                </select>
-                            </div>
-
+                    <div class="row mt-2">
+                        <div class="col">
+                            <h1>Sala</h1>
+                            
                         </div>
+                        <div class="col align-self-center ">
+                            <select name="mapa" id="mapa">
+                                <option value="volcan">Volcán</option>
+                                <option value="llanura">Llanura</option>
+                                <option value="mar">Mar</option>
+                            </select>
+                        </div>
+
                     </div>
+                    
+                    
+                    <canvas id="fondo" width="auto" height="auto" style="border: 1px solid black;">
+                        
+                    </canvas>
+                
+                
+                    
+                </div>
                 
             </div>
             

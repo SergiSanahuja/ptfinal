@@ -53,7 +53,7 @@
                             Arrastra una imagen aquí
                          </div>
 
-                         <input type="file" class="form-control mt-2 mb-2 imgPerfil" id="inputFile" name="imgPerfil">
+                         <input type="file" class="form-control mt-2 mb-2 imgPerfil" accept="image/jpeg, image/png id="inputFile" name="imgPerfil">
                          <input type="text" class="form-control mt-2 mb-2 imgPerfil" id="nomImgPerfil" name="nomImgPerfil" hidden>
                         
 

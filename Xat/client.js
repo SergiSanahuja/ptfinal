@@ -1,5 +1,6 @@
 	// Connexió
     let connexio;
+    
 
     function init() {
         // Local o remot
@@ -13,7 +14,13 @@
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
         });
-      
+   
+
+        $('#unirSala').on('click', function() {
+            let codigoSala = document.getElementById("codiSala").value;
+            connexio.send(JSON.stringify({codigoSala: codigoSala, accio: "unirseSala"}));
+
+        });
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
 
@@ -29,7 +36,8 @@
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
             connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
-            
+            connexio.send(JSON.stringify({accio:'unirseSala'}) );
+
             
         }
 
@@ -61,6 +69,12 @@
                     $('#fondo').css('background-image', 'url("../img/mapa/' + data.mapa + '.jpg")');
                     $('#fondo').css('background-size', 'cover');
                     break;
+
+                case 'introduirCodi':
+                   
+                    modal.style.display = "block";
+                    modal.showModal();
+                    
 
                 default:
                 

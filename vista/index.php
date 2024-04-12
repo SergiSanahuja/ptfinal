@@ -56,7 +56,7 @@
 
             <h1>Sala de JOC</h1>
             <div class="row">
-                <div class="col">
+                <div class="col-4">
                     <?php
                     if (isset($_SESSION['username'])) {
                         echo '<a href="../controlador/crearSala.controller.php" class="btn">Crear Sala</a>';
@@ -68,7 +68,7 @@
                     
                     
                 </div>
-                <div class="col">
+                <div class="col-4">
                     <?php
                     if (isset($_SESSION['username'])) {
                         echo '<a href="../controlador/unirSala.controller.php" class="btn">Unir Sala</a>';
@@ -76,8 +76,9 @@
                         echo '<a href="login.php" class="btn">Unir Sala</a>';
                     }
                     ?>
+                </div>
 
-                <div class="col">
+                <div class="col-4">
                     <?php
                     if (isset($_SESSION['username'])) {
                         echo '<a href="../controlador/crearPersonatje.controller.php" class="btn">Crear Personaje</a>';

@@ -13,7 +13,12 @@
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
         });
-      
+        
+
+
+        // Llama a resizeCanvas una vez al cargar la página para ajustar el tamaño inicial del canvas
+        resizeCanvas();
+
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
 
