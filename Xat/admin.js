@@ -29,6 +29,7 @@
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
             connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
+            connexio.send(JSON.stringify({accio:'crearSala'}) );
             
             
         }

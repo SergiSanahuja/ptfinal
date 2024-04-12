@@ -5,6 +5,7 @@
 // Afegir el mòdul 'ws'
 import WebSocket, {WebSocketServer} from 'ws';
 let admin = null;
+let salas = {}
 
 // Crear servidor WebSockets i escoltar en el port 8180
 const wsServer = new WebSocketServer({ port:8180 })
@@ -20,9 +21,12 @@ function broadcast(missatge, clientExclos) {
 	});
 }
 
+let activeConnections = 0;
 // Al rebre un nou client (nova connexió)
 wsServer.on('connection', (client, peticio) => {
 	// Guardar identificador (IP i Port) del nou client
+	
+
 	let id = peticio.socket.remoteAddress + ":" + peticio.socket.remotePort;
 
     if (admin === null) {
@@ -43,27 +47,51 @@ wsServer.on('connection', (client, peticio) => {
         missatge = JSON.parse(missatge);
 
         switch (missatge.accio) {
-              case  'nouJugador':
+              	case  'nouJugador':
                     
-               client.nomJugador = missatge.nom;
-               broadcast(`<strong>${client.nomJugador}</strong> s'ha connectat`);
+					client.nomJugador = missatge.nom;
+					broadcast(JSON.stringify({nom: client.nomJugador, accio: "nouJugador"}));	
 
-                break;
+					break;
+			    case 'crearSala':
+					let codigoSala = generarCodigoSala();
+					salas[codigoSala] = [client];
+					client.send(JSON.stringify({msg:`Has creat la sala ${codigoSala}`,accio: "missatge"}));
+					break;
+
+				case 'unirseSala':
+					if (salas[missatge.codigoSala]) {
+						salas[missatge.codigoSala].push(client);
+						client.send(`Te has unido a la sala ${missatge.codigoSala}`);
+					} else {
+						client.send(`La sala ${missatge.codigoSala} no existe`);
+					}
+					break;
 
                 case 'missatge':
                     if (missatge.msg.length > 200) { // Limitar a 200 caracteres
                         client.send('El teu missatge és massa llarg. Limita els teus missatges a 200 caràcters.');
                     } else {
-                        broadcast(`<strong>${client.nomJugador}: </strong>${missatge.msg}`);
+
+                        broadcast(JSON.stringify({msg: `<strong>${client.nomJugador}: </strong>${missatge.msg}`, accio: "missatge"}));
+                        // broadcast(`<strong>${client.nomJugador}: </strong>${missatge.msg}`);
                         console.log(`Missatge de ${id} --> ${missatge.msg}`);
                     }
 
                     break;
+				
+				case 'CanviMapa':
+					broadcast(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}), client);
+					break;
+
         
             default:
                 break;
         }
 
+		function generarCodigoSala() {
+			return Math.random().toString(36).substring(2, 7);
+		}
 	});
 });
 

@@ -5,7 +5,7 @@
     <title>Document</title>
 
     <!-- Bootstrap CSS -->
-    <script defer src="../Xat/admin.js"></script>
+    <script defer src="../Xat/client.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="../css/index.css">
@@ -81,13 +81,7 @@
                                 <h1>Sala</h1>
                                 
                             </div>
-                            <div class="col align-self-center ">
-                                <select name="mapa" id="mapa">
-                                    <option value="volcan">Volcán</option>
-                                    <option value="llanura">Llanura</option>
-                                    <option value="mar">Mar</option>
-                                </select>
-                            </div>
+                           
 
                         </div>
                     </div>

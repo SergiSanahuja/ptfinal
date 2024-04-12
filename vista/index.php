@@ -69,8 +69,13 @@
                     
                 </div>
                 <div class="col">
-                    <button class="btn">Unir-se</button>
-                </div>
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        echo '<a href="../controlador/unirSala.controller.php" class="btn">Unir Sala</a>';
+                    }else{
+                        echo '<a href="login.php" class="btn">Unir Sala</a>';
+                    }
+                    ?>
 
                 <div class="col">
                     <?php
