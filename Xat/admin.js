@@ -19,6 +19,9 @@
      
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
+        let salaCodi = $('#salaCodi').text();
+
+       
 
         //coneixió amb el servidor mjs
         let domini;
@@ -31,8 +34,10 @@
 
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
+        
             connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
             connexio.send(JSON.stringify({accio:'crearSala'}) );
+            // connexio.send(JSON.stringify({accio:'crearSala'}) );
             
             
         }
@@ -77,6 +82,8 @@
         connexio.onerror = error => {
             alert("Error en la connexió: " + error);
         }
+
+        
     }
 
     // Enviar missatge

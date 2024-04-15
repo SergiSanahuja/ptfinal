@@ -6,11 +6,12 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
-
-$usuario = $_SESSION['user'];
-
-
+if(isset($_SESSION['user'])){
+    $usuario = $_SESSION['user'];
+}else{
+    $_SESSION['error'] = "No has iniciat sessió";
+    $usuario = null;
+}
 if(isset($_SESSION['error'])) {
     $error = $_SESSION['error'];
     unset($_SESSION['error']);

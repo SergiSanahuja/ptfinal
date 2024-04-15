@@ -38,10 +38,10 @@
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="../vista/login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registre.php">Register</a>
+                    <a class="nav-link" href="../vista/registre.php">Register</a>
 
                 </li>
                 </ul>
@@ -68,10 +68,12 @@
             <div class="row justify-content-around ">
                 <div class="col-4 align-content-center">
                     <?php
+                    
+
                     if (isset($_SESSION['username'])) {
-                        echo '<a href="../controlador/crearSala.controller.php" class="btn">Crear Sala</a>';
+                        echo '<a href="crearSala.controller.php" class="btn">Crear Sala</a>';
                     }else{
-                        echo '<a href="login.php" class="btn">Crear Sala</a>';
+                        echo '<a href="../controlador/index.controler.php" class="btn">Crear Sala</a>';
                     }
 
                     ?>
@@ -114,7 +116,7 @@
                         if (isset($_SESSION['username'])) {
                             echo '<a href="#" class="btn" data-toggle="modal" data-target="#modalUnirSala">Unir Sala</a>';
                         }else{
-                            echo '<a href="login.php" class="btn">Unir Sala</a>';
+                            echo '<a href="../controlador/index.controler.php" class="btn">Unir Sala</a>';
                         }
                     ?>
                 </div>

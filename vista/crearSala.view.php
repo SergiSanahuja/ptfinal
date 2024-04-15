@@ -73,7 +73,7 @@
                     <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
                 </form>
 
-                <div>
+                <div id="salaCodi">
                     Codi de la sala: <?php echo $idSala; ?>
                 </div>
                 

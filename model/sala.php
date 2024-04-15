@@ -11,14 +11,21 @@ class Sala extends DB{
         return $result;
     }
 
-    public function crearSala($id ){
-        $sql = "INSERT INTO salas (Codi_sala) VALUES ('$id')";
+    public function crearSala($id, $idAdmin){
+        $sql = "INSERT INTO salas (Codi_sala,ID_Admin) VALUES ('$id','$idAdmin')";
         $this->connect()->query($sql);
     }
 
     public function deleteSala($id){
-        $sql = "DELETE FROM salas WHERE id = '$id'";
+        $sql = "DELETE FROM salas WHERE ID_Admin = '$id'";
         $this->connect()->query($sql);
+    }
+
+    public function getSalaByUser($id){
+        $sql = "SELECT * FROM salas WHERE ID_Admin = '$id'";
+        $stmt = $this->connect()->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function getSala($id){
@@ -33,6 +40,8 @@ class Sala extends DB{
 
         $this->connect()->query($sql);
     }
+
+
 };
 
 

@@ -30,7 +30,21 @@
                 header('Location: ../vista/login.php');
             }else{
                 $_SESSION['error'] = 'Error al registrar el usuario';
-                header('Location: ../vista/registre.php');
+                // header('Location: ../vista/registre.php');
+            }
+        }
+
+
+        public function comprovaEmail($email){
+            $this->email = $email;
+
+            $sql = "SELECT * FROM usuaris WHERE email = '$this->email'";
+            $query = $this->db->connect()->query($sql);
+
+            if($query->rowCount() > 0){
+                return true;
+            }else{
+                return false;
             }
         }
     }
@@ -45,17 +59,25 @@
         $password = $_POST['password'];
         $confirmPsw = $_POST['confirmPsw'];
 
+
         if($password == $confirmPsw){
             $login = new Login();
-            $login->registre($username, $email, $password);
+
+            if($login->comprovaEmail($email)){
+                $_SESSION['error'] = 'El email ya está registrado';
+                // header('Location: ../vista/registre.php');
+            }else{
+
+                $login->registre($username, $email, $password);
+            }
         }else{
             $_SESSION['error'] = 'Las contraseñas no coinciden';
-            header('Location: ../vista/registre.php');
+            // header('Location: ../vista/registre.php');
         }
     
     }else{
         $_SESSION['error'] = 'Rellena todos los campos';
-        header('Location: ../vista/registre.php');
+        // header('Location: ../vista/registre.php');
     }
 
     include_once '../vista/registre.php';

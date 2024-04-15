@@ -23,7 +23,18 @@
     <div class="login-container">
 
 
-        <?php
+       
+
+        <div class="row">
+            <div class="col-10">
+                </div>
+                <div class="col-1 d-flex" style="    display: flex!important; flex-direction: row; align-items: center;">
+                    <a href="../vista/index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
+                </div>
+            </div>
+            <h2>Login</h2>
+
+            <?php
             
             if(session_status() === PHP_SESSION_NONE) {
                 session_start();
@@ -35,15 +46,6 @@
                 unset($_SESSION['error']);
             }
         ?>
-
-        <div class="row">
-            <div class="col-10">
-                </div>
-                <div class="col-1 d-flex" style="    display: flex!important; flex-direction: row; align-items: center;">
-                    <a href="index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
-                </div>
-            </div>
-            <h2>Login</h2>
         <form id="login-form" action="../controlador/login.controler.php" method="post">
             <input type="text" id="email" name="email" placeholder="Email" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" required>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
