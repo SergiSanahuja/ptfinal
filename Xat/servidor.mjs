@@ -53,23 +53,7 @@ wsServer.on('connection', (client, peticio) => {
 					broadcast(JSON.stringify({nom: client.nomJugador, accio: "nouJugador"}));	
 
 					break;
-			    case 'crearSala':
-					let codigoSala = generarCodigoSala();
-					salas[codigoSala] = [client];
-					client.send(JSON.stringify({msg:`Has creat la sala ${codigoSala}`,accio: "missatge"}));
-					break;
-
-				case 'unirseSala':
-					if(!missatge.codigoSala) return client.send(JSON.stringify({ accio: "introduirCodi"}));
-
-					if (salas[missatge.codigoSala]) {
-						salas[missatge.codigoSala].push(client);
-						client.send(JSON.stringify({msg:`T'has unit a la sala ${missatge.codigoSala}`,accio: "missatge"}));
-					} else {
-						client.send(JSON.stringify({msg:`La sala ${missatge.codigoSala} no existeix`,accio: "missatge"}));
-					}
-					break;
-
+			   
                 case 'missatge':
                     if (missatge.msg.length > 200) { // Limitar a 200 caracteres
                         client.send('El teu missatge és massa llarg. Limita els teus missatges a 200 caràcters.');
@@ -96,6 +80,8 @@ wsServer.on('connection', (client, peticio) => {
 		}
 	});
 });
+
+
 
 
 

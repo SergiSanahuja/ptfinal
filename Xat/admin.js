@@ -7,7 +7,7 @@
         $('#mapa').on('change', function() {
             let mapa = document.getElementById("mapa").value;
             
-            $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.jpg")');
+            $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.webp")');
             $('#fondo').css('background-size', 'cover');
             
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
@@ -16,9 +16,7 @@
         
 
 
-        // Llama a resizeCanvas una vez al cargar la página para ajustar el tamaño inicial del canvas
-        resizeCanvas();
-
+     
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
 
@@ -64,7 +62,7 @@
                     break;
 
                 case 'CanviMapa':
-                    $('#fondo').css('background-image', 'url("../img/mapa/' + data.mapa + '.jpg")');
+                    $('#fondo').css('background-image', 'url("../img/mapa/' + data.mapa + '.webp")');
                     $('#fondo').css('background-size', 'cover');
                     break;
 

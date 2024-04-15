@@ -8,19 +8,13 @@
         $('#mapa').on('change', function() {
             let mapa = document.getElementById("mapa").value;
             
-            $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.jpg")');
+            $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.webp")');
             $('#fondo').css('background-size', 'cover');
             
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
         });
    
-
-        $('#unirSala').on('click', function() {
-            let codigoSala = document.getElementById("codiSala").value;
-            connexio.send(JSON.stringify({codigoSala: codigoSala, accio: "unirseSala"}));
-
-        });
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
 
@@ -35,8 +29,9 @@
 
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
+
+
             connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
-            connexio.send(JSON.stringify({accio:'unirseSala'}) );
 
             
         }
@@ -66,7 +61,7 @@
                     break;
 
                 case 'CanviMapa':
-                    $('#fondo').css('background-image', 'url("../img/mapa/' + data.mapa + '.jpg")');
+                    $('#fondo').css('background-image', 'url("../img/mapa/' + data.mapa + '.webp")');
                     $('#fondo').css('background-size', 'cover');
                     break;
 
@@ -75,6 +70,12 @@
                     modal.style.display = "block";
                     modal.showModal();
                     
+                    break;
+
+                case 'denegarSala':
+                    alert("Sala no trobada");
+                    window.location.href = "index.controler.php";
+                    break;
 
                 default:
                 

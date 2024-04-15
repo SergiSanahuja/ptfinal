@@ -26,7 +26,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <?php
-            session_start();
+           if(session_status() === PHP_SESSION_NONE) {
+             session_start();
+            }
 
             if(isset($_SESSION['user'])){
                 echo '<div class="collapse navbar-collapse" id="navbarNav">
@@ -70,6 +72,10 @@
                 <form onsubmit="enviar(event)">
                     <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
                 </form>
+
+                <div>
+                    Codi de la sala: <?php echo $idSala; ?>
+                </div>
                 
                 
             </div>
@@ -83,8 +89,8 @@
                         </div>
                         <div class="col align-self-center ">
                             <select name="mapa" id="mapa">
-                                <option value="volcan">Volcán</option>
                                 <option value="llanura">Llanura</option>
+                                <option value="volcan">Volcán</option>
                                 <option value="mar">Mar</option>
                             </select>
                         </div>

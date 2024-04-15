@@ -1,5 +1,7 @@
 <?php
-    SESSION_START();
+   if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+    }
 
 
     class Login{

@@ -32,8 +32,10 @@
 }
 
 #fondo{
+    background-image:url('../img/mapa/llanura.webp');
     border-radius: 5px;
     height: 85%;
     width: 100%;
+    background-size: cover;
   
 }
