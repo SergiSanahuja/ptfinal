@@ -4,6 +4,7 @@
 
 // Afegir el mòdul 'ws'
 import WebSocket, {WebSocketServer} from 'ws';
+
 let admin = null;
 let salas = {}
 
@@ -50,24 +51,45 @@ wsServer.on('connection', (client, peticio) => {
               	case  'nouJugador':
                     
 					client.nomJugador = missatge.nom;
-					broadcast(JSON.stringify({nom: client.nomJugador, accio: "nouJugador"}));	
+					client.admin = missatge.admin;
+					
 
 					break;
-			   
+
+				case 'crearSala':
+					missatge.codi = missatge.codi.trim();
+					missatge.codi = missatge.codi.replace(/[^a-zA-Z0-9]/g, '');
+
+				
+					if (!salas[missatge.codi]) {
+						salas[missatge.codi] = [];
+					}
+					
+
+					client.sala = missatge.codi;
+					salas[missatge.codi].push(client);
+					break;
+								   
                 case 'missatge':
-                    if (missatge.msg.length > 200) { // Limitar a 200 caracteres
-                        client.send('El teu missatge és massa llarg. Limita els teus missatges a 200 caràcters.');
-                    } else {
-
-                        broadcast(JSON.stringify({msg: `<strong>${client.nomJugador}: </strong>${missatge.msg}`, accio: "missatge"}));
-                        // broadcast(`<strong>${client.nomJugador}: </strong>${missatge.msg}`);
-                        console.log(`Missatge de ${id} --> ${missatge.msg}`);
-                    }
-
-                    break;
+					if (client.sala && salas[client.sala]) {
+						salas[client.sala].forEach((clients) => {
+							
+							clients.send(JSON.stringify({nom: client.nomJugador, msg: missatge.msg, accio: "missatge"}));
+							
+						});
+					}
+					break;
+					
 				
 				case 'CanviMapa':
-					broadcast(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}), client);
+
+					if(client.sala && salas[client.sala]) {
+						salas[client.sala].forEach((clients) => {
+							clients.send(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}));
+						});
+					}
+
+					// broadcast(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}), client);
 					break;
 
         
@@ -75,10 +97,21 @@ wsServer.on('connection', (client, peticio) => {
                 break;
         }
 
+
+		client.on('close', () => {
+			if(client.admin) {
+				if(client.salas && salas[client.sala]) {
+					salas[client.sala].forEach((clients) => {
+						clients.send(JSON.stringify({ accio: "TancarSala"}));
+					});
+				}
+			}
+		});
+
 		function generarCodigoSala() {
 			return Math.random().toString(36).substring(2, 7);
 		}
-	});
+		});
 });
 
 

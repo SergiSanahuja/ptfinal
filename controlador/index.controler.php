@@ -2,6 +2,7 @@
 
 require_once '../model/personatje.php';
 
+
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -18,6 +19,8 @@ if(isset($_SESSION['error'])) {
 } else {
     $error = null;
 }
+
+
 
 $Personatges = new Personatje();
 

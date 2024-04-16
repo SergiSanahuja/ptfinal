@@ -74,9 +74,17 @@
                 </form>
 
                 <div id="salaCodi">
-                    Codi de la sala: <?php echo $idSala; ?>
+                    Codi de la sala:
+                    
+                    <div id="Codi">
+                        <?php echo $idSala;?>
+                    </div>
                 </div>
-                
+
+            <div>
+                <input type="checkbox" id="closeRoom" name="closeRoom">
+                <label for="closeRoom">Cerrar la sala</label>
+            </div>
                 
             </div>
             <div id="ContenidorMapa" class="col-md-9   col-sm-7">                

@@ -17,6 +17,7 @@
    
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
+        let Codi = $('#Codi').text();
 
         //coneixió amb el servidor mjs
         let domini;
@@ -30,8 +31,10 @@
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
 
+            connexio.send(JSON.stringify({nom: nomJugador,admin:false ,accio: "nouJugador"}));
+            connexio.send(JSON.stringify({codi:Codi,  accio: "crearSala"}));
 
-            connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
+           
 
             
         }
@@ -55,7 +58,7 @@
 
                 case 'missatge':
                    
-                    d.innerHTML += "<p>" + data.msg + "</p>";
+                    d.innerHTML += "<p>"+data.nom+": " + data.msg + "</p>";
                     d.scroll(0,d.scrollHeight);
 
                     break;
@@ -77,11 +80,25 @@
                     window.location.href = "index.controler.php";
                     break;
 
+
+                case 'TancarSala':
+                    alert("Sala tancada");
+                    window.location.href = "index.controler.php";
+                    break;
+
+                    
+
+
                 default:
                 
                 break;
             }
 
+        }
+
+        connexio.onclose = () => {
+            alert("Connexió tancada");
+            window.location.href = "index.controler.php";
         }
         
         // Quan es produeix un error, mostrar-lo per consola
@@ -89,6 +106,8 @@
             alert("Error en la connexió: " + error);
         }
     }
+
+
 
     // Enviar missatge
     function enviar(ev) {

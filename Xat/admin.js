@@ -2,7 +2,12 @@
     let connexio;
 
     function init() {
-        // Local o remot
+
+         // Nom del jugador
+         let nomJugador = document.getElementById("name").textContent;
+         let Codi = $('#Codi').text();
+       
+         // Local o remot
         //Canviar el mapa
         $('#mapa').on('change', function() {
             let mapa = document.getElementById("mapa").value;
@@ -13,13 +18,28 @@
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
         });
+
+        document.getElementById('closeRoom').addEventListener('change', function() {
+            fetch('../controlador/unirSala.controller.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    'closeRoom': this.checked ? '1' : '0', 'codi':Codi,
+                }),
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch((error) => {
+              console.error('Error:', error);
+            });
+        });
         
 
 
      
-        // Nom del jugador
-        let nomJugador = document.getElementById("name").textContent;
-        let salaCodi = $('#salaCodi').text();
+       
 
        
 
@@ -35,8 +55,8 @@
         // Quan s'obre la connexió, enviar missatge al servidor
         connexio.onopen = () => {
         
-            connexio.send(JSON.stringify({nom: nomJugador, accio: "nouJugador"}));
-            connexio.send(JSON.stringify({accio:'crearSala'}) );
+            connexio.send(JSON.stringify({nom: nomJugador,admin:true, accio: "nouJugador"}));
+            connexio.send(JSON.stringify({codi:Codi, accio:'crearSala'}) );
             // connexio.send(JSON.stringify({accio:'crearSala'}) );
             
             
@@ -61,7 +81,7 @@
 
                 case 'missatge':
                    
-                    d.innerHTML += "<p>" + data.msg + "</p>";
+                    d.innerHTML += "<p>"+data.nom+": " + data.msg + "</p>";
                     d.scroll(0,d.scrollHeight);
 
                     break;

@@ -73,7 +73,9 @@
                     <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
                 </form>
                 
-                
+                <div id="Codi">
+                    <?php echo $_SESSION['codigoSala'];?>
+                </div>
             </div>
             <div id="ContenidorMapa" class="col-md-9   col-sm-7">                
                 <div class="">

@@ -41,6 +41,19 @@ class Sala extends DB{
         $this->connect()->query($sql);
     }
 
+    public function UsuarisConectats($id){
+        $sql = "SELECT Usuaris_Conectats FROM salas WHERE Codi_sala = '$id'";
+        $stmt = $this->connect()->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function UsuarisEnSala($UsuarisConectats, $id){
+        $sql = "UPDATE salas SET Usuaris_Conectats = '$UsuarisConectats' WHERE Codi_sala = '$id'";
+        
+        $this->connect()->query($sql);    
+    }
+
 
 };
 
