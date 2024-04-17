@@ -4,6 +4,7 @@
 
 // Afegir el mòdul 'ws'
 import WebSocket, {WebSocketServer} from 'ws';
+import mysql from 'mysql2/promise';
 
 let admin = null;
 let salas = {}
@@ -22,10 +23,21 @@ function broadcast(missatge, clientExclos) {
 	});
 }
 
+var con = mysql.createPool({
+	host: "localhost",
+	user: "root",
+	password: "",
+	database: "finald"
+});
+
+
+
+
 let activeConnections = 0;
 // Al rebre un nou client (nova connexió)
 wsServer.on('connection', (client, peticio) => {
 	// Guardar identificador (IP i Port) del nou client
+	
 	
 
 	let id = peticio.socket.remoteAddress + ":" + peticio.socket.remotePort;
@@ -44,18 +56,16 @@ wsServer.on('connection', (client, peticio) => {
 
 	// Al rebre un missatge d'aques client
 	//	reenviar-lo a tothom (inclòs ell mateix)
-	client.on('message', missatge => {
+	client.on('message',async missatge => {
         missatge = JSON.parse(missatge);
 
         switch (missatge.accio) {
               	case  'nouJugador':
                     
-					client.nomJugador = missatge.nom;
-					client.admin = missatge.admin;
-					
-
-					break;
-
+					  client.nomJugador = missatge.nom;
+					  client.admin = missatge.admin;						
+									
+					break;				
 				case 'crearSala':
 					missatge.codi = missatge.codi.trim();
 					missatge.codi = missatge.codi.replace(/[^a-zA-Z0-9]/g, '');
@@ -64,10 +74,38 @@ wsServer.on('connection', (client, peticio) => {
 					if (!salas[missatge.codi]) {
 						salas[missatge.codi] = [];
 					}
-					
 
 					client.sala = missatge.codi;
 					salas[missatge.codi].push(client);
+
+					try {
+
+						if (!client.admin) {
+							const [rows, fields] = await con.execute("SELECT u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE u.nom = ?", [client.nomJugador]);
+							const infoClient = rows[0];
+							
+							console.log(infoClient);
+
+							if (client.sala && salas[client.sala]) {
+								salas[client.sala].forEach((clients) => {
+									
+									clients.send(JSON.stringify({accio: "infoJugador", info: infoClient}));
+									
+									
+								});
+							}
+
+						} else {
+							
+						}
+
+
+					} catch (err) {
+							console.log(err);		
+					}	
+					
+
+					
 					break;
 								   
                 case 'missatge':

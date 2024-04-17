@@ -91,6 +91,31 @@
                     $('#fondo').css('background-size', 'cover');
                     break;
 
+
+                case 'infoJugador':
+
+                    let canvas = document.getElementById('fondo');
+                    let ctx = canvas.getContext('2d');
+                
+                    let img = new Image();
+                    img.src = '../img/avatar/' + data.info.Img ;
+
+                    
+                
+                    img.onload = function() {
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 50, 0, Math.PI * 2, true);
+                        
+                        ctx.closePath();
+
+                        ctx.clip();
+                
+                        ctx.drawImage(img, 50, 50, 100, 100);
+                    };
+
+                    
+                    break;
+
                 default:
                 
                 break;
