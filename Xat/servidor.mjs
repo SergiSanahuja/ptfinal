@@ -157,8 +157,12 @@ wsServer.on('connection', (client, peticio) => {
 
 		function generarCodigoSala() {
 			return Math.random().toString(36).substring(2, 7);
-		}
+			}
 		});
+
+
+
+
 });
 
 

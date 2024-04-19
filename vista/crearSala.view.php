@@ -69,8 +69,8 @@
             <div class="col-md-3 col-sm-5">                
                 <div id="XatGlobal"></div>
                 
-                <form onsubmit="enviar(event)">
-                    <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
+                <form onsubmit="enviar(event)" id="message">
+                    <textarea id="missatge"  rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
                 </form>
 
                 <div id="salaCodi">
@@ -84,6 +84,8 @@
             <div>
                 <input type="checkbox" id="closeRoom" name="closeRoom">
                 <label for="closeRoom">Cerrar la sala</label>
+                <input type="checkbox" id="ChatHidden" name="ChatHidden">
+                <label for="ChatHidden">Esconder Chat</label>
             </div>
                 
             </div>

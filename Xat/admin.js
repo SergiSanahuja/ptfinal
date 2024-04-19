@@ -19,6 +19,11 @@
 
         });
 
+        $('#ChatHidden').on('click', function() {
+            $('#message').toggle();
+            $('#XatGlobal').toggle();
+        }
+        );
         
 
         document.getElementById('closeRoom').addEventListener('change', function() {
