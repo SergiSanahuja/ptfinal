@@ -19,6 +19,8 @@
 
         });
 
+        
+
         document.getElementById('closeRoom').addEventListener('change', function() {
             fetch('../controlador/unirSala.controller.php', {
                 method: 'POST',
@@ -94,27 +96,69 @@
 
                 case 'infoJugador':
 
-                    let canvas = document.getElementById('fondo');
-                    let ctx = canvas.getContext('2d');
-                
-                    let img = new Image();
-                    img.src = '../img/avatar/' + data.info.Img ;
+                    let div = document.createElement('div');
+                    div.id = data.info.id;
+                    div.style.width = '100px';
+                    div.style.height = '100px';
+                    div.style.backgroundImage = 'url("../img/avatar/' + data.info.Img + '")';
+                    div.style.backgroundSize = 'cover';
+                    div.draggable = true;
 
-                    
+                  
                 
-                    img.onload = function() {
-                        ctx.beginPath();
-                        ctx.arc(100, 100, 50, 0, Math.PI * 2, true);
-                        
-                        ctx.closePath();
+                    div.onmousedown = function(event) {
 
-                        ctx.clip();
+                        //preparar para moure, fer-ho absolut i posar-lo per sobre de tot
+                        div.style.position = 'absolute';    
+                        div.style.zIndex = 1000;
+
+                        //treure qualsevol pare actual i afegir-lo a body
+                        document.body.append(div);
+
+                        //centrar el div sota el ratolí
+                        function moveAt(pageX, pageY) {
+                            div.style.left = pageX - div.offsetWidth / 2 + 'px';
+                            div.style.top = pageY - div.offsetHeight / 2 + 'px';
+                        }
+
+                        //moure el div a la posicio absoluta sote el ratolí
+                        moveAt(event.pageX, event.pageY);
+
+                        function onMouseMove(event) {
+                            moveAt(event.pageX, event.pageY);
+                        }
+
+                        //moure el div a la posicio absoluta sote el ratolí
+                        document.addEventListener('mousemove', onMouseMove);
+
+                        div.onmouseup = function() {
+                            document.removeEventListener('mousemove', onMouseMove);
+                            div.onmouseup = null;
+                        }
+                    }
+
+                    div.ondragstart = function() {
+                        return false;
+                    }
+
+
+                    div.textContent = data.info.NomPersonatge;
+            
+                    document.getElementById('fondo').appendChild(div);        
                 
-                        ctx.drawImage(img, 50, 50, 100, 100);
-                    };
+
 
                     
                     break;
+
+                case 'desconectarJugador':
+                    
+                    document.getElementById(data.id).remove();
+                   
+                   break;
+
+
+         
 
                 default:
                 

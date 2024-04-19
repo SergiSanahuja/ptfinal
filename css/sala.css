@@ -39,3 +39,38 @@
     background-size: cover;
   
 }
+
+@media  (min-width: 1200px){
+    #fondo{
+        background-image:url('../img/mapa/llanura.webp');
+        border-radius: 5px;
+        height: 85%;
+        width: 100%;
+        background-size: cover;
+      
+    }
+
+    #ContenidorMapa{
+        margin-top: -53px;
+        height: 50rem;
+    }
+
+
+}
+
+@media (max-height: 768px){
+    #fondo{
+        background-image:url('../img/mapa/llanura.webp');
+        border-radius: 5px;
+        height: 85%;
+        width: 100%;
+        background-size: cover;
+      
+    }
+
+    #ContenidorMapa{
+        margin-top: -53px;
+        height: 27rem;
+    }
+    
+}

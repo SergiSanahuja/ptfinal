@@ -90,9 +90,9 @@
                     </div>
                     
                     
-                    <canvas id="fondo" width="auto" height="auto" style="border: 1px solid black;">
+                    <div id="fondo" width="auto" height="auto" style="border: 1px solid black;">
                         
-                    </canvas>
+                    </div>
                 
                 
                     

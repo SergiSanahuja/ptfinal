@@ -4,6 +4,7 @@ function init(){
 
     $('.imgPerfil').on('change', function() {
         var file = this.files[0];
+        var formData = new FormData();
         var reader = new FileReader();
         reader.onload = function(e) {
             var img = document.createElement('img');
@@ -17,6 +18,9 @@ function init(){
             dropZone.appendChild(img);
         };
         reader.readAsDataURL(file);
+
+        
+
     });
 
 

@@ -31,20 +31,44 @@ if (isset($_POST['submit'])) {
 
         if (isset($_FILES['imgPerfil'])) {
             $imagen = $_FILES['imgPerfil'];
+            //var_dump($imagen);
+            
+            $infoImagen = getimagesize($imagen['tmp_name'][0]);
+            $nameImage =$imagen['name'][0];
+            $fileType = pathinfo($nameImage, PATHINFO_EXTENSION);
+
+            var_dump($fileType);
+            $allow = array("png","jpg", "jpeg");
+
+           
         
-            $infoImagen = getimagesize($imagen['tmp_name']);
-            $tipoImagen = $infoImagen[2];
-        
-            if ($tipoImagen != IMAGETYPE_JPEG || $tipoImagen != IMAGETYPE_PNG) {
-                $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
+            if (!in_array($fileType, $allow)) {
+                 $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
+            }else{
+
+                $UnicName = uniqid() . $imagen['name'][0];
+
+                $ruta = '../img/avatar/' . $UnicName;
+                move_uploaded_file($imagen['tmp_name'][0], $ruta);
+            
+                $imagen = $UnicName;
             }
-        
+
+                
         }else if(isset($_POST['nomImgPerfil'])){
 
+            if($_POST['nomImgPerfil'] == ''){
+                $_SESSION['error'] = 'Has de seleccionar una imatge de perfil';
+            }   
             $imagen = $_POST['nomImgPerfil'];
+
+            
+
         }else{
-            $_SESSION['error'] = 'Has de tenir una imatge de perfol';
+            $_SESSION['error'] = 'Has de tenir una imatge de perfil';
         }
+
+           
 
         if($raza == 'Raza'){
             $_SESSION['error'] = 'Has de seleccionar una raza';

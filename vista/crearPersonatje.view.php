@@ -33,7 +33,7 @@
   
       
 
-        <form id="login-form" action="../controlador/crearPersonatje.controller.php" method="post">
+        <form id="login-form" action="../controlador/crearPersonatje.controller.php" method="post" enctype="multipart/form-data">
             <div class="container">
 
                 <div class="row H-70">
@@ -51,10 +51,10 @@
                     
                         <div id="drop_zone" style="width: 200px; height: 200px; border: 1px solid black;">
                             Arrastra una imagen aquí
-                         </div>
+                        </div>
 
-                         <input type="file" class="form-control mt-2 mb-2 imgPerfil" accept="image/jpeg, image/png id="inputFile" name="imgPerfil">
-                         <input type="text" class="form-control mt-2 mb-2 imgPerfil" id="nomImgPerfil" name="nomImgPerfil" hidden>
+                          <input type="file" class="form-control mt-2 mb-2 imgPerfil" accept="image/jpeg, image/png" id="inputFile" name="imgPerfil[]">
+                          <input type="text" class="form-control mt-2 mb-2 imgPerfil" id="nomImgPerfil" name="nomImgPerfil" hidden> 
                         
 
                     </div>

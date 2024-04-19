@@ -81,10 +81,12 @@ wsServer.on('connection', (client, peticio) => {
 					try {
 
 						if (!client.admin) {
-							const [rows, fields] = await con.execute("SELECT u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE u.nom = ?", [client.nomJugador]);
+							const [rows, fields] = await con.execute("SELECT u.id,u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE u.nom = ?", [client.nomJugador]);
 							const infoClient = rows[0];
 							
 							console.log(infoClient);
+
+							client.id = infoClient.id;
 
 							if (client.sala && salas[client.sala]) {
 								salas[client.sala].forEach((clients) => {
@@ -141,6 +143,13 @@ wsServer.on('connection', (client, peticio) => {
 				if(client.salas && salas[client.sala]) {
 					salas[client.sala].forEach((clients) => {
 						clients.send(JSON.stringify({ accio: "TancarSala"}));
+					});
+				}
+			}else{
+
+				if(client.sala && salas[client.sala]) {
+					salas[client.sala].forEach((clients) => {
+						clients.send(JSON.stringify({id: client.id, accio: "desconectarJugador"}));
 					});
 				}
 			}
