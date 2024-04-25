@@ -74,3 +74,50 @@
     }
     
 }
+
+.modal {
+    background-color: #f4e8c1;
+    border: 2px solid #000;
+
+    width: 60%;
+    height: 70%;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+
+    left: 20%;
+    top: 10%;
+}
+
+.modal-dialog {
+    max-width: 800px;
+}
+
+.modal-content {
+    background-color: #f4e8c1;
+    color: #000;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #000;
+}
+
+.modal-title {
+    color: #000;
+}
+
+#idPersonatge, #Img, #infoPersonatge, #inventari {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#inventari {
+    display: flex;
+    justify-content: space-between;
+}
+
+#arma, #armadura, #pocio {
+    flex: 1;
+    text-align: center;
+}

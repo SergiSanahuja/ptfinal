@@ -30,9 +30,6 @@
         }
         );
 
-        $('#moveCharacter').on('click', function() {
-            
-        });
 
         $('#expulsarJugador').on('click', function() {
             let id = $('#id').text();

@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sala</title>
 
     <!-- Bootstrap CSS -->
     <script defer src="../Xat/admin.js"></script>
@@ -82,13 +82,12 @@
                 </div>
 
             <div>
+
                 <input type="checkbox" id="closeRoom" name="closeRoom">
                 <label for="closeRoom">Cerrar la sala</label>
                 <input type="checkbox" id="ChatHidden" name="ChatHidden">
                 <label for="ChatHidden">Esconder Chat</label>
-                <input type="checkbox" id="moveCharacter" name="moveCharacter">
-                <label for="moveCharacter">Bloquejar Moviment</label>
-
+                
             </div>
             <div>
                 <table id="Users">
