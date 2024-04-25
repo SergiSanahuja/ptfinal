@@ -115,7 +115,7 @@
     <div id="modal" class="modal ">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div id="idPersonatge" hidden>
+                <div id="idPersonatge" hidden >
                     <?php echo $_SESSION['idPersonatge'];?>
                 </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

@@ -37,31 +37,7 @@
 
             confirm( text) ? connexio.send(JSON.stringify({id: id, accio: "desconectarJugador"})) : null;
         });
-
-
-        
-
-        document.getElementById('closeRoom').addEventListener('change', function() {
-            fetch('../controlador/unirSala.controller.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    'closeRoom': this.checked ? '1' : '0', 'codi':Codi,
-                }),
-            })
-            .then(response => response.text())
-            .then(data => console.log(data))
-            .catch((error) => {
-              console.error('Error:', error);
-            });
-        });
-        
-
-
-     
-       
+          
 
        
 
