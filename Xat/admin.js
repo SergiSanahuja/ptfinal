@@ -19,11 +19,29 @@
 
         });
 
+        $('.modal').on('click', function() {
+            $('#modal').css('display', 'none');
+        });
+
+
         $('#ChatHidden').on('click', function() {
             $('#message').toggle();
             $('#XatGlobal').toggle();
         }
         );
+
+        $('#moveCharacter').on('click', function() {
+            
+        });
+
+        $('#expulsarJugador').on('click', function() {
+            let id = $('#id').text();
+            let text ='Estas segur que vols expulsar aquest jugador?'
+
+            confirm( text) ? connexio.send(JSON.stringify({id: id, accio: "desconectarJugador"})) : null;
+        });
+
+
         
 
         document.getElementById('closeRoom').addEventListener('change', function() {
@@ -103,13 +121,50 @@
 
                     let div = document.createElement('div');
                     div.id = data.info.id;
-                    div.style.width = '100px';
-                    div.style.height = '100px';
+                    div.style.width = '50px';
+                    div.style.height = '50px';
+                    div.style.borderRadius = '50%';
+                    div.style.textAlign = 'center';
                     div.style.backgroundImage = 'url("../img/avatar/' + data.info.Img + '")';
                     div.style.backgroundSize = 'cover';
                     div.draggable = true;
 
+                    let table = document.getElementById('Users');   
+                    let row = document.createElement('tr');
+                    let cell = document.createElement('td');
+                    cell.id = data.info.id;
+                    cell.textContent = data.info.NomPersonatge;
+                
+                    cell.addEventListener('click', function() {
+                        
+                        if (data.info.id == data.info.id) {
+                            $('#modal').css('display', 'block');
+                            $('#modal').show();
+                            
+                            $('#NomPersonatge').text(data.info.NomPersonatge);
+
+                            $('#id').text(data.info.id);
+                            $('#raza').text(data.info.raza);
+                            $('#clase').text(data.info.clase);
+                            $('#nivel').text(data.info.nivel);
+                            $('#Vida').text(data.info.Vida);
+                            $('#Iniciativa').text(data.info.Iniciativa);
+                            $('#Fuerza').text(data.info.Fuerza);
+                            $('#Destreza').text(data.info.Destreza);
+                            $('#Constitucion').text(data.info.Constitucion);
+                            $('#Inteligencia').text(data.info.Inteligencia);
+                            $('#Sabiduria').text(data.info.Sabiduria);
+                            $('#Carisma').text(data.info.Carisma);
+                            $('#Img').attr('src', '../img/avatar/' + data.info.Img);
+
+
+                        }
+                    
+                        
+                    });
                   
+                    row.appendChild(cell);
+                    table.appendChild(row);
                 
                     div.onmousedown = function(event) {
 
@@ -158,9 +213,17 @@
 
                 case 'desconectarJugador':
                     
-                    document.getElementById(data.id).remove();
+                    while (document.getElementById(data.id)) {
+                        document.getElementById(data.id).remove();
+                    }
+                            
+
+
+
                    
                    break;
+
+
 
 
          

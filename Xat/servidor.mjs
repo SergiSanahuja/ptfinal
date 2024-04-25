@@ -7,6 +7,7 @@ import WebSocket, {WebSocketServer} from 'ws';
 import mysql from 'mysql2/promise';
 
 let admin = null;
+
 let salas = {}
 
 // Crear servidor WebSockets i escoltar en el port 8180
@@ -67,39 +68,48 @@ wsServer.on('connection', (client, peticio) => {
 									
 					break;				
 				case 'crearSala':
+					//codi de la sala
 					missatge.codi = missatge.codi.trim();
 					missatge.codi = missatge.codi.replace(/[^a-zA-Z0-9]/g, '');
-
-				
+					
 					if (!salas[missatge.codi]) {
 						salas[missatge.codi] = [];
 					}
 
+					//guardar la sala al client
 					client.sala = missatge.codi;
 					salas[missatge.codi].push(client);
 
 					try {
 
+
 						if (!client.admin) {
-							const [rows, fields] = await con.execute("SELECT u.id,u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE u.nom = ?", [client.nomJugador]);
+
+							missatge.pesontage = missatge.pesontage.trim();
+							missatge.pesontage = missatge.pesontage.replace(/[^a-zA-Z0-9]/g, '');
+
+							//buscar la informació del personatge
+							const [rows, fields] = await con.execute("SELECT u.id,u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE p.id = ?", [missatge.pesontage]);
 							const infoClient = rows[0];
 							
 							console.log(infoClient);
 
-							client.id = infoClient.id;
+							//guardar tota la informació del personatge al client propietari
+							client.character = infoClient;
+
+							// client.id = infoClient.id;
 
 							if (client.sala && salas[client.sala]) {
+								
+								
 								salas[client.sala].forEach((clients) => {
 									
-									clients.send(JSON.stringify({accio: "infoJugador", info: infoClient}));
-									
+									clients.send(JSON.stringify({info: infoClient, accio: "infoJugador"}));													
 									
 								});
 							}
-
-						} else {
 							
-						}
+						} 
 
 
 					} catch (err) {
@@ -111,6 +121,7 @@ wsServer.on('connection', (client, peticio) => {
 					break;
 								   
                 case 'missatge':
+					// Enviar missatge a tothom de la sala
 					if (client.sala && salas[client.sala]) {
 						salas[client.sala].forEach((clients) => {
 							
@@ -119,10 +130,11 @@ wsServer.on('connection', (client, peticio) => {
 						});
 					}
 					break;
-					
+
+						
 				
 				case 'CanviMapa':
-
+					//canviar el mapa a tots els clients de la sala
 					if(client.sala && salas[client.sala]) {
 						salas[client.sala].forEach((clients) => {
 							clients.send(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}));
@@ -132,24 +144,52 @@ wsServer.on('connection', (client, peticio) => {
 					// broadcast(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}), client);
 					break;
 
+				case 'desconectarJugador':
+						// Enviar missatge a tots de la sala
+						if (client.sala && salas[client.sala]) {
+							salas[client.sala].forEach((clients) => {
+								clients.send(JSON.stringify({id: missatge.id, accio: "desconectarJugador"}));
+								if(!client.admin){
+									if(clients.character.id == missatge.id){
+										client.send(JSON.stringify({accio: "TancarSala"}));
+									}
+								}
+
+							});
+						}
+					break;
+				
+
         
             default:
                 break;
         }
 
-
+		//Funció per tancar la sala quan l'admin es desconnecta 
 		client.on('close', () => {
 			if(client.admin) {
-				if(client.salas && salas[client.sala]) {
+
+				admin = null;
+				if(client.sala && salas[client.sala]) {
 					salas[client.sala].forEach((clients) => {
 						clients.send(JSON.stringify({ accio: "TancarSala"}));
 					});
 				}
+
+				salas[client.sala] = [];
+
 			}else{
 
 				if(client.sala && salas[client.sala]) {
+
+					salas[client.sala] = salas[client.sala].filter((clients) => {
+						return clients !== client;
+					});
+
+
 					salas[client.sala].forEach((clients) => {
-						clients.send(JSON.stringify({id: client.id, accio: "desconectarJugador"}));
+						clients.send(JSON.stringify({id: client.character.id, accio: "desconectarJugador"}));
+						
 					});
 				}
 			}

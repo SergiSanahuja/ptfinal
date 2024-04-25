@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
             $nameImage =$imagen['name'][0];
             $fileType = pathinfo($nameImage, PATHINFO_EXTENSION);
 
-            var_dump($fileType);
+            // var_dump($fileType);
             $allow = array("png","jpg", "jpeg");
 
            

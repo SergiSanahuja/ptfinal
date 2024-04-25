@@ -15,12 +15,18 @@
 
         });
 
+        $('.modal').on('click', function() {
+            $('#modal').css('display', 'none');
+        });
+        
        
 
    
         // Nom del jugador
         let nomJugador = document.getElementById("name").textContent;
         let Codi = $('#Codi').text();
+        let idJugador = $('#id').text();
+        let idPersonatge = $('#idPersonatge').text();
 
         //coneixió amb el servidor mjs
         let domini;
@@ -35,7 +41,8 @@
         connexio.onopen = () => {
 
             connexio.send(JSON.stringify({nom: nomJugador,admin:false ,accio: "nouJugador"}));
-            connexio.send(JSON.stringify({codi:Codi,  accio: "crearSala"}));
+            connexio.send(JSON.stringify({codi:Codi, pesontage: idPersonatge ,accio: "crearSala"}));
+          
 
            
 
@@ -89,68 +96,114 @@
                     window.location.href = "index.controler.php";
                     break;
 
+
                 case 'infoJugador':                    
 
+                
+                    let div = document.createElement('div');
+                    div.id = data.info.id;
+                    div.style.width = '50px';
+                    div.style.height = '50px';
+                    div.style.borderRadius = '50%';
+                    div.style.textAlign = 'center';
+                    div.style.backgroundImage = 'url("../img/avatar/' + data.info.Img + '")';
+                    div.style.backgroundSize = 'cover';
+                    div.draggable = true;
+
+                    let table = document.getElementById('Users');   
+                    let row = document.createElement('tr');
+                    row.id = data.info.id;
+                    let cell = document.createElement('td');
+                    cell.textContent = data.info.NomPersonatge;
+                
+                    cell.addEventListener('click', function() {
                         
-                let div = document.createElement('div');
-                div.id = data.info.id;
-                div.style.width = '100px';
-                div.style.height = '100px';
-                div.style.backgroundImage = 'url("../img/avatar/' + data.info.Img + '")';
-                div.style.backgroundSize = 'cover';
-                div.draggable = true;
+                        if (data.info.id == data.info.id) {
+                            $('#modal').css('display', 'block');
+                            $('#modal').show();
+                            
+                            $('#NomPersonatge').text(data.info.NomPersonatge);
+                            $('#raza').text(data.info.raza);
+                            $('#clase').text(data.info.clase);
+                            $('#nivel').text(data.info.nivel);
+                            $('#Vida').text(data.info.Vida);
+                            $('#Iniciativa').text(data.info.Iniciativa);
+                            $('#Fuerza').text(data.info.Fuerza);
+                            $('#Destreza').text(data.info.Destreza);
+                            $('#Constitucion').text(data.info.Constitucion);
+                            $('#Inteligencia').text(data.info.Inteligencia);
+                            $('#Sabiduria').text(data.info.Sabiduria);
+                            $('#Carisma').text(data.info.Carisma);
+                            $('#Img').attr('src', '../img/avatar/' + data.info.Img);
 
-              
-            
-                div.onmousedown = function(event) {
 
-                    //preparar para moure, fer-ho absolut i posar-lo per sobre de tot
-                    div.style.position = 'absolute';    
-                    div.style.zIndex = 1000;
+                        }
+                    
+                        
+                    });
+                
+                    row.appendChild(cell);
+                    table.appendChild(row);
+                
+                    div.onmousedown = function(event) {
 
-                    //treure qualsevol pare actual i afegir-lo a body
-                    document.body.append(div);
+                        //preparar para moure, fer-ho absolut i posar-lo per sobre de tot
+                        div.style.position = 'absolute';    
+                        div.style.zIndex = 1000;
 
-                    //centrar el div sota el ratolí
-                    function moveAt(pageX, pageY) {
-                        div.style.left = pageX - div.offsetWidth / 2 + 'px';
-                        div.style.top = pageY - div.offsetHeight / 2 + 'px';
-                    }
+                        //treure qualsevol pare actual i afegir-lo a body
+                        document.body.append(div);
 
-                    //moure el div a la posicio absoluta sote el ratolí
-                    moveAt(event.pageX, event.pageY);
+                        //centrar el div sota el ratolí
+                        function moveAt(pageX, pageY) {
+                            div.style.left = pageX - div.offsetWidth / 2 + 'px';
+                            div.style.top = pageY - div.offsetHeight / 2 + 'px';
+                        }
 
-                    function onMouseMove(event) {
+                        //moure el div a la posicio absoluta sote el ratolí
                         moveAt(event.pageX, event.pageY);
+
+                        function onMouseMove(event) {
+                            moveAt(event.pageX, event.pageY);
+                        }
+
+                        //moure el div a la posicio absoluta sote el ratolí
+                        document.addEventListener('mousemove', onMouseMove);
+
+                        div.onmouseup = function() {
+                            document.removeEventListener('mousemove', onMouseMove);
+                            div.onmouseup = null;
+                        }
                     }
 
-                    //moure el div a la posicio absoluta sote el ratolí
-                    document.addEventListener('mousemove', onMouseMove);
-
-                    div.onmouseup = function() {
-                        document.removeEventListener('mousemove', onMouseMove);
-                        div.onmouseup = null;
+                    div.ondragstart = function() {
+                        return false;
                     }
-                }
-
-                div.ondragstart = function() {
-                    return false;
-                }
 
 
-                div.textContent = data.info.NomPersonatge;
-        
-                document.getElementById('fondo').appendChild(div);        
+                    div.textContent = data.info.NomPersonatge;
             
-
+                    document.getElementById('fondo').appendChild(div);        
+            
+                
 
                 
                 break;
                 
                 case 'desconectarJugador':
                     
-                     document.getElementById(data.id).remove();
                     
+                        
+                    while (document.getElementById(data.id)) {
+                       
+                        document.getElementById(data.id).remove();
+                        
+
+                    }
+
+                    
+                    
+
                     break;
 
 

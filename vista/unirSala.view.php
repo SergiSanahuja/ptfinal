@@ -35,7 +35,7 @@
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
-                    <div id="name" class="nav-link" ">'.$_SESSION['username'].'</div>
+                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
@@ -76,6 +76,14 @@
                 <div id="Codi">
                     <?php echo $_SESSION['codigoSala'];?>
                 </div>
+                <div>
+                    <table id="Users">
+                        <tr>
+                            <th>Personatges</th>
+                        </tr>
+                        
+                    </table>
+                </div>
             </div>
             <div id="ContenidorMapa" class="col-md-9   col-sm-7">                
                 <div class="">
@@ -103,7 +111,43 @@
         </div>
     </div>
    
-    
+    <div id="modal" class="modal ">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="idPersonatge">
+                    <?php echo $_SESSION['idPersonatge'];?>
+                </div>
+                <div id="Img">
+
+                </div>
+                <div class="modal-header">
+                    <h3 class="modal-title" id="NomPersonatge"></h3>
+                    <h4 class="modal-title" id="raza"></h4>
+                    <h4 class="modal-title" id="clase"></h4>
+                    <h4 class="modal-title" id="nivel"></h4>
+                </div>
+                <div class="modal-body">
+                    <div id="infoPersonatge">
+                        <div id="Vida"></div>
+                        <div id="Iniciativa"></div>
+                        <div id="Fuerza"></div>
+                        <div id="Destreza"></div>
+                        <div id="Constitucion"></div>
+                        <div id="Inteligencia"></div>
+                        <div id="Sabiduria"></div>
+                        <div id="Carisma"></div>
+                    </div>
+                    <div id="inventari">
+                        <div id="arma"></div>
+                        <div id="armadura"></div>
+                        <div id="pocio"></div>
+                    </div>  
+                </div>  
+            </div>
+
+        </div>
+
+    </div>
         
 
 

@@ -11,18 +11,31 @@ if(session_status() === PHP_SESSION_NONE) {
 
 if(isset($_POST['codigoSala'])){
     $codigoSala = $_POST['codigoSala'];
+    $idPersonaje = $_POST['Personatge'];
+    $_SESSION['idPersonatge'] = $idPersonaje;
     
-    
+    // var_dump($_SESSION['idPersonatge']);
     $salas = new Sala();
+
 
     if($salas->getSala($codigoSala) == null){
         $_SESSION['error'] = "La sala no existeix";
          header("Location: index.controler.php");
         exit();
     }else{
-        $_SESSION['codigoSala'] = $codigoSala;
-        $Personatges = new Personatje();
+        $Personatges = new Personatje();      
+        
+        if($Personatges->getPersonatje($idPersonaje) == null){
+            $_SESSION['error'] = "El personatge no existeix";
+            header("Location: index.controler.php");
+            exit();
+        }
 
+        
+        $_SESSION['codigoSala'] = $codigoSala;
+      
+
+       
 
         if (isset($_POST['closeRoom'])) {
             $closeRoom = $_POST['closeRoom'];
