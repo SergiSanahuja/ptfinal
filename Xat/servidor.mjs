@@ -103,8 +103,22 @@ wsServer.on('connection', (client, peticio) => {
 								
 								
 								salas[client.sala].forEach((clients) => {
+
+									let lastClient = salas[client.sala][salas[client.sala].length - 1];
+
+									if ( clients == lastClient) {
+										for (let i = 0; i < salas[client.sala].length; i++) {
+											
+											if (salas[client.sala][i].character )  {
+												clients.send(JSON.stringify({info: salas[client.sala][i].character, accio: "infoJugador"}));
+											}
+										}
+
+									}else{
+										clients.send(JSON.stringify({info: infoClient, accio: "infoJugador"}));
+									}
 									
-									clients.send(JSON.stringify({info: infoClient, accio: "infoJugador"}));													
+									// clients.send(JSON.stringify({info: infoClient, accio: "infoJugador"}));													
 									
 								});
 							}
