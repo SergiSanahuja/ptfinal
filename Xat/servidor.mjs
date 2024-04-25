@@ -162,13 +162,9 @@ wsServer.on('connection', (client, peticio) => {
 						// Enviar missatge a tots de la sala
 						if (client.sala && salas[client.sala]) {
 							salas[client.sala].forEach((clients) => {
-								clients.send(JSON.stringify({id: missatge.id, accio: "desconectarJugador"}));
-								if(!client.admin){
-									if(clients.character.id == missatge.id){
-										client.send(JSON.stringify({accio: "TancarSala"}));
-									}
+								if (clients.character && clients.character.id == missatge.id) {
+									clients.send(JSON.stringify({id: missatge.id, accio: "TancarConexio"}));
 								}
-
 							});
 						}
 					break;

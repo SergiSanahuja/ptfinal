@@ -190,6 +190,12 @@
                 
                 break;
                 
+                case 'TancarConexio':
+                    alert("S'ha tancat la connexió");
+                    window.location.href = "index.controler.php";
+                    break;
+                    
+
                 case 'desconectarJugador':
                     
                     
@@ -197,10 +203,18 @@
                     while (document.getElementById(data.id)) {
                        
                         document.getElementById(data.id).remove();
+
+                        
+
+
                         
 
                     }
 
+                    if (data.id == idJugador) {
+                        alert("Has sigut desconectat de la sala");
+                        window.location.href = "index.controler.php";
+                    }
                     
                     
 
