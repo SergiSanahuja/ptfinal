@@ -3,6 +3,42 @@
         width: 1440px;
         margin: 0px;
     }   
+
+    #fondo{
+        background-image:url('../img/mapa/llanura.webp');
+        border-radius: 5px;
+        height: 85%;
+        width: 100%;
+        background-size: cover;
+      
+    }
+    
+    #ContenidorMapa{
+        margin-top: -53px;
+    }
+}
+
+@media screen and (max-width: 1200px){
+   
+    .container{
+        width: 1440px;
+        margin: 0px;
+    }   
+
+    #fondo{
+        background-image:url('../img/mapa/llanura.webp');
+        border-radius: 5px;
+        height: 200px;
+        width: 100%;
+        background-size: cover;
+        margin-bottom: 5px;
+      
+    }
+
+    #ContenidorMapa{
+        margin-top: 0px;
+    }
+    
 }
 
 /* Xat de text */
@@ -18,9 +54,6 @@
     
 }
 
-#ContenidorMapa{
-    margin-top: -53px;
-}
 
 #missatge{
     width: 100%;
@@ -31,14 +64,7 @@
     box-shadow:  5px 5px #888888;
 }
 
-#fondo{
-    background-image:url('../img/mapa/llanura.webp');
-    border-radius: 5px;
-    height: 85%;
-    width: 100%;
-    background-size: cover;
-  
-}
+
 
 @media  (min-width: 1200px){
     #fondo{
@@ -53,6 +79,19 @@
     #ContenidorMapa{
         margin-top: -53px;
         height: 50rem;
+    }
+
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 60%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 20%;
+        top: 10%;
     }
 
 
@@ -72,21 +111,23 @@
         margin-top: -53px;
         height: 27rem;
     }
+
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 70%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 20%;
+        top: 10%;
+    }
     
 }
 
-.modal {
-    background-color: #f4e8c1;
-    border: 2px solid #000;
 
-    width: 60%;
-    height: 70%;
-    border-radius: 10px;
-    font-family: 'Times New Roman', Times, serif;
-
-    left: 20%;
-    top: 10%;
-}
 
 .modal-dialog {
     max-width: 800px;

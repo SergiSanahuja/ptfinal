@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <script defer src="../Xat/admin.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
     
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/sala.css">
@@ -162,23 +163,28 @@
                     </div>
                 </div>
                 <div class="modal-body ">
-                    <div id="infoPersonatge" class="row justify-content-center align-items-center ">
-                        <div class="col-3 h4">
-                            <div class="row">
-
-                                <i class="bi bi-heart-fill mr-1"></i>
-                                <div class=""><label for="vida">Vida:</label></div>
-                                <div  id="Vida"></div>
+                    <div id="infoPersonatge" class="row justify-content-center align-items-center ">    
+                        <div class="col-md-3">
+                        <div class="row">
+                                
+                                <div class="col-6  h4">
+                                    <div class="row">
+                                        
+                                        <i class="bi bi-heart-fill mr-1"></i>
+                                        <div class=""><label for="vida">Vida:</label></div>
+                                        <div id="Vida">5</div>
+                                    </div>
+                                </div>
+                                <div class="col-6 h4">
+                                    <div class="row justify-content-end">
+                                        <i class="bi bi-dice mr-1"></i>
+                                        <div><label for="Iniciativa">Iniciativa:</label></div>
+                                        <div id="Iniciativa">5</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
-                            <div class="row">
-                                <i class="bi bi-dice mr-1"></i>
-                                <div><label for="Iniciativa">Iniciativa:</label></div>
-                                <div id="Iniciativa"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 h4">
+                        <div class="col-md-3 col-sm-2 h4">
                             <div class="row">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve"><defs>
                                 </defs>
@@ -191,35 +197,35 @@
                                 <div id="Fuerza"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
+                        <div class="col-md-3 col-sm-2 h4">
                             <div class="row">
                                 <i class="bi bi-hand mr-1"></i>
                                 <div><label for="Destreza">Destreza:</label></div>
                                 <div id="Destreza"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
+                        <div class="col-md-3 col-sm-2 h4">
                             <div class="row">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitucion:</label></div>
                                 <div id="Constitucion"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
+                        <div class="col-md-3 col-sm-2 h4">
                             <div class="row">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">Inteligencia:</label></div>
                                 <div id="Inteligencia"></div>
                             </div>
                         </div>  
-                        <div class="col-3 h4">
+                        <div class="col-md-3 col-sm-2 h4">
                             <div class="row">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Sabiduria:</label></div>
                                 <div id="Sabiduria"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
+                        <div class="col-md-3 col-sm-2 h4">
                             <div class="row">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
@@ -233,7 +239,7 @@
                         <div id="armadura"></div>
                         <div id="pocio"></div>
                     </div>  
-                </div>  
+                </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" id='expulsarJugador'>Expulsar Jugador</button>

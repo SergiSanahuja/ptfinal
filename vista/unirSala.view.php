@@ -144,23 +144,28 @@
                 </div>
                 <div class="modal-body ">
                     <div id="infoPersonatge" class="row justify-content-center align-items-center ">
-                        <div class="col-3 h4">
-                            <div class="row">
-
-                                <i class="bi bi-heart-fill mr-1"></i>
-                                <div class=""><label for="vida">Vida:</label></div>
-                                <div  id="Vida"></div>
+                        <div class="col-md-3 col-sm-2 h4">
+                        <div class="row">
+                                
+                                <div class="col-6  h4">
+                                    <div class="row">
+                                        
+                                        <i class="bi bi-heart-fill mr-1"></i>
+                                        <div class=""><label for="vida">Vida:</label></div>
+                                        <div id="Vida">5</div>
+                                    </div>
+                                </div>
+                                <div class="col-6 h4">
+                                    <div class="row justify-content-end">
+                                        <img src="" alt="">
+                                        <div><label for="Iniciativa">Iniciativa:</label></div>
+                                        <div id="Iniciativa">5</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
-                            <div class="row">
-                                <i class="bi bi-dice mr-1"></i>
-                                <div><label for="Iniciativa">Iniciativa:</label></div>
-                                <div id="Iniciativa"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 h4">
-                            <div class="row">
+                        <div class="col-md-3 col-sm-2 h4">
+                            <div class="row justify-content-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve"><defs>
                                 </defs>
                                 <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
@@ -172,36 +177,36 @@
                                 <div id="Fuerza"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
-                            <div class="row">
+                        <div class="col-md-3 col-sm-2 h4">
+                            <div class="row  justify-content-center">
                                 <i class="bi bi-hand mr-1"></i>
                                 <div><label for="Destreza">Destreza:</label></div>
                                 <div id="Destreza"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
-                            <div class="row">
+                        <div class="col-md-3 col-sm-2 h4">
+                            <div class="row  justify-content-center">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitucion:</label></div>
                                 <div id="Constitucion"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
-                            <div class="row">
+                        <div class="col-md-3 col-sm-2 h4">
+                            <div class="row  justify-content-center">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">Inteligencia:</label></div>
                                 <div id="Inteligencia"></div>
                             </div>
                         </div>  
-                        <div class="col-3 h4">
-                            <div class="row">
+                        <div class="col-md-3 col-sm-2 h4">
+                            <div class="row  justify-content-center">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Sabiduria:</label></div>
                                 <div id="Sabiduria"></div>
                             </div>
                         </div>
-                        <div class="col-3 h4">
-                            <div class="row">
+                        <div class="col-md-3 col-sm-2 h4">
+                            <div class="row  justify-content-center">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
                                 <div id="Carisma"></div>
