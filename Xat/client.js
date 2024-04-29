@@ -15,13 +15,10 @@
 
         });
 
-        $('.modal').on('touchstart', function() {
+        $('.close').on('click', function() {
             $('#modal').css('display', 'none');
-        });
-        $('.modal').on('click', function() {
-            $('#modal').css('display', 'none');
-        });
-        
+        }
+        );
        
 
    
@@ -115,8 +112,8 @@
 
                     let table = document.getElementById('Users');   
                     let row = document.createElement('tr');
-                    row.id = data.info.id;
                     let cell = document.createElement('td');
+                    cell.id = data.info.id;
                     cell.textContent = data.info.NomPersonatge;
                 
                     cell.addEventListener('click', function() {

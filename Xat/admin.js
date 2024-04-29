@@ -19,9 +19,14 @@
 
         });
 
-        $('.modal').on('click', function() {
+
+        $('.close').on('click', function() {
             $('#modal').css('display', 'none');
-        });
+        }
+        );
+        // $('.modal').on('click', function() {
+        //     $('#modal').css('display', 'none');
+        // });
 
 
         $('#ChatHidden').on('click', function() {

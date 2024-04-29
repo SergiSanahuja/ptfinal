@@ -1,22 +1,4 @@
-@media (min-width: 1200px){
-    .container{
-        width: 1440px;
-        margin: 0px;
-    }   
 
-    #fondo{
-        background-image:url('../img/mapa/llanura.webp');
-        border-radius: 5px;
-        height: 85%;
-        width: 100%;
-        background-size: cover;
-      
-    }
-    
-    #ContenidorMapa{
-        margin-top: -53px;
-    }
-}
 
 @media screen and (max-width: 1200px){
    
@@ -91,7 +73,7 @@
         font-family: 'Times New Roman', Times, serif;
     
         left: 20%;
-        top: 10%;
+        top: 5%;
     }
 
 
@@ -108,7 +90,7 @@
     }
 
     #ContenidorMapa{
-        margin-top: -53px;
+        /* margin-top: -53px; */
         height: 27rem;
     }
 
@@ -122,9 +104,16 @@
         font-family: 'Times New Roman', Times, serif;
     
         left: 20%;
-        top: 10%;
+        top: 5%;
     }
     
+    input[type="number"] {
+        width: 40%;
+        border: none;
+        color: white;
+        background-color: #851212;
+        border-bottom: #ddd 2px solid;
+    }
 }
 
 
@@ -162,3 +151,5 @@
     flex: 1;
     text-align: center;
 }
+
+
