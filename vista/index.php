@@ -63,10 +63,13 @@
             </div>
 
         <div class="card">
+            <div class="row justify-content-center">
+                <h1>Sala de JOC</h1>
 
-            <h1>Sala de JOC</h1>
-            <div class="row justify-content-around ">
-                <div class="col-4 align-content-center">
+            </div>
+
+            <div class="row  ">
+                <div class="col-4  align-content-center">
                     <?php
                     
 

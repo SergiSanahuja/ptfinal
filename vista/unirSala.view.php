@@ -143,27 +143,33 @@
                     </div>
                 </div>
                 <div class="modal-body ">
-                    <div id="infoPersonatge" class="row justify-content-center align-items-center ">
-                        <div class="col-md-3 col-sm-2 h4">
-                        <div class="row">
-                                
-                                <div class="col-6  h4">
-                                    <div class="row">
-                                        
-                                        <i class="bi bi-heart-fill mr-1"></i>
-                                        <div class=""><label for="vida">Vida:</label></div>
-                                        <div id="Vida">5</div>
-                                    </div>
+                
+                    <div class="row justify-content-around">
+                            
+                            <div class="col-3  h4">
+                               
+                                <div class="row">
+
+                                    <i class="bi bi-heart-fill mr-1"></i>
+                                    <div class=""><label for="vida">Vida:</label></div>
+                                    <div id="Vida">5</div>
                                 </div>
-                                <div class="col-6 h4">
-                                    <div class="row justify-content-end">
-                                        <img src="" alt="">
-                                        <div><label for="Iniciativa">Iniciativa:</label></div>
-                                        <div id="Iniciativa">5</div>
-                                    </div>
+                               
+                            </div>
+                            <div class="col-3 h4">
+                                <div class="row">
+
+                                    <i class="bi bi-dice mr-1"></i>
+                                    <div><label for="Iniciativa">Iniciativa:</label></div>
+                                    <div id="Iniciativa">5</div>
+                                    
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                    <div id="infoPersonatge" class="row justify-content-center align-items-center ">
+                       
                         <div class="col-md-3 col-sm-2 h4">
                             <div class="row justify-content-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve"><defs>

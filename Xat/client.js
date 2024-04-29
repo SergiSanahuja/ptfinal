@@ -18,6 +18,9 @@
         $('.modal').on('touchstart', function() {
             $('#modal').css('display', 'none');
         });
+        $('.modal').on('click', function() {
+            $('#modal').css('display', 'none');
+        });
         
        
 

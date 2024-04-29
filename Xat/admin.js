@@ -19,7 +19,7 @@
 
         });
 
-        $('.modal').on('touchstart', function() {
+        $('.modal').on('click', function() {
             $('#modal').css('display', 'none');
         });
 
