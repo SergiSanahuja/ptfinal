@@ -20,6 +20,9 @@
         });
 
 
+        /**
+         * Mostrar/ocultar modal
+         */
         $('.close').on('click', function() {
             $('#modal').css('display', 'none');
         }
@@ -29,6 +32,9 @@
         // });
 
 
+        /**
+         * Mostrar/ocultar xat
+         */
         $('#ChatHidden').on('click', function() {
             $('#message').toggle();
             $('#XatGlobal').toggle();
@@ -36,6 +42,9 @@
         );
 
 
+        /**
+         * Expulsar jugador
+         */
         $('#expulsarJugador').on('click', function() {
             let id = $('#id').text();
             let text ='Estas segur que vols expulsar aquest jugador?'
@@ -43,6 +52,10 @@
             confirm( text) ? connexio.send(JSON.stringify({id: id, accio: "desconectarJugador"})) : null;
         });
           
+        /**
+         * Actualitzar personatge
+         * 
+         */
         $('#updateCharacter').on('click', function() {
             let id = $('#id').text();
 
@@ -85,7 +98,7 @@
 
         
 
-        // Quan arriba un missatge, mostrar-lo per consola
+        //Detecta que el servidor enviat un missatge
         connexio.onmessage = e => {
 
             let data =  JSON.parse(e.data);
@@ -94,6 +107,9 @@
 
             switch (data.accio) {
                 case 'nouJugador':
+                    /**
+                     * Mostrar missatge de nou jugador
+                     */
                     d.innerHTML += "<p>S'ha conectat " + data.nom + "</p>";
                     d.scroll(0,d.scrollHeight);
 
@@ -101,7 +117,9 @@
                     break;
 
                 case 'missatge':
-                   
+                   /**
+                    * Mostrar missatge de xat
+                    */
                     d.innerHTML += "<p>"+data.nom+": " + data.msg + "</p>";
                     d.scroll(0,d.scrollHeight);
 
@@ -121,6 +139,7 @@
                     }
                 
 
+                    //Crear div amb la imatge del jugador
                     let div = document.createElement('div');
                     div.id = data.info.id;
                     div.style.width = '50px';
@@ -131,12 +150,14 @@
                     div.style.backgroundSize = 'cover';
                     div.draggable = true;
 
+                    //Crear taula amb la informació del jugador
                     let table = document.getElementById('Users');   
                     let row = document.createElement('tr');
                     let cell = document.createElement('td');
                     cell.id = data.info.id;
                     cell.textContent = data.info.NomPersonatge;
                 
+                    //Quan es fa click al div, mostrar la informació del jugador
                     cell.addEventListener('click', function() {
                         
                         if (data.info.id == data.info.id) {
@@ -168,6 +189,7 @@
                     row.appendChild(cell);
                     table.appendChild(row);
                 
+                    //Moure el div amb el ratolí
                     div.onmousedown = function(event) {
 
                         //preparar para moure, fer-ho absolut i posar-lo per sobre de tot
