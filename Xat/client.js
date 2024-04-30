@@ -15,6 +15,9 @@
 
         });
 
+      
+
+
         $('.close').on('click', function() {
             $('#modal').css('display', 'none');
         }
@@ -107,7 +110,8 @@
                 
                 
                     let div = document.createElement('div');
-                    div.id = data.info.id;
+                    div.id = data.info.IdPersonaje;
+                    div.style.position = 'absolute';
                     div.style.width = '50px';
                     div.style.height = '50px';
                     div.style.borderRadius = '50%';
@@ -154,16 +158,21 @@
                     div.onmousedown = function(event) {
 
                         //preparar para moure, fer-ho absolut i posar-lo per sobre de tot
-                        div.style.position = 'absolute';    
+                        // div.style.position = 'absolute';    
                         div.style.zIndex = 1000;
 
                         //treure qualsevol pare actual i afegir-lo a body
                         document.body.append(div);
+                        var fondo = document.getElementById('fondo');
 
                         //centrar el div sota el ratolí
                         function moveAt(pageX, pageY) {
                             div.style.left = pageX - div.offsetWidth / 2 + 'px';
                             div.style.top = pageY - div.offsetHeight / 2 + 'px';
+
+                                                    // Limitar las coordenadas al fondo
+
+
                         }
 
                         //moure el div a la posicio absoluta sote el ratolí
@@ -173,11 +182,19 @@
                             moveAt(event.pageX, event.pageY);
                         }
 
+                       
+
                         //moure el div a la posicio absoluta sote el ratolí
                         document.addEventListener('mousemove', onMouseMove);
 
                         div.onmouseup = function() {
                             document.removeEventListener('mousemove', onMouseMove);
+
+
+                            if (event.pageX > fondo.offsetLeft && event.pageX < fondo.offsetLeft + fondo.offsetWidth && event.pageY > fondo.offsetTop && event.pageY < fondo.offsetTop + fondo.offsetHeight) {
+                                connexio.send(JSON.stringify({id: data.info.IdPersonaje, posX: event.pageX - fondo.offsetLeft, posY: event.pageY - fondo.offsetTop, accio: "moureJugador"}));
+                            }
+
                             div.onmouseup = null;
                         }
                     }
@@ -224,6 +241,14 @@
                     
                     
 
+                    break;
+
+
+                case 'moureJugador':
+
+                    let jugador = document.getElementById(data.id);
+                    jugador.style.left = data.posX + 'px';
+                    jugador.style.top = data.posY + 'px';
                     break;
 
 

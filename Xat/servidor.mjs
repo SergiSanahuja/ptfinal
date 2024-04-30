@@ -163,7 +163,7 @@ wsServer.on('connection', (client, peticio) => {
 						if (client.sala && salas[client.sala]) {
 							salas[client.sala].forEach((clients) => {
 								if (clients.character && clients.character.id == missatge.id) {
-									clients.send(JSON.stringify({id: missatge.id, accio: "TancarConexio"}));
+									clients.send(JSON.stringify({id: missatge.id, idPersonaje: clients.character.IdPersonaje, accio: "TancarConexio"}));
 								}
 							});
 						}
@@ -209,6 +209,16 @@ wsServer.on('connection', (client, peticio) => {
 					
 					break;
 
+					case 'moureJugador':
+						// Enviar missatge a tots de la sala
+						if (client.sala && salas[client.sala]) {
+							salas[client.sala].forEach((clients) => {
+								clients.send(JSON.stringify({id: missatge.id, posX: missatge.posX, posY: missatge.posY, accio: "moureJugador"}));
+							}
+							);
+						}
+						break;
+
         
             	default:
                 break;
@@ -237,7 +247,8 @@ wsServer.on('connection', (client, peticio) => {
 
 
 					salas[client.sala].forEach((clients) => {
-						clients.send(JSON.stringify({id: client.character.id, accio: "desconectarJugador"}));
+
+						clients.send(JSON.stringify({id: client.character.id, idPersonaje:client.character.IdPersonaje,accio: "desconectarJugador"}));
 						
 					});
 				}
