@@ -100,6 +100,12 @@
                 case 'infoJugador':                    
 
                 
+                   
+                    while (document.getElementById(data.info.id)) {
+                        document.getElementById(data.info.id).remove();
+                    }
+                
+                
                     let div = document.createElement('div');
                     div.id = data.info.id;
                     div.style.width = '50px';

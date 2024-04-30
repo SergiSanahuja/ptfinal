@@ -45,6 +45,9 @@
           
         $('#updateCharacter').on('click', function() {
             let id = $('#id').text();
+
+            
+
             let nivel = $('#nivel').text();
             let Vida = $('#Vida').text();
             let Iniciativa = $('#Iniciativa').text();
@@ -111,6 +114,12 @@
 
 
                 case 'infoJugador':
+
+                
+                    while (document.getElementById(data.info.id)) {
+                        document.getElementById(data.info.id).remove();
+                    }
+                
 
                     let div = document.createElement('div');
                     div.id = data.info.id;
@@ -259,6 +268,7 @@
             return true;
         }
     }
-
+    
+    
 
     window.onload = init;

@@ -169,9 +169,38 @@ wsServer.on('connection', (client, peticio) => {
 						}
 					break;
 				
+				case 'updateCharacter':
+
+					// Enviar missatge a tots de la sala
+					if (client.sala && salas[client.sala]) {
+						salas[client.sala].forEach((clients) => {
+							if (clients.character && clients.character.id == missatge.id) {
+								clients.character.nivel = missatge.nivel;
+								clients.character.Vida = missatge.Vida;
+								clients.character.Iniciativa = missatge.Iniciativa;
+								clients.character.Fuerza = missatge.Fuerza;
+								clients.character.Destreza = missatge.Destreza;
+								clients.character.Constitucion = missatge.Constitucion;
+								clients.character.Inteligencia = missatge.Inteligencia;
+								clients.character.Sabiduria = missatge.Sabiduria;
+								clients.character.Carisma = missatge.Carisma;
+								
+
+								for (let i = 0; i < salas[client.sala].length; i++) {
+									salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
+								}			
+
+							}
+
+
+						});
+					}
+
+					
+					break;
 
         
-            default:
+            	default:
                 break;
         }
 
@@ -226,6 +255,7 @@ wsServer.on('connection', (client, peticio) => {
 import { createServer } from 'http';
 import { parse } from 'url';
 import { existsSync, readFile } from 'fs';
+import { fork } from 'child_process';
 
 function header(resposta, codi, cType) {
 	resposta.setHeader('Access-Control-Allow-Origin', '*');
