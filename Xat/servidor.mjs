@@ -89,7 +89,7 @@ wsServer.on('connection', (client, peticio) => {
 							missatge.pesontage = missatge.pesontage.replace(/[^a-zA-Z0-9]/g, '');
 
 							//buscar la informació del personatge
-							const [rows, fields] = await con.execute("SELECT u.id,u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE p.id = ?", [missatge.pesontage]);
+							const [rows, fields] = await con.execute("SELECT u.id,p.id as IdPersonaje,u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE p.id = ?", [missatge.pesontage]);
 							const infoClient = rows[0];
 							
 							console.log(infoClient);
@@ -171,30 +171,40 @@ wsServer.on('connection', (client, peticio) => {
 				
 				case 'updateCharacter':
 
-					// Enviar missatge a tots de la sala
-					if (client.sala && salas[client.sala]) {
-						salas[client.sala].forEach((clients) => {
-							if (clients.character && clients.character.id == missatge.id) {
-								clients.character.nivel = missatge.nivel;
-								clients.character.Vida = missatge.Vida;
-								clients.character.Iniciativa = missatge.Iniciativa;
-								clients.character.Fuerza = missatge.Fuerza;
-								clients.character.Destreza = missatge.Destreza;
-								clients.character.Constitucion = missatge.Constitucion;
-								clients.character.Inteligencia = missatge.Inteligencia;
-								clients.character.Sabiduria = missatge.Sabiduria;
-								clients.character.Carisma = missatge.Carisma;
-								
+					try {
+						// Enviar missatge a tots de la sala
+						if (client.sala && salas[client.sala]) {
+							salas[client.sala].forEach((clients) => {
+								if (clients.character && clients.character.id == missatge.id) {
+									clients.character.nivel = missatge.nivel;
+									clients.character.Vida = missatge.Vida;
+									clients.character.Iniciativa = missatge.Iniciativa;
+									clients.character.Fuerza = missatge.Fuerza;
+									clients.character.Destreza = missatge.Destreza;
+									clients.character.Constitucion = missatge.Constitucion;
+									clients.character.Inteligencia = missatge.Inteligencia;
+									clients.character.Sabiduria = missatge.Sabiduria;
+									clients.character.Carisma = missatge.Carisma;
+									
+									con.execute("UPDATE personatges SET nivel = ?, Vida = ?, Iniciativa = ?, Fuerza = ?, Destreza = ?, Constitucion = ?, Inteligencia = ?, Sabiduria = ?, Carisma = ? WHERE id = ?", [missatge.nivel, missatge.Vida, missatge.Iniciativa, missatge.Fuerza, missatge.Destreza, missatge.Constitucion, missatge.Inteligencia, missatge.Sabiduria, missatge.Carisma, clients.character.IdPersonaje], function(err) {
+										if (err) {
+										  console.error(err.message);
+										}
+									  });
 
-								for (let i = 0; i < salas[client.sala].length; i++) {
-									salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
-								}			
+									for (let i = 0; i < salas[client.sala].length; i++) {
+										salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
+									}			
 
-							}
+								}
 
 
-						});
+							});
+						}
+					} catch (err) {
+						console.log(err);
 					}
+
 
 					
 					break;
