@@ -43,8 +43,23 @@
             confirm( text) ? connexio.send(JSON.stringify({id: id, accio: "desconectarJugador"})) : null;
         });
           
+        $('#updateCharacter').on('click', function() {
+            let id = $('#id').text();
+            let nivel = $('#nivel').text();
+            let Vida = $('#Vida').text();
+            let Iniciativa = $('#Iniciativa').text();
+            let Fuerza = $('#Fuerza').val();
+            let Destreza = $('#Destreza').val();
+            let Constitucion = $('#Constitucion').val();
+            let Inteligencia = $('#Inteligencia').val();
+            let Sabiduria = $('#Sabiduria').val();
+            let Carisma = $('#Carisma').val();
+            let text ='Estas segur que vols actualitzar aquest jugador?'
 
+            confirm( text) ? connexio.send(JSON.stringify({id: id, nivel: nivel, Vida: Vida, Iniciativa: Iniciativa, Fuerza: Fuerza, Destreza: Destreza, Constitucion: Constitucion, Inteligencia: Inteligencia, Sabiduria: Sabiduria, Carisma: Carisma, accio: "updateCharacter"})) : null;
        
+        });
+
 
         //coneixió amb el servidor mjs
         let domini;
@@ -127,12 +142,12 @@
                             $('#nivel').text(data.info.nivel);
                             $('#Vida').text(data.info.Vida);
                             $('#Iniciativa').text(data.info.Iniciativa);
-                            $('#Fuerza').text(data.info.Fuerza);
-                            $('#Destreza').text(data.info.Destreza);
-                            $('#Constitucion').text(data.info.Constitucion);
-                            $('#Inteligencia').text(data.info.Inteligencia);
-                            $('#Sabiduria').text(data.info.Sabiduria);
-                            $('#Carisma').text(data.info.Carisma);
+                            $('#Fuerza').val(data.info.Fuerza);
+                            $('#Destreza').val(data.info.Destreza);
+                            $('#Constitucion').val(data.info.Constitucion);
+                            $('#Inteligencia').val(data.info.Inteligencia);
+                            $('#Sabiduria').val(data.info.Sabiduria);
+                            $('#Carisma').val(data.info.Carisma);
                             $('#Img').attr('src', '../img/avatar/' + data.info.Img);
 
 
@@ -194,6 +209,8 @@
                     while (document.getElementById(data.id)) {
                         document.getElementById(data.id).remove();
                     }
+
+                    
                             
 
 

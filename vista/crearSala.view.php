@@ -139,7 +139,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal">Modal title</h5>
+                    <h5 class="modal-title" id="modal">Hoja de personaje</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -154,11 +154,11 @@
                     </div>
                     <div class="modal-header">
                         <div>
-                            <label for="NomPersonatge">Nom Personatge</label>
+                            <label for="NomPersonatge">Nombre</label>
                             <h3 class="modal-title" id="NomPersonatge"></h3>
                         </div>
                         <div>
-                            <label for="Raza">Raça</label>
+                            <label for="Raza">Raza</label>
                             <h4 class="modal-title" id="raza"></h4>
                         </div>
                         <div>
@@ -173,7 +173,7 @@
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-3h4">
+                            <div class="col-sm-3 h4">
 
                                 <div class="row">
 
@@ -183,10 +183,10 @@
                                 </div>
 
                             </div>
-                            <div class="col-3 h4">
+                            <div class="col-sm-3 h4">
                                 <div class="row">
 
-                                    <i class="bi bi-dice mr-1"></i>
+                                 <i class="bi bi-activity"></i>
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
                                     <div id="Iniciativa">5</div>
 
@@ -198,7 +198,7 @@
                     <div id="infoPersonatge" class="row justify-content-center align-items-center ">
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
                                     <defs>
                                     </defs>
                                     <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
@@ -212,7 +212,7 @@
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
-                                <i class="bi bi-hand mr-1"></i>
+                                <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
                                 <div><label for="Destreza">Destreza:</label></div>
 
                                 <input type="number" name="skill" id="Destreza"></input>
@@ -222,28 +222,28 @@
                             <div class="row">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitucion:</label></div>
-                                <div id="Constitucion"></div>
+                                <input type="number" name="constitution" id="Constitucion"></input>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">Inteligencia:</label></div>
-                                <div id="Inteligencia"></div>
+                                <input type="number" name="inteligence" id="Inteligencia"></input>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Sabiduria:</label></div>
-                                <div id="Sabiduria"></div>
+                                <input type="number" name="wisdom" id="Sabiduria"></input>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
-                                <div id="Carisma"></div>
+                                <input type="number" name="charisma" id="Carisma"></input>
                             </div>
                         </div>
 
@@ -257,7 +257,8 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="updateCharacter" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="expulsarJugador" class="btn btn-primary">Expulsar</button>
                 </div>
             </div>
         </div>

@@ -120,7 +120,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal">Modal title</h5>
+                    <h5 class="modal-title" id="modal">Hoja de personaje</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -135,11 +135,11 @@
                     </div>
                     <div class="modal-header">
                         <div>
-                            <label for="NomPersonatge">Nom Personatge</label>
+                            <label for="NomPersonatge">Nombre</label>
                             <h3 class="modal-title" id="NomPersonatge"></h3>
                         </div>
                         <div>
-                            <label for="Raza">Raça</label>
+                            <label for="Raza">Raza</label>
                             <h4 class="modal-title" id="raza"></h4>
                         </div>
                         <div>
@@ -154,9 +154,9 @@
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-3  h4">
+                            <div class="col-sm-3  h4">
 
-                                <div class="row">
+                                <div class="row justify-content-center">
 
                                     <i class="bi bi-heart-fill mr-1"></i>
                                     <div class=""><label for="vida">Vida:</label></div>
@@ -164,14 +164,16 @@
                                 </div>
 
                             </div>
-                            <div class="col-3 h4">
-                                <div class="row">
-
-                                    <i class="bi bi-dice mr-1"></i>
+                            <div class="col-sm-3 h4">
+                                <div class="row justify-content-center">
+                            
+                                    <i class="bi bi-activity"></i>
+                                                                    
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
-                                    <div id="Iniciativa">5</div>
+                                
 
-                                </div>
+                                    <div id="Iniciativa">5</div>
+                                </div>                                
                             </div>
                         </div>
 
@@ -195,7 +197,9 @@
                             </div>
                             <div class="col-md-4 col-sm-6 h4">
                                 <div class="row">
-                                    <i class="bi bi-hand mr-1"></i>
+                                    <!-- <i class="bi bi-lightning-fill"></i> -->
+
+                                    <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
                                     <div><label for="Destreza">Destreza:</label></div>
 
                                     <div id="Destreza"></div>
@@ -240,7 +244,7 @@
 
                     <div class="modal-footer">
 
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                      
                     </div>
                 </div>
             </div>
