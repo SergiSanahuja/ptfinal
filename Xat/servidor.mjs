@@ -136,12 +136,65 @@ wsServer.on('connection', (client, peticio) => {
 								   
                 case 'missatge':
 					// Enviar missatge a tothom de la sala
+
+					//lista de comandos
+					if(missatge.msg.startsWith("/")) {
+
+						var comando = missatge.msg.substring(1);
+						var msgBot
+						
+						switch(comando){
+							case 'saludo':
+								msgBot = "Hola, soy el bot de la sala";
+								break;
+
+							case 'd4':
+								msgBot = Math.floor(Math.random() * 4) + 1;
+								break;
+							case 'd6':
+								msgBot = Math.floor(Math.random() * 6) + 1;
+								break;
+							
+							case 'd8':
+								msgBot = Math.floor(Math.random() * 8) + 1;
+								break;
+
+							case 'd10':	
+								msgBot = Math.floor(Math.random() * 10) + 1;
+								break;
+							
+							case 'd12':
+								msgBot = Math.floor(Math.random() * 12) + 1;
+								break;
+
+							case 'd20':
+								msgBot = Math.floor(Math.random() * 20) + 1;
+								break;
+
+							
+
+
+							case 'ayuda':
+								msgBot = "Lista de comandos: /saludo, /ayuda, /d4, /d6, /d8, /d10, /d12, /d20";
+								break
+							default:
+								msgBot = "Comando no reconocido";
+								break;
+						}
+					}
+
 					if (client.sala && salas[client.sala]) {
 						salas[client.sala].forEach((clients) => {
-							
+					
 							clients.send(JSON.stringify({nom: client.nomJugador, msg: missatge.msg, accio: "missatge"}));
+
+							if(msgBot){
+								clients.send(JSON.stringify({nom: "Bot", msg: msgBot, accio: "missatge"}));
+							}
 							
 						});
+
+						msgBot = null;
 					}
 					break;
 

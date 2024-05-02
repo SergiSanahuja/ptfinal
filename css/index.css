@@ -23,6 +23,7 @@ h1{
     border-radius: 5px;
     box-shadow:  5px 5px #888888;
     width: auto;
+    
 
 }
 
@@ -85,3 +86,14 @@ h1{
 }
 
 
+/*Boto de crear personatge*/
+.CrearPersonatje{
+    border-radius: 5px;
+ 
+   width: 200px;
+}
+
+.btnCrearPersonatje{
+    background: none;
+    border: none;
+}

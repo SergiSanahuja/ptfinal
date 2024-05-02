@@ -191,9 +191,9 @@
                             document.removeEventListener('mousemove', onMouseMove);
 
 
-                            if (event.pageX > fondo.offsetLeft && event.pageX < fondo.offsetLeft + fondo.offsetWidth && event.pageY > fondo.offsetTop && event.pageY < fondo.offsetTop + fondo.offsetHeight) {
-                                connexio.send(JSON.stringify({id: data.info.IdPersonaje, posX: event.pageX - fondo.offsetLeft, posY: event.pageY - fondo.offsetTop, accio: "moureJugador"}));
-                            }
+                            // if (event.pageX > fondo.offsetLeft && event.pageX < fondo.offsetLeft + fondo.offsetWidth && event.pageY > fondo.offsetTop && event.pageY < fondo.offsetTop + fondo.offsetHeight) {
+                            //     connexio.send(JSON.stringify({id: data.info.IdPersonaje, posX: event.pageX - fondo.offsetLeft, posY: event.pageY - fondo.offsetTop, accio: "moureJugador"}));
+                            // }
 
                             div.onmouseup = null;
                         }

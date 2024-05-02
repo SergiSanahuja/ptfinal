@@ -4,6 +4,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+if (!isset($_SESSION['username'])) {
+    $_SESSION['error'] = 'Has de estar loguejat per crear un personatje';
+    header('Location: ../controlador/index.controler.php');
+    die();
+}
+
 
 if (isset($_POST['submit'])) {
 

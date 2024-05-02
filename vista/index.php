@@ -51,7 +51,7 @@
         ?>
         
     </nav>
-    <section class="sala d-flex flex-column justify-content-center align-items-center">
+    <section class="sala d-flex  justify-content-center align-items-center">
 
             <div>
                 <?php
@@ -69,7 +69,7 @@
             </div>
 
             <div class="row  ">
-                <div class="col-4  align-content-center">
+                <div class="col-6  align-content-center">
                     <?php
                     
 
@@ -113,8 +113,8 @@
                         </div>
                         </div>
                     </div>
-                    </div>
-                <div class="col-4">
+                </div>
+                <div class="col-6">
                    <?php
                         if (isset($_SESSION['username'])) {
                             echo '<a href="#" class="btn" data-toggle="modal" data-target="#modalUnirSala">Unir Sala</a>';
@@ -124,18 +124,27 @@
                     ?>
                 </div>
 
-                <?php
+                <!-- <?php
                     if (isset($_SESSION['username'])) {
                        echo "<div class='col-4'>
                         <a href='../controlador/crearPersonatje.controller.php' class='btn'>Crear Personaje</a>
                         </div>";
                     }
                     
-                    ?>
+                    ?> -->
+
             </div>
-
-
         </div>
+
+        <div >
+            <button class="btnCrearPersonatje">
+                <a href="../controlador/crearPersonatje.controller.php">
+                    <img src="../img/fondos/Crearpersonaje.png" class="CrearPersonatje" title="Crear Personaje" alt="Crear Personaje">
+                </a>
+            </button>
+        </div>
+
+
     </section>
     <section class="Mercat">
         

@@ -80,7 +80,7 @@
                     <?php echo $_SESSION['codigoSala']; ?>
                 </div>
                 <div>
-                    <table id="Users">
+                    <table class="table-personajes" id="Users">
                         <tr>
                             <th>Personatges</th>
                         </tr>
