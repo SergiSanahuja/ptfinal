@@ -58,26 +58,26 @@
         ?>
     </nav>
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-8 mt-2 col-sm-12 titol justify-content-sm-center">
-                <h1>Els teus Personatges</h1>
+    <div class="container h-100">
+        
+            <div class="row">
+                <div class="col-md-8 mt-2 col-sm-12 titol justify-content-sm-center">
+                    <h1>Els teus Personatges</h1>
+                </div>
+                <div class="col-md-4 col-sm-12 d-flex justify-content-md-end justify-content-sm-center ">
+                    <a href="../controlador/crearPersonatje.controller.php" class="input-group-text CrearPersonatje" id="crearPersonatge">Crear Personatge</a>
+                </div>
             </div>
-            <div class="col-md-4 col-sm-12 d-flex justify-content-md-end justify-content-sm-center ">
-                <a href="../controlador/crearPersonatje.controller.php" class="input-group-text CrearPersonatje" id="crearPersonatge">Crear Personatge</a>
+            <div class="row mt-1 ">
+                <div class="col-6 input-group buscador">
+                    <span class="input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                        </svg>
+                    </span>
+                    <input class="form-control" id="search" type="text">
+                </div>
             </div>
-        </div>
-        <div class="row mt-1 ">
-            <div class="col-6 input-group buscador">
-                <span class="input-group-text" id="basic-addon1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
-                    </svg>
-                </span>
-                <input class="form-control" id="search" type="text">
-            </div>
-        </div>
 
         <div class="row mt-5 justify-content-md-around rounded llista-personatges">
             <?php
@@ -85,16 +85,16 @@
 
             foreach ($llistaPersonatges as $personatge) {
                 echo '  
-                    <div class="col-sm-12 col-md-5 p-1 col-lg-5 cartaPersonatge">
+                    <div class="col-sm-12 col-md-5  p-1 col-lg-5 cartaPersonatge">
                         
                             <div class="fitxaPersonatge row ">
                                 <div class="col-lg-3 col-sm-3 col-md-4 align-self-center">                                                    
                                     <img src="../img/avatar/' . $personatge['Img'] . '" class="rounded-circle imgPerfil"  alt="imatge de perfil">
                                 </div>
                                 <div class="col-lg-9 col-sm-9 col-md-8">
-                                    <div class="row  ">
+                                    <div class="row">
                                         <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-3 col-md-12 col-lg-12 ">
-                                            <h3 class="card-title mt-2 ">' . $personatge['nom'] . '</h3>
+                                            <h4 class="card-title mt-2 ">' . $personatge['nom'] . '</h4>
                                         </div>
                                         <div class="col-lg-12 col-md-12">
                                             <div class="row">
@@ -182,7 +182,7 @@
 
                                     <i class="bi bi-heart-fill mr-1"></i>
                                     <div class=""><label for="vida">Vida:</label></div>
-                                    <div id="Vida">5</div>
+                                    <div id="Vida"></div>
                                 </div>
 
                             </div>
@@ -191,7 +191,7 @@
 
                                  <i class="bi bi-activity"></i>
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
-                                    <div id="Iniciativa">5</div>
+                                    <div id="Iniciativa"></div>
 
                                 </div>
                             </div>
@@ -210,7 +210,7 @@
                                 </svg>
 
                                 <div><label for="Fuerza">Fuerza:</label></div>
-                                <input type="number" name="Strenght" id="Fuerza"></input>
+                                <input type="number" name="Strenght" id="Fuerza" value=""></input>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 h4">
@@ -266,7 +266,18 @@
             </div>
         </div>
     </div>
-
 </body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                <p>FinalD&D</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
 
 </html>
