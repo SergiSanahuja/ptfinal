@@ -1,5 +1,6 @@
-<html lang="en">
+<html lang="ca">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -17,6 +18,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
         <a class="navbar-brand" href="#">FinalD</a>
+        <a href="../controlador/personatges.controller.php">Personatges </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,7 +59,7 @@
                 <?php
                  
                     if(isset($error)){
-                        echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+                        echo '<div class="alert alert-danger msgError" role="alert">'.$error.'</div>';
                     }
                 ?>
             </div>
@@ -68,8 +70,8 @@
 
             </div>
 
-            <div class="row  ">
-                <div class="col-6  align-content-center">
+            <div class="row">
+                <div class="col-4  align-content-center">
                     <?php
                     
 
@@ -114,35 +116,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                    <?php
                         if (isset($_SESSION['username'])) {
                             echo '<a href="#" class="btn" data-toggle="modal" data-target="#modalUnirSala">Unir Sala</a>';
                         }else{
-                            echo '<a href="../controlador/index.controler.php" class="btn">Unir Sala</a>';
+                            echo '<a href="../controlador/index.controler.php" class=" btn">Unir Sala</a>';
                         }
                     ?>
                 </div>
 
-                <!-- <?php
+                <?php
                     if (isset($_SESSION['username'])) {
                        echo "<div class='col-4'>
-                        <a href='../controlador/crearPersonatje.controller.php' class='btn'>Crear Personaje</a>
+                        <a href='../controlador/crearPersonatje.controller.php' class='btn'>Crear Personatge</a>
+                        </div>";
+                    }else{
+                        echo "<div class='col-4'>
+                        <a href='../controlador/index.controler.php' class='btn'>Crear Personatge</a>
                         </div>";
                     }
                     
-                    ?> -->
+                    ?>
 
             </div>
         </div>
 
-        <div >
+        <!-- <div >
             <button class="btnCrearPersonatje">
                 <a href="../controlador/crearPersonatje.controller.php">
                     <img src="../img/fondos/Crearpersonaje.png" class="CrearPersonatje" title="Crear Personaje" alt="Crear Personaje">
                 </a>
             </button>
-        </div>
+        </div> -->
 
 
     </section>

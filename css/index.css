@@ -86,6 +86,22 @@ h1{
 }
 
 
+.msgError{
+    color: black;
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    margin: auto;
+    animation: parpadeo 1s linear forwards;
+}
+
+@keyframes parpadeo {
+   
+    0%{top: 120px;}
+    50%{top: 125px;}
+    100%{top: 130px;}
+}
+
 /*Boto de crear personatge*/
 .CrearPersonatje{
     border-radius: 5px;

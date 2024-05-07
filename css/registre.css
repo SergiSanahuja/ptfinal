@@ -63,7 +63,9 @@ body {
 }
 
 .error{
-    color: #A81414;
+    color: #fff9f9;
+    background-color: rgb(125, 15, 33);
+    border-radius: 5px;
     font-size: 1.5rem;
     margin: 10px 0;
 }

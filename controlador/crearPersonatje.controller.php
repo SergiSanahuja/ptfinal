@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
             require_once '../model/personatje.php';
             $personatje = new Personatje();
             $personatje->crearPersonatje($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
-            $_SESSION['success'] = 'Personatje creat correctament';
+            $_SESSION['success'] = 'Personatge creat correctament';
             header('Location: ../controlador/index.controler.php');
             die();
         }

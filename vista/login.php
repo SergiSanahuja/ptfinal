@@ -41,7 +41,7 @@
             }
 
             if(isset($_SESSION['error'])){
-                echo '<div class="error">'.$_SESSION['error'].'</div>';
+                echo '<div class="error msgError">'.$_SESSION['error'].'</div>';
              
                 unset($_SESSION['error']);
             }

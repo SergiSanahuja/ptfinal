@@ -22,10 +22,7 @@ if(isset($_SESSION['error'])) {
 
 
 
-$Personatges = new Personatje();
 
-
-$llistaPersonatges = $Personatges->getPersonatjeByUser($usuario);
 
 include_once '../vista/index.php'
 
