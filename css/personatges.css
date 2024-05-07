@@ -33,7 +33,7 @@ body{
     
 }
 
-img{
+.imgPerfil{
     width: 100%;
     height: 100%;
     margin: 5%;
@@ -67,7 +67,43 @@ img{
     display: flex;
     justify-content: space-around;
 }
+@media  (max-width: 1900px ){
+   
 
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 60%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 15%;
+        top: 5%;
+    }
+
+    input[type="number"] {
+        width: 40px;
+        border: none;
+        color: white;
+        background-color: #851212;
+        border-bottom: #ddd 2px solid;
+        border-radius: 5px;
+    }
+
+    select {
+        width: 100px;
+        border: none;
+        color: white;
+        background-color: #851212;
+        border-bottom: #ddd 2px solid;
+        border-radius: 5px;
+    }
+
+
+
+}
 
 @media (min-width: 768px){
 
@@ -76,11 +112,32 @@ img{
         padding: 5px 0px;
     }
 
-    img{
+    .imgPerfil{
         width: 100%;
         height: 100%;
         margin: 5%;
     
+    }
+
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 70%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 15%;
+        top: 5%;
+    }
+    
+    input[type="number"] {
+        width: 40px;
+        border: none;
+        color: white;
+        background-color: #851212;
+        border-bottom: #ddd 2px solid;
     }
 }
 
@@ -96,7 +153,7 @@ img{
 }
 
 @media (max-width: 575px){
-    img{
+    .imgPerfil{
         width: 50%;
         height: auto;
         margin: 5%;

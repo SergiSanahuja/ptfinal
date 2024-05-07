@@ -10,3 +10,16 @@ $("#search").keyup(function(){
         }
     });
 });
+
+$("eliminarPersonatge").click(function(){
+    var id = $(this).attr("id");
+    $.ajax({
+        url: "eliminarPersonatge.php",
+        method: "POST",
+        data: {id: id},
+        success: function(data){
+            $("#"+id).remove();
+        }
+    });
+});
+

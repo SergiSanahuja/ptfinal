@@ -35,7 +35,10 @@ if($_SESSION['user'] == 0 || $_SESSION['user'] == null){
     $_SESSION['error'] = "No has iniciat sessió";
     header("Location: index.controler.php");
     exit();
-}
+}   
+
+
+
 
 
 
