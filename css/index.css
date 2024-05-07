@@ -93,6 +93,7 @@ h1{
     right: 40%;
     margin: auto;
     animation: parpadeo 1s linear forwards;
+    z-index: 3;
 }
 
 @keyframes parpadeo {
