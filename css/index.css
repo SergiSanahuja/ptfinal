@@ -19,7 +19,7 @@ h1{
 .card{
     background-color: #A81414;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     box-shadow:  5px 5px #888888;
     width: auto;
@@ -27,13 +27,21 @@ h1{
 
 }
 
+.Personatges{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+}
 
+.Personatges:hover{
+    color: white;
+    text-decoration: none;
+}
 
 .btn{
     background-color: #A81414;
     color: white;
   
-    width: 100px;
+    width: 100%;
 }
 
 @media screen and (max-width: 768px){
@@ -45,7 +53,15 @@ h1{
         height: 200px;
     }
 
-  
+    .msgError{
+        color: black;
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        margin: auto;
+        animation: parpadeo 1s linear forwards;
+        z-index: 3;
+    }
 
     .card{
         background-color: #A81414;
@@ -74,6 +90,15 @@ h1{
         height: 500px;
     }
 
+    .msgError{
+        color: black;
+        position: absolute;
+        left: 40%;
+        right: 40%;
+        margin: auto;
+        animation: parpadeo 1s linear forwards;
+        z-index: 3;
+    }
     
 
     .mercat{
@@ -86,21 +111,13 @@ h1{
 }
 
 
-.msgError{
-    color: black;
-    position: absolute;
-    left: 40%;
-    right: 40%;
-    margin: auto;
-    animation: parpadeo 1s linear forwards;
-    z-index: 3;
-}
+
 
 @keyframes parpadeo {
    
-    0%{top: 120px;}
-    50%{top: 125px;}
-    100%{top: 130px;}
+    0%{top: 10%;}
+    50%{top: 11%;}
+    100%{top: 10%;}
 }
 
 /*Boto de crear personatge*/

@@ -24,6 +24,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
         <a class="navbar-brand" href="../controlador/index.controler.php">FinalD</a>
+        <a href="../controlador/personatges.controller.php" class="Personatges active">Personatges </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

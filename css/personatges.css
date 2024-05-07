@@ -18,6 +18,17 @@
     color: #000000;
 }
 
+.Personatges{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+
+.Personatges:hover{
+    color: white;
+    text-decoration: none;
+}
+
 body{
     background-image: url("../img/fondos/papiro.png");
     background-size: cover;
@@ -94,6 +105,7 @@ body{
     text-align: center;
     box-shadow: 5px 5px 5px #888888;
 }
+
 
 #idPersonatge, #Img, #infoPersonatge, #inventari {
     border: 1px solid #000;
