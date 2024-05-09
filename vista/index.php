@@ -96,12 +96,20 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            <?php
+                                if(isset($error)){
+                                    echo '<div class="alert alert-danger msgError" role="alert">'.$error.'</div>';
+                                }
+                                
+                            ?>
                             <form action="../controlador/unirSala.controller.php" method="post">
                             <div class="form-group">
+                                
 
                                 <label for="Personatge">Selecciona el teu personatge</label>
                                 <select class="form-control mb-3" id="Personatge" name="Personatge" required>
                                     <?php
+                                       
                                         foreach ($llistaPersonatges as $personatge) {
                                             echo '<option value="'.$personatge['id'].'">'.$personatge['nom'].' - nivell'.$personatge['nivel'].'</option>';
                                         }

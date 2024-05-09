@@ -20,9 +20,9 @@ if(isset($_SESSION['error'])) {
     $error = null;
 }
 
+$Personatge = new Personatje();
 
-
-
+$llistaPersonatges = $Personatge->getPersonatjeByUser($usuario);
 
 include_once '../vista/index.php'
 
