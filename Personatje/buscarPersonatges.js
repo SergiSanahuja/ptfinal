@@ -23,3 +23,38 @@ $("eliminarPersonatge").click(function(){
     });
 });
 
+
+$(".editarPersonatge").click(function(){
+    var idPersonatge = $(this).attr("id");
+
+    $.ajax({
+        url: "editarPersonatge.controller.php",
+        method: "POST",
+        data: {PersonatgeID: idPersonatge},
+        success: function(data){
+            // console.log(JSON.stringify(data));
+
+            var Personatge = JSON.parse(data);
+
+            console.log(Personatge);
+
+           
+
+            $('#NomPersonatge').text(Personatge.nom);
+            $('#raza').text(Personatge.raza);
+            $('#clase').text(Personatge.clase);
+            $('#nivel').text(Personatge.nivel);
+            $('#Vida').text(Personatge.Vida);
+            $('#Iniciativa').text(Personatge.Iniciativa);
+            $('#Fuerza').val(Personatge.Fuerza);
+            $('#Destreza').val(Personatge.Destreza);
+            $('#Constitucion').val(Personatge.Constitucion);
+            $('#Inteligencia').val(Personatge.Inteligencia);
+            $('#Sabiduria').val(Personatge.Sabiduria);
+            $('#Carisma').val(Personatge.Carisma);
+           
+
+            
+        }
+    });
+});

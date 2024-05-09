@@ -43,6 +43,12 @@ class Personatje extends DB{
         return $result;
     }
    
+    public function getPersonatgeByID($id){
+        $sql = "SELECT * FROM personatges WHERE id = '$id'";
+        $stmt = $this->connect()->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
 
 }

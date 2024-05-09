@@ -33,8 +33,6 @@ var con = mysql.createPool({
 
 
 
-
-let activeConnections = 0;
 // Al rebre un nou client (nova connexió)
 wsServer.on('connection', (client, peticio) => {
 	// Guardar identificador (IP i Port) del nou client
@@ -170,15 +168,36 @@ wsServer.on('connection', (client, peticio) => {
 							case 'd20':
 								msgBot = Math.floor(Math.random() * 20) + 1;
 								break;
-
 							
+							case 'd4 h':
+								msgBot = "Tirada de un número entre 1 y 4";
+								break;
 
+							case 'd6 h':
+								msgBot = "Tirada de un número entre 1 y 6";
+								break;
 
-							case 'ayuda':
-								msgBot = "Lista de comandos: /saludo, /ayuda, /d4, /d6, /d8, /d10, /d12, /d20";
+							case 'd8 h':
+								msgBot = "Tirada de un número entre 1 y 8";
+								break;
+
+							case 'd10 h':
+								msgBot = "Tirada de un número entre 1 y 10";
+								break;
+
+							case 'd12 h':
+								msgBot = "Tirada de un número entre 1 y 12";
+								break;
+
+							case 'd20 h':
+								msgBot = "Tirada de un número entre 1 y 20";
+								break;
+								
+							case 'help':
+								msgBot = "Llista de comandes: /saludo, /help, /d4, /d6, /d8, /d10, /d12, /d20 (si tens algun dubte per cualsevol comanda, afegeix 'h' al final per obtenir més informació (Ex: /d4 h))";
 								break
 							default:
-								msgBot = "Comando no reconocido";
+								msgBot = "Comande no reconeguda, escriu /help per veure la llista de comandes disponibles";
 								break;
 						}
 					}

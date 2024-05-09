@@ -14,6 +14,8 @@
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script type="module" src="../Personatje/buscarPersonatges.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -58,6 +60,14 @@
 
         ?>
     </nav>
+
+    <div>
+        <?php
+        if (isset($error)) {
+            echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+        }
+        ?>
+    </div>
 
     <div class="container h-100">
         
@@ -116,10 +126,10 @@
                                 </div>
                             <div class="row section-btn">
                                 <form action="../controlador/eliminarPersonatge.controller.php" method="POST">
-                                    <input type="hidden" name="id" value="' . $personatge['id'] . '">
+                                    <input type="hidden" id="getId" name="id" value="' . $personatge['id'] . '">
                                     <button name="eliminarPersonatge" type="submit" class="btn">Eliminar</button>
                                 </form>
-                                <a class="btn" data-toggle="modal" data-target="#modalPersonatge" id="modificarPersonatge">Modificar</a>
+                                <a class="btn editarPersonatge" data-toggle="modal" data-target="#modalPersonatge" id="'.$personatge['id'].'">Modificar</a>
                                 
                             </div>
                         

@@ -46,8 +46,7 @@ if (isset($_POST['submit'])) {
             // var_dump($fileType);
             $allow = array("png","jpg", "jpeg");
 
-           
-        
+                    
             if (!in_array($fileType, $allow)) {
                  $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
             }else{

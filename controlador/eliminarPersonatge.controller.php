@@ -17,6 +17,13 @@ $personatges = new Personatje();
 
 if(isset($_POST['eliminarPersonatge'])){
     $id = $_POST['id'];
+
+    $nomAvarar = $personatges->getPersonatje($id);
+
+    if($nomAvarar['Img'] != "avatar.png"){
+        unlink("../img/".$nomAvarar['Img']);
+    }
+
     $personatges->deletePersonatje($id);
     header("Location: personatges.controller.php");
     exit();

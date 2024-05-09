@@ -26,9 +26,10 @@ if(isset($_SESSION['error'])) {
     $error = null;
 }
 
-
+//Creem un objecte de la classe Personatje
 $personatges = new Personatje();
 
+//Cridem a la funció getPersonatjeByUser per a que ens retorni tots els personatges de l'usuari
 $llistaPersonatges = $personatges->getPersonatjeByUser($usuario);
 
 if($_SESSION['user'] == 0 || $_SESSION['user'] == null){

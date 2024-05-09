@@ -90,18 +90,18 @@
 
                         <div class="stats">
                             <div class="row bg-secondary pt-1 mb-4">
-                                <div class="col align-content-center">
+                                <div class="col-6 col-md-3 align-content-center">
                                     <label for="vida">Vida:</label>
                                 </div>
-                                <div class="col align-content-center" id="vida">
+                                <div class="col-6  col-md-3 align-content-center" id="vida">
                                     <input type="number" value="<?php echo isset($_POST['vida']) ? $_POST['vida'] : 5 ?>" name="vida" min=0 max=20 class="bg-secondary" style="border: none; color:white;">
                                 </div>
                                
-                                <div class="col">
+                                <div class="col-6 col-md-3" >
                                     <label for="iniciativa">Iniciativa:</label>
                                 </div>
                                
-                                <div class="col" id="iniciativa">
+                                <div class="col-6 col-md-3"  id="iniciativa">
                                     <input type="number" value="<?php echo isset($_POST['iniciativa']) ? $_POST['iniciativa'] : 5 ?>" name="iniciativa" min=0 max=20 class="bg-secondary" style="border: none; color:white;">
                                     
                                 </div>
