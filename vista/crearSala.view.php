@@ -173,7 +173,7 @@
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-sm-3 h4">
+                            <div class="col-sm-4 h4">
 
                                 <div class="row">
 
@@ -183,7 +183,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-sm-3 h4">
+                            <div class="col-sm-6 h4">
                                 <div class="row">
 
                                  <i class="bi bi-activity"></i>

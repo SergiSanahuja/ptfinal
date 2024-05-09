@@ -99,7 +99,7 @@
                     </select>
                 </div>
             </div>
-
+        <!-- Bucle per veure tots els personatges que te el usuari -->
         <div class="row mt-5 justify-content-md-around rounded llista-personatges">
             <?php
 
@@ -139,7 +139,7 @@
                                     <input type="hidden" id="getId" name="id" value="' . $personatge['id'] . '">
                                     <button name="eliminarPersonatge" type="submit" class="btn">Eliminar</button>
                                 </form>
-                                <a class="btn editarPersonatge" data-toggle="modal" data-target="#modalPersonatge" id="'.$personatge['id'].'">Modificar</a>
+                                <a class="btn editarPersonatge" data-toggle="modal"  tabindex="0" data-target="#modalPersonatge" id="'.$personatge['id'].'">Modificar</a>
                                 
                             </div>
                         
@@ -159,6 +159,7 @@
 
     </div>
 
+    <!-- Modal per a la fitxa de personatge  -->
     <div class="modal" id="modalPersonatge" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -177,22 +178,25 @@
 
                     </div>
                     <div class="modal-header">
-                        <div>
-                            <label for="NomPersonatge">Nombre</label>
-                            <h3 class="modal-title" id="NomPersonatge"></h3>
-                        </div>
-                        <div>
-                            <label for="Raza">Raza</label>
-                            <h4 class="modal-title" id="raza"></h4>
-                        </div>
-                        <div>
-                            <label for="clase">Clase</label>
-                            <h4 class="modal-title" name='clase' id="clase"></h4>
-                        </div>
-                        <div>
-                            <label for="nivel">LV:</label>
-                            <!-- <h4 class="modal-title" name='nivel' id="nivel">LV</h4> -->
-                            <input type="number" min="0" max="20" name='nivel' id="nivel">
+                        <div class="row">
+
+                            <div class="col-6 col-md-6">
+                                <label for="NomPersonatge">Nombre</label>
+                                <h3 class="modal-title" id="NomPersonatge"></h3>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="Raza">Raza</label>
+                                <h4 class="modal-title" id="raza"></h4>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <label for="clase">Clase</label>
+                                <h4 class="modal-title" name='clase' id="clase"></h4>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="nivel">LV:</label>
+                                <!-- <h4 class="modal-title" name='nivel' id="nivel">LV</h4> -->
+                                <input type="number" min="0" max="20" name='nivel' id="nivel">
+                            </div>
                         </div>
                     </div>
                     <div class="modal-body ">
