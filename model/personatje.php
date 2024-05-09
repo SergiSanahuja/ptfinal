@@ -29,8 +29,8 @@ class Personatje extends DB{
         return $result;
     }
 
-    public function updatePersonatje($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen){
-        $sql = "UPDATE personatges SET raza = '$raza', clase = '$clase', nombre = '$nombre', fuerza = '$fuerza', vida = '$vida', iniciativa = '$iniciativa', constitucion = '$constitucion', destreza = '$destreza', inteligencia = '$inteligencia', sabiduria = '$sabiduria', carisma = '$carisma', imagen = '$imagen' WHERE id = '$id'";
+    public function updatePersonatje($id, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma,$nivel){
+        $sql = "UPDATE personatges SET Fuerza = '$fuerza', Vida = '$vida', Iniciativa = '$iniciativa', Constitucion = '$constitucion', Destreza = '$destreza', Inteligencia = '$inteligencia', Sabiduria = '$sabiduria', Carisma = '$carisma', nivel = '$nivel' WHERE id = '$id'";
 
         $this->connect()->query($sql);
     }

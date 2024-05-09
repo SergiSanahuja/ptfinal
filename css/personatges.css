@@ -140,6 +140,7 @@ body{
 
     select {
         width: 100px;
+        height: 100%;
         border: none;
         color: white;
         background-color: #851212;
@@ -192,6 +193,18 @@ body{
         color: #000000;
     }
 
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 5%;
+        top: 5%;
+    }
     
 }
 
@@ -217,4 +230,6 @@ body{
         margin: 5%;
         size: 10%;
     }
+
+    
 }

@@ -11,6 +11,8 @@ $("#search").keyup(function(){
     });
 });
 
+
+
 $("eliminarPersonatge").click(function(){
     var id = $(this).attr("id");
     $.ajax({
@@ -43,9 +45,9 @@ $(".editarPersonatge").click(function(){
             $('#NomPersonatge').text(Personatge.nom);
             $('#raza').text(Personatge.raza);
             $('#clase').text(Personatge.clase);
-            $('#nivel').text(Personatge.nivel);
-            $('#Vida').text(Personatge.Vida);
-            $('#Iniciativa').text(Personatge.Iniciativa);
+            $('#nivel').val(Personatge.nivel);
+            $('#Vida').val(Personatge.Vida);
+            $('#Iniciativa').val(Personatge.Iniciativa);
             $('#Fuerza').val(Personatge.Fuerza);
             $('#Destreza').val(Personatge.Destreza);
             $('#Constitucion').val(Personatge.Constitucion);
@@ -55,6 +57,32 @@ $(".editarPersonatge").click(function(){
            
 
             
+        }
+    });
+});
+
+
+
+$("#updateCharacter").click(function(){
+    
+   
+    var PersonatgeID = $('#getId').val();
+    var Fuerza = $('#Fuerza').val();
+    var Destreza = $('#Destreza').val();
+    var Constitucion = $('#Constitucion').val();
+    var Inteligencia = $('#Inteligencia').val();
+    var Sabiduria = $('#Sabiduria').val();
+    var Carisma = $('#Carisma').val();
+    var Vida = $('#Vida').val();
+    var Iniciativa = $('#Iniciativa').val();
+    var nivel = $('#nivel').val();
+
+    $.ajax({
+        url: "updatePersonatge.controller.php",
+        method: "POST",
+        data: {PersonatgeID: PersonatgeID, Fuerza: Fuerza, Destreza: Destreza, Constitucion: Constitucion, Inteligencia: Inteligencia, Sabiduria: Sabiduria, Carisma: Carisma, Vida: Vida, Iniciativa: Iniciativa, nivel: nivel},
+        success: function(data){
+            window.location.reload();
         }
     });
 });

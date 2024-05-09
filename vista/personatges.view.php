@@ -88,6 +88,16 @@
                     </span>
                     <input class="form-control" id="search" type="text">
                 </div>
+
+                <div class="col-4">
+                    <select name="FiltrarClasse" id="FiltrarClasse">
+                        <option value="Tots">Tots</option>
+                        <option value="Mago">Mag</option>
+                        <option value="Guerrero">Guerrer</option>
+                        <option value="Asesino">Assassí</option>
+                        <option value="Arquero">Arquer</option>
+                    </select>
+                </div>
             </div>
 
         <div class="row mt-5 justify-content-md-around rounded llista-personatges">
@@ -117,7 +127,7 @@
                                                 <div class="card-title  mt-2">' . $personatge['raza'] . '</div>
                                                 </div>
                                                 <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-3 col-md-6 col-lg-4">
-                                                <div class="card-title mt-2">' . $personatge['clase'] . '</div>
+                                                <div class="card-title mt-2 clase">' . $personatge['clase'] . '</div>
                                                 </div>
                                                 </div>
                                             </div>
@@ -181,28 +191,31 @@
                         </div>
                         <div>
                             <label for="nivel">LV:</label>
-                            <h4 class="modal-title" name='nivel' id="nivel">LV</h4>
+                            <!-- <h4 class="modal-title" name='nivel' id="nivel">LV</h4> -->
+                            <input type="number" min="0" max="20" name='nivel' id="nivel">
                         </div>
                     </div>
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-sm-3 h4">
+                            <div class="col-sm-4 h4">
 
                                 <div class="row">
 
                                     <i class="bi bi-heart-fill mr-1"></i>
                                     <div class=""><label for="vida">Vida:</label></div>
-                                    <div id="Vida"></div>
+                                    <!-- <div id="Vida"></div> -->
+                                    <input type="number" min="0" max="20" name="Vida" id="Vida">
                                 </div>
 
                             </div>
-                            <div class="col-sm-3 h4">
+                            <div class="col-sm-5 h4">
                                 <div class="row">
 
                                  <i class="bi bi-activity"></i>
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
-                                    <div id="Iniciativa"></div>
+                                    <!-- <div id="Iniciativa"></div> -->
+                                    <input type="number" min="0" max="20" name="Iniciativa" id="Iniciativa">
 
                                 </div>
                             </div>
@@ -210,7 +223,7 @@
 
                     </div>
                     <div id="infoPersonatge" class="row justify-content-center align-items-center ">
-                        <div class="col-md-6 col-sm-6 h4">
+                        <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
                                     <defs>
@@ -221,43 +234,43 @@
                                 </svg>
 
                                 <div><label for="Fuerza">Fuerza:</label></div>
-                                <input type="number" name="Strenght" id="Fuerza" value=""></input>
+                                <input type="number" min="0" max="20" name="Strenght" id="Fuerza" value=""></input>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 h4">
+                        <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
                                 <div><label for="Destreza">Destreza:</label></div>
 
-                                <input type="number" name="skill" id="Destreza"></input>
+                                <input type="number" min="0" max="20" name="skill" id="Destreza"></input>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 h4">
+                        <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitucion:</label></div>
-                                <input type="number" name="constitution" id="Constitucion"></input>
+                                <input type="number" min="0" max="20" name="constitution" id="Constitucion"></input>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 h4">
+                        <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">Inteligencia:</label></div>
-                                <input type="number" name="inteligence" id="Inteligencia"></input>
+                                <input type="number" min="0" max="20" name="inteligence" id="Inteligencia"></input>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 h4">
+                        <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Sabiduria:</label></div>
-                                <input type="number" name="wisdom" id="Sabiduria"></input>
+                                <input type="number" min="0" max="20" name="wisdom" id="Sabiduria"></input>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 h4">
+                        <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
-                                <input type="number" name="charisma" id="Carisma"></input>
+                                <input type="number" min="0" max="20" name="charisma" id="Carisma"></input>
                             </div>
                         </div>
 
