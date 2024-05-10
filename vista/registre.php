@@ -47,7 +47,7 @@
             
             <hr>
             
-            <a href="login.php">Iniciar Sessió</a>
+            <a href="../vista/login.php">Iniciar Sessió</a>
             
             <hr>
             <button type="submit">Registrar</button>

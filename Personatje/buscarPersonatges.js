@@ -41,7 +41,7 @@ $(".editarPersonatge").click(function(){
             console.log(Personatge);
 
            
-
+            $('#id').text(Personatge.id);
             $('#NomPersonatge').text(Personatge.nom);
             $('#raza').text(Personatge.raza);
             $('#clase').text(Personatge.clase);
@@ -66,7 +66,7 @@ $(".editarPersonatge").click(function(){
 $("#updateCharacter").click(function(){
     
    
-    var PersonatgeID = $('#getId').val();
+    var PersonatgeID = $('#id').text();
     var Fuerza = $('#Fuerza').val();
     var Destreza = $('#Destreza').val();
     var Constitucion = $('#Constitucion').val();

@@ -52,7 +52,7 @@
 
             <hr>
 
-            <a href="registre.php">Regístrate</a>
+            <a href="../vista/registre.php">Regístrate</a>
             <hr>
 
             <button type="submit">Iniciar sesión</button>
