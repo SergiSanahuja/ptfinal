@@ -38,13 +38,15 @@ body{
 }
 
 
+
 .fitxaPersonatge{
     background-color: #f1f1f1;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
-    
-}
+    font-family: 'IM Fell English', serif;
+    font-size: 1.5rem;
+;}
 
 .llista-Personatges{
     display: flex;
@@ -52,6 +54,12 @@ body{
     justify-content: space-around;
     margin: 5%;
   font-size: small;
+}
+
+.nomPersonatge{
+    /* background-color: #a81414; */
+    border-radius: 6px;
+    color: rgb(0, 0, 0);
 }
 
 .imgPerfil{
@@ -71,6 +79,10 @@ body{
 #modificarPersonatge:hover{
    cursor: pointer;
 
+}
+
+.editarPersonatge{
+    cursor: pointer;
 }
 
 .CrearPersonatje{
@@ -148,6 +160,11 @@ body{
         border-radius: 5px;
     }
 
+    hr{
+        border: 1px solid #A81414;
+        width: 100%;
+    
+    }
    
 
 }
@@ -161,6 +178,11 @@ body{
         height: 5.2rem;
        
         margin: 5%;
+    }
+    hr{
+        border: 1px solid #A81414;
+        width: 90%;
+    
     }
 
     .modal {

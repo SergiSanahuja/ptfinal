@@ -109,24 +109,27 @@
                     <div class="col-sm-12 col-md-5  p-1 col-lg-5 cartaPersonatge">
                         
                             <div class="fitxaPersonatge row ">
-                                <div class="col-lg-3 col-sm-3 col-md-4 align-self-center">                                                    
+                                <div class="col-lg-3 col-sm-3 col-md-12 align-self-center">                                                    
                                     <img src="../img/avatar/' . $personatge['Img'] . '" class="rounded-circle imgPerfil"  alt="imatge de perfil">
                                 </div>
-                                <div class="col-lg-9 col-sm-9 col-md-8">
+                                <div class="col-lg-9 col-sm-9 col-md-12">
                                     <div class="row">
-                                        <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-3 col-md-12 col-lg-12 ">
-                                            <h4 class="card-title mt-2 ">' . $personatge['nom'] . '</h4>
+                                        <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-12 col-md-12 col-lg-12 nomPersonatge ">
+                                            <h3 class="card-title mt-2 ">' . $personatge['nom'] . '</h3>
                                         </div>
+                                        
+                                        <hr>
+
                                         <div class="col-lg-12 col-md-12">
                                             <div class="row">
-                                                <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-3 col-md-6 col-lg-4">
-                                                <div class="card-title mt-2">Nivell: ' . $personatge['nivel'] . '</div>
+                                                <div class="mt-lg-2 mt-sm-4 mt-md-3 col-sm-4 col-md-6 col-lg-4">
+                                                <div class="card-title mt-2">Lv: ' . $personatge['nivel'] . '</div>
                                                 </div>
                                                 
-                                                <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-3 col-md-6 col-lg-4">
+                                                <div class="mt-lg-2 mt-sm-4 mt-md-3 col-sm-4 col-md-6 col-lg-4">
                                                 <div class="card-title  mt-2">' . $personatge['raza'] . '</div>
                                                 </div>
-                                                <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-3 col-md-6 col-lg-4">
+                                                <div class="mt-lg-2 mt-sm-4 mt-md-3 col-sm-4 col-md-6 col-lg-4">
                                                 <div class="card-title mt-2 clase">' . $personatge['clase'] . '</div>
                                                 </div>
                                                 </div>
