@@ -86,11 +86,11 @@
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
                         </svg>
                     </span>
-                    <input class="form-control" id="search" type="text">
+                    <input class="form-control" aria-label="Buscador de personatges pel nom" id="search" type="text">
                 </div>
 
                 <div class="col-4">
-                    <select name="FiltrarClasse" id="FiltrarClasse">
+                    <select name="FiltrarClasse" aria-label="Filtar per clase" id="FiltrarClasse">
                         <option value="Tots">Tots</option>
                         <option value="Mago">Mag</option>
                         <option value="Guerrero">Guerrer</option>
@@ -246,7 +246,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
-                                <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
+                                <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="imagen de destreza">
                                 <div><label for="Destreza">Destreza:</label></div>
 
                                 <input type="number" min="0" max="20" name="skill" id="Destreza"></input>

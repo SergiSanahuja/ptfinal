@@ -163,6 +163,7 @@ body{
     hr{
         border: 1px solid #A81414;
         width: 100%;
+        animation: cargarLinea 2s ;
     
     }
    
@@ -178,8 +179,11 @@ body{
         height: 5.2rem;
        
         margin: 5%;
+
+        animation: opacity 3s;
     }
     hr{
+
         border: 1px solid #A81414;
         width: 90%;
     
@@ -240,6 +244,7 @@ body{
     
     .cartaPersonatge{
         margin: 5%;
+        
     }
 
     .titol{
@@ -254,4 +259,27 @@ body{
     }
 
     
+}
+
+
+@keyframes cargarLinea {
+
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+    
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

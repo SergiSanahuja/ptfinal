@@ -199,7 +199,7 @@
                                 <div class="row">
                                     <!-- <i class="bi bi-lightning-fill"></i> -->
 
-                                    <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
+                                    <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="imagen de destreza">
                                     <div><label for="Destreza">Destreza:</label></div>
 
                                     <div id="Destreza"></div>
