@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro de Discusión</title>
+    <link rel="shortcut icon" href="../img/fondos/favicon.ico" type="image/x-icon">
+    <title>Forum </title>
     <!-- Enlace a los estilos de Bootstrap -->
     <link rel="stylesheet" href="../css/foroVista.css">
       <!-- CSS -->
@@ -18,7 +19,7 @@
 <body >
 
     <header class="bg-dark text-white text-center p-3">
-        <h1>Foro de Discusión</h1>
+        <h1>Forum</h1>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">

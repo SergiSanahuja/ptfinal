@@ -75,7 +75,7 @@ h1{
     
     .sala{
         background-image: url("../img/fondos/drac.png");
-        opacity: 1;
+      
         background-size: cover;
         width: auto;
         height: 200px;
@@ -102,7 +102,7 @@ h1{
 
     .mercat{
         background-image: url("../img/fondos/drac2.png");
-        opacity: 50%;
+    
         background-size: cover;
         width: auto;
         height: 200px;

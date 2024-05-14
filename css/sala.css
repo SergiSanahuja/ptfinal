@@ -52,7 +52,7 @@
 
 /** 1200px **/
 
-@media  (max-width: 1900px ){
+@media  (min-width: 1200px ){
     #fondo{
         background-image:url('../img/mapa/llanura.webp');
         border-radius: 5px;
