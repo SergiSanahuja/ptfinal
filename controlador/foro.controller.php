@@ -8,13 +8,9 @@ if(session_status() === PHP_SESSION_NONE) {
 require_once '../model/foro.model.php';
 
 
-$foro = new Foro();
-$id = $_SESSION['user'];
 
-if(empty($id)){
-    $_SESSION['error'] = 'No pots crear un foro sense estar loguejat';
-    header('Location: ../controlador/index.controler.php');
-}
+
+$foro = new Foro();
 
 
 $foros = $foro->getForo();

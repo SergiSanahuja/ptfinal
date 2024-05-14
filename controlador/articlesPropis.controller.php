@@ -11,15 +11,15 @@ $foro = new Foro();
 $id = $_SESSION['user'];
 
 if(empty($id)){
-    $_SESSION['error'] = 'No pots crear un foro sense estar loguejat';
+    $_SESSION['error'] = 'No estas loguejat';
     header('Location: ../controlador/foro.controller.php');
 }
 
 $foros = $foro->getForoByID($id);
 
 
-include '../vista/foro.view.php';
 
+include '../vista/foro.view.php';
 
 
 ?>

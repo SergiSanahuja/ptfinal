@@ -29,56 +29,62 @@
 </header>
 
 <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
-
-                </li>
-                <li class="nav-item">
-                    <a href="../controlador/personatges.controller.php" class="Personatges  nav-link active">Personatges </a>
-
-                </li>
-                <li class="nav-item">
-                    <a href="../controlador/foro.controller.php" class="nav-link">Forum </a>
-                    
-                </li>
-
-            </ul>
-
+    <div class="container-fluid">  
+        <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <?php
-            if(isset($_SESSION['user'])){
-                echo '<div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav
-                ml-auto">
-                <li class="nav-item">
-                <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
-                </li>
-                </ul>
-                </div>';
-            }else{
-                echo '<div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav
-                ml-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="../vista/login.php">Login</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="../vista/registre.php">Register</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link active">Personatges </a>
+                        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Forum
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../controlador/crearForo.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
+                        </div>
+                    </li>            
+                    
+                </ul>    
                 
-                </li>
-                </ul>
-                </div>';
-            }
+                 
+                <?php
+                if(isset($_SESSION['user'])){
+                    echo '<div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                    </li>
+                    </ul>
+                    </div>';
+                }else{
+                    echo '<div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="../vista/login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="../vista/registre.php">Register</a>
+                    
+                    </li>
+                    </ul>
+                    </div>';
+                }
+                
+                ?>
+               
             
-            ?>
-        
+            </div>
         </div>
     </nav>
 
