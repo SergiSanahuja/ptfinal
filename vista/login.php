@@ -17,6 +17,7 @@
        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -49,7 +50,7 @@
         <form id="login-form" action="../controlador/login.controler.php" method="post">
             <input type="text" id="email" name="email" placeholder="Email" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" required>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
-
+            <!-- <div class="g-recaptcha" data-sitekey="6LdlFtgpAAAAAEoSuX1wBSbC-O194jDPkZwFezEa"></div> -->
             <hr>
 
             <a href="../vista/registre.php">Regístrate</a>

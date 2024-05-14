@@ -1,0 +1,31 @@
+footer{
+    position: relative;
+    clear: both;
+    margin-top: -200px;
+    height: 20  px;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.delete{
+    position: absolute;
+    right: 10px;
+    width: 10%;
+}
+
+.error .success{
+    position: absolute;
+    right: 10px;
+}
+
+
+.navegacio{
+    background-color: #A81414;
+    color: white;
+    padding: 10px;
+   
+    box-shadow: 5px 5px 5px #888888;
+
+}

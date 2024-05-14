@@ -24,41 +24,62 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-        <a class="navbar-brand" href="../controlador/index.controler.php">FinalD</a>
-        <a href="../controlador/personatges.controller.php" class="Personatges active">Personatges </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <?php
-        if (isset($_SESSION['user'])) {
-            echo '<div class="collapse navbar-collapse" id="navbarNav">
+<header class="bg-dark text-white text-center p-3">
+    <h1>Personatges</h1>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark navegacio">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
+
+                </li>
+                <li class="nav-item">
+                    <a href="../controlador/personatges.controller.php" class="Personatges  nav-link active">Personatges </a>
+
+                </li>
+                <li class="nav-item">
+                    <a href="../controlador/foro.controller.php" class="nav-link">Forum </a>
+                    
+                </li>
+
+            </ul>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php
+            if(isset($_SESSION['user'])){
+                echo '<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
-                 <div id="name"  class="nav-link" ">' . $_SESSION['username'] . '</div>
+                <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
                 </li>
                 </ul>
-            </div>';
-        } else {
-            echo '<div class="collapse navbar-collapse" id="navbarNav">
+                </div>';
+            }else{
+                echo '<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../vista/login.php">Login</a>
+                <a class="nav-link" href="../vista/login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../vista/registre.php">Register</a>
-
+                <a class="nav-link" href="../vista/registre.php">Register</a>
+                
                 </li>
                 </ul>
-            </div>';
-        }
-
-        ?>
+                </div>';
+            }
+            
+            ?>
+        
+        </div>
     </nav>
 
     <div>

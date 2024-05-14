@@ -16,42 +16,82 @@
 </head>
 <body>
 
+    <header class="bg-dark text-white text-center p-3">
+        <h1>FinalD</h1>
+    </header>
+
+    
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../controlador/foro.controller.php">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../vista/crearForo.view.php">Crear nou Missatge</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
+                </li>
+                Agrega más categorías según sea necesario
+            </ul>
+        </div>
+    </nav> -->
+
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-        <a class="navbar-brand" href="#">FinalD</a>
-        <a href="../controlador/personatges.controller.php" class="Personatges">Personatges </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <?php
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="Inici nav-link active" href="#">FinalD</a>
+
+                </li>
+                <li class="nav-item">
+                    <a href="../controlador/personatges.controller.php" class="Personatges  nav-link">Personatges </a>
+
+                </li>
+                <li class="nav-item">
+                    <a href="../controlador/foro.controller.php" class="nav-link">Forum </a>
+                    
+                </li>
+
+            </ul>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php
             if(isset($_SESSION['user'])){
                 echo '<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
-                 <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
                 </li>
                 </ul>
-            </div>';
+                </div>';
             }else{
                 echo '<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav
                 ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../vista/login.php">Login</a>
+                <a class="nav-link" href="../vista/login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../vista/registre.php">Register</a>
-
+                <a class="nav-link" href="../vista/registre.php">Register</a>
+                
                 </li>
                 </ul>
-            </div>';
+                </div>';
             }
-
-        ?>
+            
+            ?>
         
+        </div>
     </nav>
     <section class="sala d-flex  justify-content-center align-items-center">
 
@@ -145,7 +185,7 @@
                         </div>";
                     }
                     
-                    ?>
+                ?>
 
             </div>
         </div>
@@ -160,8 +200,18 @@
 
 
     </section>
-    <section class="Mercat">
-        
+    <section class="Mercat d-flex justify-content-center align-items-center">
+        <div class="card ">
+
+            <div class="row p-3 justify-content-center">
+                <h1>Forum</h1>        
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="../controlador/foro.controller.php" class="btn">Entrar</a>
+                </div>
+            </div> 
+        </div>
     </section>
 
     <section class="sala">

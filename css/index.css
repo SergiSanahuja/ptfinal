@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+
+
 body{
     background-color: #4C5B5C;
 }
 
 h1{
-    color: rgb(34, 33, 33); 
+    color: rgb(252, 252, 252); 
     text-align: center;
+    font-family: 'IM Fell English', serif;
+    
 }
 
 .navegacio{
@@ -17,7 +22,7 @@ h1{
 }
 
 .card{
-    background-color: #A81414;
+    background-color: #0000009e;
     margin: 10px;
     padding: 20px;
     border-radius: 5px;
@@ -27,7 +32,17 @@ h1{
 
 }
 
+.Inici{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+
+}
+
 .Personatges{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+}
+.foro{
     color: rgb(160, 158, 158);
     text-decoration: none;
 }
@@ -38,16 +53,22 @@ h1{
 }
 
 .btn{
-    background-color: #A81414;
+    background-color: #c30f0f;
     color: white;
-  
+
     width: 100%;
+}
+
+.btn:hover{
+    background-color: #a81414;
+    color: rgb(255, 200, 3);
 }
 
 @media screen and (max-width: 768px){
     
     .sala{
         background-image: url("../img/fondos/drac.png");
+        opacity: 1;
         background-size: cover;
         width: auto;
         height: 200px;
@@ -74,6 +95,7 @@ h1{
 
     .mercat{
         background-image: url("../img/fondos/drac2.png");
+        opacity: 50%;
         background-size: cover;
         width: auto;
         height: 200px;
@@ -85,8 +107,11 @@ h1{
     
     .sala{
         background-image: url("../img/fondos/drac.png");
-        background-size: cover;
+        
+        background-size: cover;        
+        background-position: center;
         width: auto;
+
         height: 500px;
     }
 

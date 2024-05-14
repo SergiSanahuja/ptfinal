@@ -82,6 +82,8 @@ input[type="text"]:focus {
     border: 1px solid #ddd;
 }
 
+
+
 .character-container button {
     padding: 10px;
     background-color: #007BFF;

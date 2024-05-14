@@ -1,7 +1,27 @@
 <?php
 
+//Claves de recapcha
+$siteKey= "6LdlFtgpAAAAAEoSuX1wBSbC-O194jDPkZwFezEa";
+$secretKey = "6LdlFtgpAAAAABiBoKVr9gUEnW9ypPYHgyFI7q2G";
+
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
+}
+
+//Verifica la respuesta de recapcha
+if (isset($_POST['g-recaptcha-response'])) {
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$recaptchaResponse";
+    $response = file_get_contents($url);
+    $response = json_decode($response);
+
+    if (!$response->success) {
+        $_SESSION['error'] = 'Error de reCAPTCHA';
+        // Redirige al usuario de vuelta al formulario de inicio de sesión
+        header('Location: login.controler.php');
+        exit();
+    }
 }
 
 if(isset($_POST['email']) && isset($_POST['password'])){
