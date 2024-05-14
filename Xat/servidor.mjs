@@ -245,6 +245,8 @@ wsServer.on('connection', (client, peticio) => {
 
 					try {
 						// Enviar missatge a tots de la sala
+						
+
 						if (client.sala && salas[client.sala]) {
 							salas[client.sala].forEach((clients) => {
 								if (clients.character && clients.character.id == missatge.id) {

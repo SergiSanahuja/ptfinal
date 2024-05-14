@@ -141,6 +141,11 @@
                     while (document.getElementById(data.info.id)) {
                         document.getElementById(data.info.id).remove();
                     }
+
+                    while (document.getElementById(data.info.IdPersonaje)) {
+                        document.getElementById(data.info.IdPersonaje).remove();
+                    }
+                    
                 
 
                     //Crear div amb la imatge del jugador

@@ -107,6 +107,10 @@
                     while (document.getElementById(data.info.id)) {
                         document.getElementById(data.info.id).remove();
                     }
+
+                    while (document.getElementById(data.info.IdPersonaje)) {
+                        document.getElementById(data.info.IdPersonaje).remove();
+                    }
                 
                 
                     let div = document.createElement('div');

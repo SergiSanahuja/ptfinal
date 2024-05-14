@@ -113,7 +113,7 @@
             <form action="../controlador/crearForo.controller.php" method="POST">
                 <div>
                     
-                    <input type="text" class="" placeholder="Títol" aria-label="titol" name="titol" id="titol" >
+                    <input type="text" class="" placeholder="Títol" min=1 max="40" aria-label="titol" name="titol" id="titol" >
                 </div>
                 <div>
                     <textarea name="contingut" aria-label="contringut" id="contingut" class="form-control" cols="30" rows="10" placeholder="Escriu el teu contingut" required></textarea>
