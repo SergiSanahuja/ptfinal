@@ -1,9 +1,4 @@
-footer{
-    position: relative;
-    clear: both;
-    margin-top: -200px;
-    height: 20  px;
-}
+
 
 body{
     min-height: 100vh;
@@ -28,4 +23,12 @@ body{
    
     box-shadow: 5px 5px 5px #888888;
 
+}
+
+.footer{
+    background-color: #A81414;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #888888;
 }

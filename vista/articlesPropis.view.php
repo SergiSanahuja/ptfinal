@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,10 +57,16 @@
 
     </div>
 
-    <footer class="bg-dark text-white text-center p-2 mt-5">
-        <p>&copy; 2024 Foro de Discusión</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                    <p>FinalD&D</p>
+                </div>
+            </div>
+        </div>
+
     </footer>
-    
     <!-- Scripts de Bootstrap y jQuery (asegúrate de incluir jQuery antes de Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

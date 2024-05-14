@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foro de Discusión</title>
     <!-- Enlace a los estilos de Bootstrap -->
     <link rel="stylesheet" href="../css/foroVista.css">
+      <!-- CSS -->
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
+    <script type="module" src="../Personatje/buscarPersonatges.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body >
@@ -95,7 +101,7 @@
 
     ?>
 
-    <div class="container mt-4">
+    <div class="container mt-2  ">
         <h2>Últimas Publicaciones</h2>
 
        
@@ -119,14 +125,20 @@
 
 
         ?>
-
-        <!-- Agrega más publicaciones según sea necesario -->
-
     </div>
 
-    <footer class="bg-dark text-white text-center p-2 mt-5">
-        <p>&copy; 2024 Foro de Discusión</p>
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                    <p>&copy; FinalD&D</p>
+                </div>
+            </div>
+        </div>
+
     </footer>
+
     
     <!-- Scripts de Bootstrap y jQuery (asegúrate de incluir jQuery antes de Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

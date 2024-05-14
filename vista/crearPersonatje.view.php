@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="ca">
 
 <head>
     <meta charset="UTF-8">
@@ -203,6 +203,15 @@
 
     </div>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                    <p>FinalD&D</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

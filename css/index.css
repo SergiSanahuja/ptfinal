@@ -63,6 +63,13 @@ h1{
     background-color: #a81414;
     color: rgb(255, 200, 3);
 }
+.footer{
+    background-color: #A81414;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #888888;
+}
 
 @media screen and (max-width: 768px){
     
