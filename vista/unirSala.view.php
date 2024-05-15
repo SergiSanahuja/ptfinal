@@ -25,6 +25,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
+        <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
         <a class="navbar-brand" href="index.controler.php">FinalD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

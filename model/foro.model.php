@@ -18,7 +18,7 @@ class Foro extends DB{
     }
 
     public function getForoByID($id){
-        $sql = "SELECT u.nom,f.id ,f.id_Usuari ,f.titol, f.missatge, f.data,f.img  FROM foro f JOIN usuaris u ON f.id_Usuari = u.id WHERE f.id_Usuari = '$id'";
+        $sql = "SELECT u.nom,f.id ,f.id_Usuari ,f.titol, f.missatge, f.data,f.img  FROM foro f JOIN usuaris u ON f.id_Usuari = u.id WHERE f.id_Usuari = '$id' ORDER BY data DESC";
         $stmt = $this->connect()->query($sql);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;

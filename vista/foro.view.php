@@ -6,12 +6,16 @@
     <link rel="shortcut icon" href="../img/fondos/favicon.ico" type="image/x-icon">
     <title>Forum </title>
     <!-- Enlace a los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../css/foroVista.css">
       <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -24,7 +28,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
-        <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
+        
+        <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
+        <a class="Inici mr-3 " href="../vista/index.php "> FinalD</a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -97,15 +104,16 @@
     ?>
 
     <div class="container mt-2  ">
-        <h2>Últimas Publicaciones</h2>
+        <h2>Últimes Publicacions</h2>
 
+        
        
         <?php
         
-        // Agrega más publicaciones según sea necesario
+            // Agrega más publicaciones según sea necesario
             foreach($foros as $row){
                 echo '<div class="card mb-3">
-                <div class="card-body">
+                <div class="card-body ">
                     <h3 class="card-title">'.$row['titol'].'</h3>
                     <p class="card-text">'.$row['missatge'].'</p>
                     <small class="text-muted">Publicado por: '.$row['nom'].' | Fecha: '.$row['data'].'</small>';
@@ -115,7 +123,8 @@
                         
                         
                         if($row['id_Usuari'] == $_SESSION['user']){
-                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger delete">Eliminar</a>';
+                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-none d-md-block delete">Eliminar</a>';
+                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-block d-md-none delete"><i class="bi bi-trash"></i></a>';
                         };
                     }
 

@@ -5,8 +5,7 @@
 .navegacio{
     background-color: #A81414;
     color: white;
-    padding: 10px;
-   
+    
     box-shadow: 5px 5px 5px #888888;
 
 }
@@ -18,12 +17,21 @@
     color: #000000;
 }
 
-.Personatges{
-    color: rgb(255, 255, 255);
+.Inici{
+    color: rgb(160, 158, 158);
     text-decoration: none;
 
 }
 
+.Inici:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.Personatges{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+}
 .Personatges:hover{
     color: white;
     text-decoration: none;

@@ -1,40 +1,80 @@
 body {
-    background-color: #888888;
-
+    /* background-color: #ffffff; */
+    background-image: url("../img/fondos/papiro.png");
 }
 
 .error {
    animation: errorAnimation 2s forwards;
 }
 
+/* ---------------------------Nav ---------------------------------*/
 .navegacio{
     background-color: #A81414;
     color: white;
-    padding: 10px;   
+     
     box-shadow: 5px 5px 5px #615a5a;
 
 }
+.Inici{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
 
-footer{
-    position: absolute;
-    bottom: 0;
 }
+
+.Inici:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.Personatges{
+    color: rgb(65, 65, 65);
+    text-decoration: none;
+}
+.Personatges:hover{
+    color: white;
+    text-decoration: none;
+}
+
 .Personatges{
     color: rgb(160, 158, 158);
     text-decoration: none;
 }
+
+/*-------------------------- Peu de pàgina ------------------------ */
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* ----------------------------Formulari ---------------------------*/
 .foro{
     color: rgb(160, 158, 158);
     text-decoration: none;
 }
 
-.container {
-    width: auto;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 3%;
-    border-radius: 5px;
-    background-color: #ffffff;
+
+
+.cross{
+
+    margin-right: 2px;
+    color: white;
+    text-decoration: none;
+
+}
+
+.cross:hover{
+    
+    color: red;
+    text-decoration: none;
+}
+
+.formulari {
+    background-color: #474747;
+    color: white;
+    border-radius:10p ;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
 }
 
 form {
@@ -53,11 +93,19 @@ form label {
 }
 
 form input[type="text"],
-form textarea {
+textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
+    background-color: #747272;
+    color: white;
+}
+
+
+form input[type="text"]::placeholder{
+    color: #fefefe;
+   
 }
 
 form button {
@@ -73,6 +121,13 @@ form button {
 form button:hover {
     background-color: #0056b3;
 }
+/* ----------------------Títol---------------------------- */
+h1{
+    text-align: center  ;
+    color: white;
+}
+
+
 
 #titol{
     border:none;

@@ -30,7 +30,8 @@
 </header>
 
 <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-    <div class="container-fluid">  
+    <div class="container-fluid"> 
+        <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a> 
         <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

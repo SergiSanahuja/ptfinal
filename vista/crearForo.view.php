@@ -25,6 +25,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
+        <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
         <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -92,41 +93,46 @@
         ?>
     </div>
     
-    <div class="container">
-    
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"> <a href="../controlador/foro.controller.php" >&times;</a></span>
-        </button>
-            
+    <div class="container mt-3">
+        <div class="w-auto h-75  formulari">
+
         
-        <div class="row justify-content-center">
-                    
-
-            <div class="col-5 accordion">
-
-                <h1>Nou Missatge</h1>
-            </div>
-
-           
-        </div>
-        <div class="row justify-content-center">
-
-            <form action="../controlador/crearForo.controller.php" method="POST">
-                <div>
-                    
-                    <input type="text" class="" placeholder="Títol" min=1 max="40" aria-label="titol" name="titol" id="titol" >
-                </div>
-                <div>
-                    <textarea name="contingut" aria-label="contringut" id="contingut" class="form-control" cols="30" rows="10" placeholder="Escriu el teu contingut" required></textarea>
-                </div>
-                <div>
-                    <label for="imatge" class="form-label">Imatge:</label>
-                    <input type="file" class="form-control" name="img">
-                </div>
-
-                <button type="submit" name="submit">Publicar</button>
+        
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"> <a href="../controlador/foro.controller.php" class="cross" >&times;</a></span>
+            </button>
+                
             
-            </form>
+            <div class="row justify-content-center">
+                        
+
+                <div class="col-12 col-sm-5  accordion">
+                    <h1>Nou Missatge</h1>
+                </div>
+
+            
+            </div>
+            <div class="row justify-content-center p-3">
+                <div class="col-12 col ">
+                    
+                    <form action="../controlador/crearForo.controller.php" method="POST">
+                        <div>
+                            
+                            <input type="text" class="" placeholder="Títol" min=1 max="40" aria-label="titol" name="titol" id="titol" >
+                        </div>
+                        <div>
+                            <textarea name="contingut" aria-label="contringut" id="contingut" class="form-control" cols="30" rows="10" placeholder="Escriu el teu contingut" required></textarea>
+                        </div>
+                        <div>
+                            <label for="imatge" class="form-label">Imatge:</label>
+                            <input type="file" class="form-control" name="img">
+                        </div>
+
+                        <button type="submit" name="submit">Publicar</button>
+                    
+                    </form>
+                </div> 
+            </div>
         </div>
     </div>
 

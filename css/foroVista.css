@@ -2,13 +2,12 @@
 
 body{
     min-height: 100vh;
+    background-image: url("../img/fondos/papiro.png");
 }
 
-.delete{
-    position: absolute;
-    right: 10px;
-    width: 10%;
-}
+
+
+
 
 .error .success{
     position: absolute;
@@ -19,7 +18,7 @@ body{
 .navegacio{
     background-color: #A81414;
     color: white;
-    padding: 10px;
+    
    
     box-shadow: 5px 5px 5px #888888;
 
@@ -31,4 +30,41 @@ body{
     padding: 10px;
     text-align: center;
     box-shadow: 5px 5px 5px #888888;
+}
+
+.Inici{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.Inici:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.Personatges{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+}
+.Personatges:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+@media (min-width: 990px) {
+    .delete{
+        width: 15%;
+    
+    }
+    
+}
+@media (max-width: 990px) {
+    .delete{
+        width: 20%;
+    
+    }
+    
 }
