@@ -17,7 +17,7 @@ $id_Article = $_GET['id'];
 
 
 if(empty($id)){
-    $_SESSION['error'] = 'No pots crear un foro sense estar loguejat';
+    $_SESSION['error'] = 'No pots eliminar un article sense estar logueja';
     header('Location: ../controlador/foro.controller.php');
     exit();
 }

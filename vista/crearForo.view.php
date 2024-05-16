@@ -38,7 +38,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Forum
+                         Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
@@ -94,7 +94,7 @@
     </div>
     
     <div class="container mt-3">
-        <div class="w-auto h-75  formulari">
+        <div class="w-auto h-auto formulari">
 
         
         
@@ -123,10 +123,10 @@
                         <div>
                             <textarea name="contingut" aria-label="contringut" id="contingut" class="form-control" cols="30" rows="10" placeholder="Escriu el teu contingut" required></textarea>
                         </div>
-                        <div>
+                        <!-- <div>
                             <label for="imatge" class="form-label">Imatge:</label>
                             <input type="file" class="form-control" name="img">
-                        </div>
+                        </div> -->
 
                         <button type="submit" name="submit">Publicar</button>
                     

@@ -10,7 +10,7 @@
     #fondo{
         background-image:url('../img/mapa/llanura.webp');
         border-radius: 5px;
-        height: 200px;
+        height: 90%;
         width: 100%;
         background-size: cover;
         margin-bottom: 5px;
@@ -168,6 +168,14 @@ select {
     border-radius: 5px;
 }
 
+#salaCodi, #Codi{
+    width: 200px;
+    border: none;
+    color: white;
+    background-color: #851212;
+    border-bottom: #ddd 2px solid;
+    border-radius: 5px;
+}
 
 /*Tabla de usuarios conectados*/
 .table-personajes {

@@ -24,8 +24,20 @@ class Foro extends DB{
         return $result;
     }
 
+    public function getContingutArticle($idArticel){
+        $sql = "SELECT * FROM foro WHERE id = '$idArticel'";
+        $stmt = $this->connect()->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function eliminarForo($id){
         $sql = "DELETE FROM foro WHERE id = '$id'";
+        $this->connect()->query($sql);
+    }
+
+    public function editarArticle($id, $titol, $missatge, $data){
+        $sql = "UPDATE foro SET titol = '$titol', missatge = '$missatge', data = '$data' WHERE id = '$id'";
         $this->connect()->query($sql);
     }
 

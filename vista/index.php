@@ -38,7 +38,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Forum
+                         Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
@@ -194,7 +194,7 @@
         <div class="card ">
 
             <div class="row p-3 justify-content-center">
-                <h1>Forum</h1>        
+                <h1>Fòrum</h1>        
             </div>
             <div class="row">
                 <div class="col-12">

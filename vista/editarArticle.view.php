@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/fondos/favicon.ico" type="image/x-icon">
-    <title>Fòrum </title>
+    <title>Editar Article</title>
+
     <!-- Enlace a los estilos de Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="../css/foroVista.css">
+    <link rel="stylesheet" href="../css/crearForo.css">
       <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -20,25 +19,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body >
 
-    <header class="bg-dark text-white text-center p-3">
-        <h1>Fòrum</h1>
-    </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark navegacio">
+</head>
+<body>
+    
+<header class="bg-dark text-white text-center p-3">
+    <h1>Editar Article</h1>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
-        
         <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici mr-3 " href="../vista/index.php "> FinalD</a>
-
+        <a class="Inici nav-link " href="../controlador/index.controler.php ">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link">Personatges </a>
+                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link ">Personatges </a>
                         
                     </li>
                     <li class="nav-item dropdown">
@@ -89,70 +89,57 @@
         </div>
     </nav>
 
-    <?php
-
-        if(isset($_SESSION['error'])){
-            echo '<div class="alert alert-danger error" role="alert">'.$_SESSION['error'].'</div>';
+    <div>
+        <?php
+        if (isset($_SESSION['error'])) {
+            echo '<div class="alert alert-danger error" role="alert">' . $_SESSION['error'] . '</div>';
             unset($_SESSION['error']);
         }
-
-        if(isset($_SESSION['success'])){
-            echo '<div class="alert alert-success success" role="alert">'.$_SESSION['success'].'</div>';
-            unset($_SESSION['success']);
-        }
-
-    ?>
-
-    <div class="container mt-2  ">
-        <h2>Últimes Publicacions</h2>
-
-        
-       
-        <?php
-        
-            // Agrega más publicaciones según sea necesario
-            foreach($foros as $row){
-                echo '<div class="card mb-3">
-                <div class="card-body ">
-                    <h3 class="card-title">'.$row['titol'].'</h3>
-                    <p class="card-text">'.$row['missatge'].'</p>
-                    <small class="text-muted">Publicado por: '.$row['nom'].' | Fecha: '.$row['data'].'</small><br>';
-                    
-
-                    if(isset($_SESSION['user'])){
-                        
-                        
-                        if($row['id_Usuari'] == $_SESSION['user']){
-                            echo  '<div class="d-flex justify-content-end">';
-                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-none d-md-inline delete mr-3">Eliminar</a>';
-                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-inline d-md-none delete mr-3"><i class="bi bi-trash"></i></a>';
-                            echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-none d-md-inline edit">Modificar</a>';
-                            echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-inline d-md-none edit"><i class="bi bi-pencil"></i></a>';   
-                            echo '</div>';
-                        };
-                    }
-
-                    echo '</div></div>';
-            }
-
-
-
         ?>
     </div>
+    
+    <div class="container mt-3">
+        <div class="w-auto h-auto formulari">
 
-   
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                    <p>&copy; FinalD&D</p>
+        
+        
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"> <a href="../controlador/foro.controller.php" class="cross" >&times;</a></span>
+            </button>
+                
+            
+            <div class="row justify-content-center">
+                        
+
+                <div class="col-12 col-sm-5  accordion">
+                    <h1>Editar Missatge</h1>
                 </div>
+
+            
+            </div>
+            <div class="row justify-content-center p-3">
+                <div class="col-12 col ">
+                    
+                    <form action="" method="POST">
+                        <div>
+                            
+                            <input type="text" class=""  min=1 max="40" aria-label="titol" name="titol" id="titol" value="<?php echo  $contingut['titol']  ?>" >
+                        </div>
+                        <div>
+                            <textarea name="contingut" aria-label="contringut" id="contingut" class="form-control" cols="30" rows="10"  required><?php echo $contingut['missatge'] ?></textarea>
+                        </div>
+                        <!-- <div>
+                            <label for="imatge" class="form-label">Imatge:</label>
+                            <input type="file" class="form-control" name="img">
+                        </div> -->
+
+                        <button type="submit" name="submit">Publicar</button>
+                    
+                    </form>
+                </div> 
             </div>
         </div>
+    </div>
 
-    </footer>
-
-
-   
 </body>
 </html>
