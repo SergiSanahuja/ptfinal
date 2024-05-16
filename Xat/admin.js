@@ -65,7 +65,7 @@
 
             
 
-            let nivel = $('#nivel').text();
+            let nivel = $('#nivel').val();
             let Vida = $('#Vida').text();
             let Iniciativa = $('#Iniciativa').text();
             let Fuerza = $('#Fuerza').val();
@@ -179,7 +179,7 @@
                             $('#id').text(data.info.id);
                             $('#raza').text(data.info.raza);
                             $('#clase').text(data.info.clase);
-                            $('#nivel').text(data.info.nivel);
+                            $('#nivel').val(data.info.nivel);
                             $('#Vida').text(data.info.Vida);
                             $('#Iniciativa').text(data.info.Iniciativa);
                             $('#Fuerza').val(data.info.Fuerza);
@@ -266,6 +266,8 @@
                         document.getElementById(data.idPersonaje).remove();
                     }
                    
+                    $('#modal').css('display', 'none');
+
                    break;
 
 

@@ -4,6 +4,7 @@ require_once 'db.model.php';
 
 class Sala extends DB{
 
+    //agafa ttes les sales de la base de dades
     public function getSalas(){
         $sql = "SELECT * FROM salas";
         $stmt = $this->connect()->query($sql);

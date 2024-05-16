@@ -194,9 +194,9 @@ select {
     text-align: left;
 }
 
-.table-personajes tr:nth-child(even) {
+ .table-personajes tr:nth-child(even) {
     background-color: #f2f2f2;
-}
+} 
 
 .table-personajes tr:hover {
     background-color: #ddd;

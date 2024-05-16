@@ -141,7 +141,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal">Hoja de personaje</h5>
+                    <h5 class="modal-title" id="modal">Fulla de personatge</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -156,20 +156,21 @@
                     </div>
                     <div class="modal-header">
                         <div>
-                            <label for="NomPersonatge">Nombre</label>
+                            <label for="NomPersonatge">Nom</label>
                             <h3 class="modal-title" id="NomPersonatge"></h3>
                         </div>
                         <div>
-                            <label for="Raza">Raza</label>
+                            <label for="Raza">Raça</label>
                             <h4 class="modal-title" id="raza"></h4>
                         </div>
                         <div>
-                            <label for="clase">Clase</label>
+                            <label for="clase">Classe</label>
                             <h4 class="modal-title" name='clase' id="clase"></h4>
                         </div>
                         <div>
                             <label for="nivel">LV:</label>
-                            <h4 class="modal-title" name='nivel' id="nivel">LV</h4>
+                            <!-- <h4 class="modal-title" name='nivel' id="nivel">LV</h4> -->
+                            <input type="number" min="0" name="nivel" id="nivel">
                         </div>
                     </div>
                     <div class="modal-body ">
@@ -208,14 +209,14 @@
                                     </g>
                                 </svg>
 
-                                <div><label for="Fuerza">Fuerza:</label></div>
+                                <div><label for="Fuerza">Força:</label></div>
                                 <input type="number" name="Strenght" id="Fuerza"></input>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
-                                <div><label for="Destreza">Destreza:</label></div>
+                                <div><label for="Destreza">Destresa:</label></div>
 
                                 <input type="number" name="skill" id="Destreza"></input>
                             </div>
@@ -223,21 +224,21 @@
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <i class="bi bi-shield mr-1"></i>
-                                <div><label for="Constitucion">Constitucion:</label></div>
+                                <div><label for="Constitucion">Constitució:</label></div>
                                 <input type="number" name="constitution" id="Constitucion"></input>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <i class="bi bi-lightbulb mr-1"></i>
-                                <div><label for="Inteligencia">Inteligencia:</label></div>
+                                <div><label for="Inteligencia">Intel·ligència:</label></div>
                                 <input type="number" name="inteligence" id="Inteligencia"></input>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
                                 <i class="bi bi-book mr-1"></i>
-                                <div><label for="Sabiduria">Sabiduria:</label></div>
+                                <div><label for="Sabiduria">Saviesa:</label></div>
                                 <input type="number" name="wisdom" id="Sabiduria"></input>
                             </div>
                         </div>
@@ -251,9 +252,39 @@
 
                     </div>
                     <div id="inventari">
-                        <div id="arma"></div>
-                        <div id="armadura"></div>
-                        <div id="pocio"></div>
+                        <div id="arma">
+                            <div>
+                                <h2>Arma</h2>
+                            </div>
+                            <hr>
+                            <div>
+                                <p>espasa</p>
+                                <p>arc</p>
+                                <p>punyal</p>
+                                <p>daga</p>
+                            </div>
+
+                        </div>
+
+
+                        <div id="armadura">
+                            <div>
+                                <h2>Armadura</h2>
+                            </div>
+                            <hr>
+                            <p>Casc</p>
+                            <p>pantalons</p>
+                            <p>camisa</p>
+                            <p>gorra</p>
+                        </div>
+                        <div id="pocio">
+                            <div>
+                                <h2>Poció</h2>
+                            </div>
+                            <hr>
+                            <p>Varí</p>
+                            <p>Hp</p>
+                        </div>
                     </div>
                 </div>
 

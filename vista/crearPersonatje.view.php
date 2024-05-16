@@ -71,19 +71,19 @@
                             <div class="col d-flex justify-content-center">
                                 <select name="raza" id="raza">
                                     <option value="Raza" default>Raza</option>
-                                    <option value="Humano">Humano</option>
-                                    <option value="Elfo">Elfo</option>
-                                    <option value="Enano">Enano</option>
-                                    <option value="Orco">Orco</option>
+                                    <option value="Humà">Humà</option>
+                                    <option value="Elf">Elf</option>
+                                    <option value="Nan">Nan</option>
+                                    <option value="Orc">Orc</option>
                                 </select>
                             </div>
                             <div class="col d-flex justify-content-center">
                                 <select name="clase" id="clase">
                                     <option value="Class">Clase</option>
-                                    <option value="Guerrero">Guerrero</option>
-                                    <option value="Mago">Mago</option>
-                                    <option value="Arquero">Arquero</option>
-                                    <option value="Asesino">Asesino</option>
+                                    <option value="Guerrer">Guerrer</option>
+                                    <option value="Mag">Mag</option>
+                                    <option value="Arquer">Arquer</option>
+                                    <option value="Assassí">Assassí</option>
                                 </select>
                             </div>
                         </div>
