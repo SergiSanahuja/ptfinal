@@ -78,6 +78,13 @@
     
         left: 15%;
         top: 5%;
+        bottom: 5%;
+    }
+
+    #changeMapModal{
+        width: 80%;
+        left:  10%;
+
     }
 
     input[type="number"] {
@@ -146,6 +153,7 @@ h1{
     
         left: 0;
         top: 5%;
+        
     }
     
     input[type="number"] {

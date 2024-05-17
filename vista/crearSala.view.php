@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index.css"> 
     <link rel="stylesheet" href="../css/sala.css">
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
@@ -25,11 +25,21 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-     <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="navbar-brand" href="index.controler.php">FinalD</a>
+
+        <a href="../controlador/index.controler.php" class="navbar-brand">
+            <img src="../img/fondos/favicon.ico" alt="logo" class="d-inline-block align-text-center">
+            FinalD
+        </a>
+
+
+        <div class="container-fluid justify-content-center">
+            <span class="navbar-brand mb-0 h1">Sala</span>
+        </div>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <?php
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -89,9 +99,9 @@
                 <div>
 
                     <input type="checkbox" id="closeRoom" name="closeRoom">
-                    <label for="closeRoom">Cerrar la sala</label>
+                    <label for="closeRoom">Tancar Sala</label>
                     <input type="checkbox" id="ChatHidden" name="ChatHidden">
-                    <label for="ChatHidden">Esconder Chat</label>
+                    <label for="ChatHidden">Amagar xat</label>
 
                 </div>
                 <div>
@@ -107,18 +117,38 @@
             <div id="ContenidorMapa" class="col-md-9   col-sm-7">
                 <div class="">
 
-                    <div class="row mt-2">
-                        <div class="col">
-                            <h1>Sala</h1>
+                    <div class="row justify-content-center mt-2">
 
-                        </div>
-                        <div class="col align-self-center ">
+                        <!-- <div class="col align-self-center ">
                             <select name="mapa" id="mapa">
-                                <option value="llanura">Llanura</option>
-                                <option value="volcan">Volcán</option>
+                                <option value="llanura">Esplanada</option>
+                                <option value="volcan">Volcà</option>
                                 <option value="mar">Mar</option>
                             </select>
+                        </div> -->
+
+                        <!-- Default dropleft button -->
+                        <!-- Default dropright button -->
+                        <div class="btn-group dropright">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Accions
+                            </button>
+                            <div class="dropdown-menu">
+                                <!-- Dropdown menu links -->
+                                
+                                <button type="button" class="dropdown-item" data-toggle="modal" data-target="#afegirObjecteModal">
+                                    Afegir Objecte
+                                </button>
+                                <button type="button" class="dropdown-item" data-toggle="modal" data-target="#changeMapModal">
+                                    Cambiar Mapa
+                                </button>
+
+
+
+                            </div>
                         </div>
+
+
 
                     </div>
 
@@ -189,7 +219,7 @@
                             <div class="col-sm-6 h4">
                                 <div class="row">
 
-                                 <i class="bi bi-activity"></i>
+                                    <i class="bi bi-activity"></i>
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
                                     <div id="Iniciativa">5</div>
 
@@ -262,6 +292,10 @@
                                 <p>arc</p>
                                 <p>punyal</p>
                                 <p>daga</p>
+                                <p>daga</p>
+                                <p>daga</p>
+                                <p>daga</p>
+                                <p>daga</p>
                             </div>
 
                         </div>
@@ -296,7 +330,71 @@
             </div>
         </div>
     </div>
-    
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="changeMapModal" tabindex="-1" role="dialog" aria-labelledby="changeMapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="changeMapModalLabel">Cambiar Mapa</h5>
+                   
+                    <div class="col align-self-center ">
+                        <select name="mapa" id="mapa">
+                            <option value="llanura">Esplanada</option>
+                            <option value="volcan">Volcà</option>
+                            <option value="mar">Mar</option>
+                        </select>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aquí puedes poner el formulario o los controles para cambiar el mapa -->
+                  
+                        <div id="mapPreview">
+                            <!-- Aquí se mostrará la previsualización del mapa -->
+                            <div class="row d-flex justify-content-arround">
+                                <div class="col">
+                                    <img src="../img/mapa/mar.webp" alt="mapa mar" aria-label="Mar" height="200" width="300">
+                                    <p>Mar</p>
+                                </div>
+                                <div class="col">
+                                    <img src="../img/mapa/volcan.webp" alt="mapa volcan" aria-label="Volcà" height="200" width="300" >
+                                    <p>Volcà</p>
+
+                                </div>
+                                <div class="col">
+                                    <img src="../img/mapa/llanura.webp" alt="mapa llanura" aria-label="Esplanada" height="200" width="300">
+                                    <p>Esplanada</p>
+                                </div>
+
+                                <?php
+
+                                    foreach ($mapas as $mapa) {
+                                        echo '<div class="col">
+                                        <img src="../img/mapa/' . $mapa['mapa'] . '.webp" alt="mapa ' . $mapa['mapa'] . '" aria-label="' . $mapa['mapa'] . '" height="200" width="300">
+                                            <p>' . $mapa['mapa'] . '</p>
+                                        </div>';
+                                    }
+
+                                ?>
+                                
+                            </div>
+
+
+                        
+                        </div>
+                    </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

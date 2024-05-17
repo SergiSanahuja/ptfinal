@@ -1,6 +1,7 @@
 <?php
 
 require_once '../model/sala.php';
+require_once '../model/User.modal.php';
 
 
 if(session_status() === PHP_SESSION_NONE) {
@@ -17,6 +18,7 @@ if(isset($_SESSION['error'])) {
 
 
 $salas = new Sala();
+$Usuari = new User();
 $idSala =  crearCodigo();
 
 
@@ -35,6 +37,7 @@ if($salas->getSalaByUser($_SESSION['user']) != null){
     
 }
 
+$mapas = $Usuari->getMapasUser($_SESSION['user']);
 
 
 

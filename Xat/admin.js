@@ -14,6 +14,7 @@
             
             $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.webp")');
             $('#fondo').css('background-size', 'cover');
+
             
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
@@ -21,6 +22,7 @@
 
         });
 
+        
        
 
 
