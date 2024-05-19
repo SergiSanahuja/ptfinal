@@ -371,12 +371,23 @@
                                 </div>
 
                                 <?php
+                                
 
                                     foreach ($mapas as $mapa) {
-                                        echo '<div class="col">
-                                        <img src="../img/mapa/' . $mapa['mapa'] . '.webp" alt="mapa ' . $mapa['mapa'] . '" aria-label="' . $mapa['mapa'] . '" height="200" width="300">
-                                            <p>' . $mapa['mapa'] . '</p>
-                                        </div>';
+
+                                     
+
+                                        if($mapa['nom_mapa'] == '' || $mapa['nom_mapa'] == 'null'){
+                                            
+                                            continue;
+                                        }else{
+                                            echo '<div class="col">
+                                            <img src="../img/mapa/' . $mapa['nom_mapa'] . '.webp" alt="mapa ' . $mapa['nom_mapa'] . '" aria-label="' . $mapa['nom_mapa'] . '" height="200" width="300">
+                                                <p>' . $mapa['nom_mapa'] . '</p>
+                                            </div>';
+                                        }
+
+                                  
                                     }
 
                                 ?>

@@ -36,6 +36,10 @@
                         <a href="../controlador/personatges.controller.php" class="Personatges  nav-link ">Personatges </a>
                         
                     </li>
+                    <li class="nav-item">
+                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
+                        
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum

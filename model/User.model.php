@@ -21,6 +21,12 @@ class User extends DB{
         return $result;
     }
 
+    public function guardarMapa($id, $nomMapa, $titol){
+        $sql = "INSERT INTO mapas (id_Usuari, nom_mapa, titol) VALUES ('$id', '$nomMapa', '$titol')";
+        $this->connect()->query($sql);
+    }
+
+
 }
 
 

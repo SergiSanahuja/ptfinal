@@ -1,7 +1,7 @@
 <?php
 
 require_once '../model/sala.php';
-require_once '../model/User.modal.php';
+require_once '../model/User.model.php';
 
 
 if(session_status() === PHP_SESSION_NONE) {
@@ -38,8 +38,6 @@ if($salas->getSalaByUser($_SESSION['user']) != null){
 }
 
 $mapas = $Usuari->getMapasUser($_SESSION['user']);
-
-
 
 
 function crearCodigo(){

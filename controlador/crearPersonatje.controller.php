@@ -66,9 +66,6 @@ if (isset($_POST['submit'])) {
                 $_SESSION['error'] = 'Has de seleccionar una imatge de perfil';
             }   
             $imagen = $_POST['nomImgPerfil'];
-
-            
-
         }else{
             $_SESSION['error'] = 'Has de tenir una imatge de perfil';
         }
