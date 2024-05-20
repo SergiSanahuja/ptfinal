@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     $mapa = $_FILES['imgMapa'];
     
     if(empty($nom) || empty($mapa)){
-        $_SESSION['error'] = 'Has d\'omplir tots els camps';
+        $_SESSION['errorMapa'] = 'Has d\'omplir tots els camps';
         header('Location: ../controlador/mapes.controller.php');
         exit();
     }else{
@@ -41,15 +41,15 @@ if(isset($_POST['submit'])){
         $nameMapa = $mapa['name'];
         $fileType = pathinfo($nameMapa, PATHINFO_EXTENSION);
 
-        $allow = array("png", "jpg", "jpeg");
+        $allow = array("png", "jpg", "jpeg", "webp");
 
         if(!in_array($fileType, $allow)){
-            $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
+            $_SESSION['errorMapa'] = 'El archivo debe ser una imagen JPEG o PNG';
             header('Location: ../controlador/mapes.controller.php');
             exit();
         }else{
 
-            $_SESSION['error'] = null;
+            $_SESSION['errorMapa'] = null;
 
             $UnicName = uniqid() . $mapa['name'][0];
 

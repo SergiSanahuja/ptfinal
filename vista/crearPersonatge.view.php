@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="../css/crearPersonatje.css">
+    <link rel="stylesheet" href="../css/crearPersonatge.css">
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script type="module" src="../Personatje/personatje.js"></script>
@@ -34,7 +34,7 @@
   
       
 
-        <form id="login-form" action="../controlador/crearPersonatje.controller.php" method="post" enctype="multipart/form-data">
+        <form id="login-form" action="../controlador/crearPersonatge.controller.php" method="post" enctype="multipart/form-data">
             <div class="container">
 
                 <div class="row H-70">
@@ -111,7 +111,7 @@
                             <div class="row mb-5">
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <label for="Fuerza"> Fuerza:</label>
+                                        <label for="Fuerza"> Força:</label>
                                     </div>
                                     
                                     <div class="row justify-content-center">
@@ -125,7 +125,7 @@
 
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <label for="Destreza">Destreza:</label>
+                                        <label for="Destreza">Habilitat:</label>
                                     </div>
                         
                                     <div class="row justify-content-center">
@@ -138,7 +138,7 @@
 
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <label for="Constitucion">Constitucion:</label>
+                                        <label for="Constitucion">Constitució:</label>
                                     </div>
                                 
                                     <div class="row justify-content-center">
@@ -154,7 +154,7 @@
 
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <label for="Inteligencia">Inteligencia:</label>
+                                        <label for="Inteligencia">Intel·ligència:</label>
                                     </div>
                                     
                                     <div class="row justify-content-center">
@@ -166,7 +166,7 @@
 
                                 <div class="col">
                                     <div class="row justify-content-center">
-                                        <label for="Sabiduria">Sabiduria:</label>
+                                        <label for="Sabiduria">Saviesa:</label>
                                     </div>
                               
                                     <div class="row justify-content-center">

@@ -13,9 +13,9 @@ $id_Usuari = $_SESSION['user'];
 
 
 
-if (isset($_SESSION['error'])) {
+if (isset($_SESSION['errorMapa'])) {
     
-    unset($_SESSION['error']);
+    unset($_SESSION['errorMapa']);
 } 
 
 

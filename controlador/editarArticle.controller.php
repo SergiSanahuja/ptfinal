@@ -7,6 +7,11 @@ if(session_status() == PHP_SESSION_NONE){
 require_once '../model/foro.model.php';
 
 
+unset($_SESSION['errorPersonatges']);
+unset($_SESSION['successPersonatges']);
+unset($_SESSION['errorMapa']);
+unset($_SESSION['successMapa']);
+
 if (isset($_SESSION['errorArticle'])) {
     
     unset($_SESSION['errorArticle']);

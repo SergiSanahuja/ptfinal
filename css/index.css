@@ -165,13 +165,13 @@ h1{
 }
 
 /*Boto de crear personatge*/
-.CrearPersonatje{
+.crearPersonatge{
     border-radius: 5px;
  
    width: 200px;
 }
 
-.btnCrearPersonatje{
+.btncrearPersonatge{
     background: none;
     border: none;
 }

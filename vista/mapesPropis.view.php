@@ -65,7 +65,7 @@
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../controlador/crearForo.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="../controlador/crearArticle.controller.php">Crear missatge</a>
                         </div>
                     </li>
 

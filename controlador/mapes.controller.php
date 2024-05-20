@@ -12,11 +12,13 @@ $User = new User();
 $id_Usuari = $_SESSION['user'];
 
 
+//Eliminar les variables de sessió de error d'altres controladors 
+unset($_SESSION['errorArticle']);
+unset($_SESSION['successArticle']);
+unset($_SESSION['errorPersonatges']);
+unset($_SESSION['successPersonatges']);
 
-if (isset($_SESSION['error'])) {
-    
-    unset($_SESSION['error']);
-} 
+
 
 
 

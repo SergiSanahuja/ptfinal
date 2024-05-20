@@ -5,6 +5,11 @@ if(session_status() === PHP_SESSION_NONE) {
 }
  
 
+unset($_SESSION['errorPersonatges']);
+unset($_SESSION['successPersonatges']);
+unset($_SESSION['errorMapa']);
+unset($_SESSION['successMapa']);
+
 require_once '../model/foro.model.php';
 
 $foro = new Foro();

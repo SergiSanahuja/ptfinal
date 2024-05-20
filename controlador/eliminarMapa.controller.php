@@ -18,17 +18,12 @@ $mapa = $User->getMapa($id_Article);
 
 
 
-if (isset($_SESSION['error'])) {
+if (isset($_SESSION['errorMapa'])) {
     
-    unset($_SESSION['error']);
+    unset($_SESSION['errorMapa']);
 } 
 
 
-if(!isset($_SESSION['errorLogin'])){
-    $_SESSION['error'] = "No has iniciat sessió";
-    header('Location: ../controlador/index.controler.php');
-    exit();
-}
 
 if($mapa['id_usuari'] == $id_Usuari){
 
@@ -47,7 +42,7 @@ if($mapa['id_usuari'] == $id_Usuari){
 
 
 }else{
-    $_SESSION['error'] = "No tens permisos per eliminar aquest mapa";
+    $_SESSION['errorMapa'] = "No tens permisos per eliminar aquest mapa";
     header('Location: ../controlador/mapes.controller.php');
     exit();
 }

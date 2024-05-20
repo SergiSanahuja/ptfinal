@@ -5,6 +5,12 @@
     }
     require_once '../model/foro.model.php';
 
+    
+    unset($_SESSION['errorPersonatges']);
+    unset($_SESSION['successPersonatges']);
+    unset($_SESSION['errorMapa']);
+    unset($_SESSION['successMapa']);
+
     if(isset($_SESSION['errorArticle'])){
         unset($_SESSION['errorArticle']);
     }
@@ -47,7 +53,7 @@
         }else{
             $_SESSION['successArticle'] = "Article creat correctament";
             $_SESSION['errorArticle'] = null;
-            $foro->crearForo($id, $titulo, $contenido, $_FILES['img']['name'], date('Y-m-d H:i:s'));
+            $foro->crearArticle($id, $titulo, $contenido, $_FILES['img']['name'], date('Y-m-d H:i:s'));
             header('Location: ../controlador/foro.controller.php');
             exit();
         }
@@ -57,7 +63,7 @@
    
 
 
-    include '../vista/crearForo.view.php';
+    include '../vista/crearArticle.view.php';
 
 
 

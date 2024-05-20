@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
         if(!isset($_SESSION['error'])){
             require_once '../model/personatje.php';
             $personatje = new Personatje();
-            $personatje->crearPersonatje($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
+            $personatje->crearPersonatge($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
             $_SESSION['success'] = 'Personatge creat correctament';
             header('Location: ../controlador/index.controler.php');
             die();
@@ -102,9 +102,9 @@ if (isset($_POST['submit'])) {
         
     } else {
         $_SESSION['error'] = 'Falta seleccionar la raza y la clase';
-        header('Location: ../vista/crearPersonatje.view.php');
+        header('Location: ../vista/crearPersonatge.view.php');
         die();
     }
 }
 
-include_once '../vista/crearPersonatje.view.php';
+include_once '../vista/crearPersonatge.view.php';

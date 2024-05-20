@@ -65,7 +65,7 @@
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../controlador/crearForo.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="../controlador/crearArticle.controller.php">Crear missatge</a>
                         </div>
                     </li>
 
@@ -107,16 +107,16 @@
 
     <div>
         <?php
-        if (isset($_SESSION['error'])) {
-            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
+        if (isset($_SESSION['errorMapa'])) {
+            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['errorMapa'] . '</div>';
         }
         ?>
     </div>
 
     <div>
         <?php
-        if (isset($success)) {
-            echo '<div class="alert alert-success" role="alert">' . $success . '</div>';
+        if (isset($_SESSION['successMapa'])) {
+            echo '<div class="alert alert-success" role="alert">' . $_SESSION['successMapa'] . '</div>';
         }
         ?>
     </div>

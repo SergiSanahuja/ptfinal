@@ -29,7 +29,7 @@ if(isset($_POST['PersonatgeID'])) {
     
     if($personatge['id_Usuari'] == $usuario) {
 
-        $personatge = $personatges->updatePersonatje($personatgeID, $_POST['Fuerza'], $_POST['Vida'], $_POST['Iniciativa'], $_POST['Constitucion'], $_POST['Destreza'], $_POST['Inteligencia'], $_POST['Sabiduria'], $_POST['Carisma'], $_POST['nivel']);
+        $personatge = $personatges->updatePersonatge($personatgeID, $_POST['Fuerza'], $_POST['Vida'], $_POST['Iniciativa'], $_POST['Constitucion'], $_POST['Destreza'], $_POST['Inteligencia'], $_POST['Sabiduria'], $_POST['Carisma'], $_POST['nivel']);
 
         
         echo json_encode($personatge);

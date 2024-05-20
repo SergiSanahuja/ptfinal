@@ -47,7 +47,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../controlador/crearForo.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="../controlador/crearArticle.controller.php">Crear missatge</a>
                             <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
                         </div>
                     </li>            
@@ -171,7 +171,7 @@
                 <?php
                     if (isset($_SESSION['username'])) {
                        echo "<div class='col-4'>
-                        <a href='../controlador/crearPersonatje.controller.php' class='btn'>Crear Personatge</a>
+                        <a href='../controlador/crearPersonatge.controller.php' class='btn'>Crear Personatge</a>
                         </div>";
                     }else{
                         echo "<div class='col-4'>
@@ -185,9 +185,9 @@
         </div>
 
         <!-- <div >
-            <button class="btnCrearPersonatje">
-                <a href="../controlador/crearPersonatje.controller.php">
-                    <img src="../img/fondos/Crearpersonaje.png" class="CrearPersonatje" title="Crear Personaje" alt="Crear Personaje">
+            <button class="btncrearPersonatge">
+                <a href="../controlador/crearPersonatge.controller.php">
+                    <img src="../img/fondos/Crearpersonaje.png" class="crearPersonatge" title="Crear Personaje" alt="Crear Personaje">
                 </a>
             </button>
         </div> -->

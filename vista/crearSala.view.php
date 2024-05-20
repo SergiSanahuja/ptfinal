@@ -324,7 +324,7 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" id="updateCharacter" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="updateCharacter" class="btn btn-primary">Guardar canvis</button>
                     <button type="button" id="expulsarJugador" class="btn btn-primary">Expulsar</button>
                 </div>
             </div>

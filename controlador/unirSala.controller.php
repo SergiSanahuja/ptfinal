@@ -26,11 +26,11 @@ if(isset($_POST['codigoSala'])){
         $Personatges = new Personatje();      
         $salas = new Sala();
 
-        if($Personatges->getPersonatje($idPersonaje) == null){
+        if($Personatges->getPersonatge($idPersonaje) == null){
             $_SESSION['error'] = "El personatge no existeix";
             header("Location: index.controler.php");
             exit();
-        }else if($Personatges->getPersonatje($idPersonaje)['id_Usuari'] != $_SESSION['user']){
+        }else if($Personatges->getPersonatge($idPersonaje)['id_Usuari'] != $_SESSION['user']){
             $_SESSION['error'] = "No pots unirte amb un personatge que no és teu";
             header("Location: index.controler.php");
             exit();

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="../css/crearForo.css">
+    <link rel="stylesheet" href="../css/crearArticle.css">
       <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -52,7 +52,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../controlador/crearForo.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="../controlador/crearArticle.controller.php">Crear missatge</a>
                             <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
                         </div>
                     </li>            

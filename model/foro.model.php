@@ -14,7 +14,7 @@ class Foro extends DB{
     }
 
     //crea un article a la base de dades
-    public function crearForo($id, $titulo, $contenido, $img, $data){
+    public function crearArticle($id, $titulo, $contenido, $img, $data){
         $sql = "INSERT INTO foro (id_Usuari, titol, missatge,img,data) VALUES ('$id', '$titulo', '$contenido', '$img', '$data')";
         $this->connect()->query($sql);
     }

@@ -53,7 +53,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../controlador/crearForo.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="../controlador/crearArticle.controller.php">Crear missatge</a>
                             <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
                         </div>
                     </li>            
@@ -96,8 +96,11 @@
 
     <div>
         <?php
-        if (isset($_SESSION['error'])) {
+        if (isset($_SESSION['errorPersonatge'])) {
             echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
+        }
+        if(isset($_SESSION['successPersonatge'])){
+            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['successPersonatge'] . '</div>';
         }
         ?>
     </div>
@@ -109,7 +112,7 @@
                     <h1>Els teus Personatges</h1>
                 </div>
                 <div class="col-md-4 col-sm-12 d-flex justify-content-md-end justify-content-sm-center ">
-                    <a href="../controlador/crearPersonatje.controller.php" class="input-group-text CrearPersonatje" id="crearPersonatge">Crear Personatge</a>
+                    <a href="../controlador/crearPersonatge.controller.php" class="input-group-text crearPersonatge" id="crearPersonatge">Crear Personatge</a>
                 </div>
             </div>
             <div class="row mt-1 ">
@@ -125,10 +128,10 @@
                 <div class="col-4">
                     <select name="FiltrarClasse" aria-label="Filtar per clase" id="FiltrarClasse">
                         <option value="Tots">Tots</option>
-                        <option value="Mago">Mag</option>
-                        <option value="Guerrero">Guerrer</option>
-                        <option value="Asesino">Assassí</option>
-                        <option value="Arquero">Arquer</option>
+                        <option value="Mag">Mag</option>
+                        <option value="Guerrer">Guerrer</option>
+                        <option value="Assassí">Assassí</option>
+                        <option value="Arquer">Arquer</option>
                     </select>
                 </div>
             </div>
@@ -202,7 +205,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal">Hoja de personaje</h5>
+                    <h5 class="modal-title" id="modal">Fulla de personatge</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -219,11 +222,11 @@
                         <div class="row">
 
                             <div class="col-6 col-md-6">
-                                <label for="NomPersonatge">Nombre</label>
+                                <label for="NomPersonatge">Nom</label>
                                 <h3 class="modal-title" id="NomPersonatge"></h3>
                             </div>
                             <div class="col-6 col-md-3">
-                                <label for="Raza">Raza</label>
+                                <label for="Raza">Raça</label>
                                 <h4 class="modal-title" id="raza"></h4>
                             </div>
                             <div class="col-6 col-md-2">
@@ -275,14 +278,14 @@
                                     </g>
                                 </svg>
 
-                                <div><label for="Fuerza">Fuerza:</label></div>
+                                <div><label for="Fuerza">Força:</label></div>
                                 <input type="number" min="0" max="20" name="Strenght" id="Fuerza" value=""></input>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="imagen de destreza">
-                                <div><label for="Destreza">Destreza:</label></div>
+                                <div><label for="Destreza">Habilitat:</label></div>
 
                                 <input type="number" min="0" max="20" name="skill" id="Destreza"></input>
                             </div>
@@ -290,21 +293,21 @@
                         <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-shield mr-1"></i>
-                                <div><label for="Constitucion">Constitucion:</label></div>
+                                <div><label for="Constitucion">Constitució:</label></div>
                                 <input type="number" min="0" max="20" name="constitution" id="Constitucion"></input>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-lightbulb mr-1"></i>
-                                <div><label for="Inteligencia">Inteligencia:</label></div>
+                                <div><label for="Inteligencia">Intel·ligència:</label></div>
                                 <input type="number" min="0" max="20" name="inteligence" id="Inteligencia"></input>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 h4">
                             <div class="row">
                                 <i class="bi bi-book mr-1"></i>
-                                <div><label for="Sabiduria">Sabiduria:</label></div>
+                                <div><label for="Sabiduria">Saviesa:</label></div>
                                 <input type="number" min="0" max="20" name="wisdom" id="Sabiduria"></input>
                             </div>
                         </div>
@@ -326,7 +329,7 @@
 
                 <div class="modal-footer">
 
-                    <button type="button" id="updateCharacter" class="btn btn-primary">Save changes</button>
+                    <button type="button" id="updateCharacter" class="btn btn-primary">Guardar canvis</button>
                     
                 </div>
             </div>

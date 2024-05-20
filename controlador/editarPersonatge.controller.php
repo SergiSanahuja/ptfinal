@@ -34,13 +34,13 @@ if(isset($_POST['PersonatgeID'])) {
 
 
     } else {
-        $_SESSION['error'] = "No tens permisos per a editar aquest personatge";
+        $_SESSION['errorPersonatge'] = "No tens permisos per a editar aquest personatge";
         header("Location: personatges.controler.php");
         exit();
     }
 
 } else {
-    $_SESSION['error'] = "No has seleccionat cap personatge";
+    $_SESSION['errorPersonatge'] = "No has seleccionat cap personatge";
     header("Location: personatges.controler.php");
     exit();
 }

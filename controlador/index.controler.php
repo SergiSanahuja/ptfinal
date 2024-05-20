@@ -7,11 +7,12 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-if (isset($_SESSION['error'])) {
-    
-    unset($_SESSION['error']);
-} 
-
+$_SESSION['errorMapa'] = null;
+$_SESSION['successMapa'] = null;
+$_SESSION['errorArticle'] = null;
+$_SESSION['successArticle'] = null;
+$_SESSION['errorPersonatge'] = null;
+$_SESSION['successPersonatge'] = null; 
 
 if(isset($_SESSION['user'])){
     $usuario = $_SESSION['user'];
@@ -27,7 +28,7 @@ if(isset($_SESSION['user'])){
 
 $Personatge = new Personatje();
 
-$llistaPersonatges = $Personatge->getPersonatjeByUser($usuario);
+$llistaPersonatges = $Personatge->getPersonatgeByUser($usuario);
 
 include_once '../vista/index.php'
 
