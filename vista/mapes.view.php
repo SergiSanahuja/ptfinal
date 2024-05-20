@@ -138,6 +138,12 @@
                 </span>
                 <input class="form-control" aria-label="Buscador de personatges pel nom" id="search" type="text">
             </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary afegirMapa"  data-toggle="modal" data-target="#addImageModal">
+                    Afegir Mapa
+                </button>
+
+            </div>
         </div>
         <!-- Bucle per veure tots els personatges que te el usuari -->
         <div class="row mt-5 justify-content-md-around rounded llista-personatges">
