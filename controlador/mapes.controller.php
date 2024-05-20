@@ -31,7 +31,7 @@ if(!isset($_SESSION['user'])){
 
 
     
-$mapes = $User->getMapasUser($id_Usuari);
+$mapes = $User->getMapes();
 
 
 

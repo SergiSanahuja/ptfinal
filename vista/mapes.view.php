@@ -149,21 +149,22 @@
         <div class="row mt-5 justify-content-md-around rounded llista-personatges">
             <?php
 
+
             foreach ($mapes as $mapa) {
                 
-
                 echo '<div class="col-md-3 col-sm-12">
                 <div class="card">
                     <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">' . $mapa['nom_mapa'] . '</h5>
-                        <a href="../controlador/eliminarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger">Eliminar</a>
-                    </div>
-                </div>
-            </div>';
-            }
+                        <h5 class="card-title">' . $mapa['nom_mapa'] . '</h5>';
+                        if($mapa['id_usuari'] == $_SESSION['user']){
+                           echo '<a href="../controlador/eliminarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger">Eliminar</a>';
+                        }  else{
+                            echo '<a href="../controlador/eliminarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-primary bg-primary">Descargar</a>';
+                        }
 
-
+                    echo '</div> </div> </div>';                  
+                }
             ?>
         </div>
 
