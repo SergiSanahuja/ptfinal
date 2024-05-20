@@ -6,12 +6,10 @@ body{
 }
 
 
+.error, .success{
+   
 
-
-
-.error .success{
-    position: absolute;
-    right: 10px;
+    animation: errorAnimation 2s forwards;
 }
 
 
@@ -53,7 +51,10 @@ body{
     text-decoration: none;
 }
 
-
+@keyframes errorAnimation {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
 
 @media (min-width: 990px) {
     .delete{

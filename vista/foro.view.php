@@ -27,7 +27,7 @@
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-    <div class="container-fluid">  
+    <div class="container-fluid ">  
         
         <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
         <a class="Inici mr-3 " href="../vista/index.php "> FinalD</a>
@@ -95,48 +95,41 @@
 
     <?php
 
-        if(isset($_SESSION['error'])){
-            echo '<div class="alert alert-danger error" role="alert">'.$_SESSION['error'].'</div>';
-            unset($_SESSION['error']);
+        if(isset($_SESSION['errorArticle'])){
+            echo '<div class="alert alert-danger error" role="alert">'.$_SESSION['errorArticle'].'</div>';
         }
 
-        if(isset($_SESSION['success'])){
-            echo '<div class="alert alert-success success" role="alert">'.$_SESSION['success'].'</div>';
-            unset($_SESSION['success']);
+        if(isset($_SESSION['successArticle'])){
+            echo '<div class="alert alert-success success" role="alert">'.$_SESSION['successArticle'].'</div>';
+           
         }
 
     ?>
 
-    <div class="container mt-2  ">
-        <h2>Últimes Publicacions</h2>
-
-        
-       
+    <div class="container mt-2 h-100 ">
+        <h2>Últimes Publicacions</h2>       
         <?php
         
             // Agrega más publicaciones según sea necesario
             foreach($foros as $row){
                 echo '<div class="card mb-3">
-                <div class="card-body ">
-                    <h3 class="card-title">'.$row['titol'].'</h3>
-                    <p class="card-text">'.$row['missatge'].'</p>
-                    <small class="text-muted">Publicado por: '.$row['nom'].' | Fecha: '.$row['data'].'</small><br>';
-                    
-
-                    if(isset($_SESSION['user'])){
-                        
-                        
-                        if($row['id_Usuari'] == $_SESSION['user']){
-                            echo  '<div class="d-flex justify-content-end">';
-                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-none d-md-inline delete mr-3">Eliminar</a>';
-                            echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-inline d-md-none delete mr-3"><i class="bi bi-trash"></i></a>';
-                            echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-none d-md-inline edit">Modificar</a>';
-                            echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-inline d-md-none edit"><i class="bi bi-pencil"></i></a>';   
-                            echo '</div>';
-                        };
-                    }
-
-                    echo '</div></div>';
+                        <div class="card-body ">
+                         <h3 class="card-title">'.$row['titol'].'</h3>
+                        <p class="card-text">'.$row['missatge'].'</p>
+                        <small class="text-muted">Publicado por: '.$row['nom'].' | Fecha: '.$row['data'].'</small><br>';
+            
+                if(isset($_SESSION['user'])){
+                    if($row['id_Usuari'] == $_SESSION['user']){
+                        echo  '<div class="d-flex justify-content-end">';
+                        echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-none d-md-inline delete mr-3" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este artículo?\');">Eliminar</a>';
+                        echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-inline d-md-none delete mr-3" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este artículo?\');"><i class="bi bi-trash"></i></a>';
+                        echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-none d-md-inline edit">Modificar</a>';
+                        echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-inline d-md-none edit"><i class="bi bi-pencil"></i></a>';   
+                        echo '</div>';
+                    };
+                }
+            
+                echo '</div></div>';
             }
 
 

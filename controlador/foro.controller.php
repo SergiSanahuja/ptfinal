@@ -8,6 +8,10 @@ if(session_status() === PHP_SESSION_NONE) {
 require_once '../model/foro.model.php';
 
 
+if(isset($_SESSION['user'])){
+    unset($_SESSION['errorArticle']);
+}
+
 
 
 $foro = new Foro();

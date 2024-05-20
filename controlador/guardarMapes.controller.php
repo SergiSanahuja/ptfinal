@@ -12,14 +12,15 @@ $User = new User();
 $id_Usuari = $_SESSION['user'];
 var_dump($_FILES['imgMapa']);
 
-if(isset($_SESSION['error'])){
-    $error = $_SESSION['error'];
-}else{
-    $error = null;
-}
+
+if (isset($_SESSION['error'])) {
+    
+    unset($_SESSION['error']);
+} 
+
 
 if(!isset($_SESSION['user'])){
-    $_SESSION['error'] = "No has iniciat sessió";
+    $_SESSION['errorLogin'] = "No has iniciat sessió";
     header('Location: ../controlador/index.controler.php');
     exit();
 }
@@ -30,6 +31,8 @@ if(isset($_POST['submit'])){
     
     if(empty($nom) || empty($mapa)){
         $_SESSION['error'] = 'Has d\'omplir tots els camps';
+        header('Location: ../controlador/mapes.controller.php');
+        exit();
     }else{
 
 
@@ -42,6 +45,8 @@ if(isset($_POST['submit'])){
 
         if(!in_array($fileType, $allow)){
             $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
+            header('Location: ../controlador/mapes.controller.php');
+            exit();
         }else{
 
             $_SESSION['error'] = null;
@@ -63,6 +68,6 @@ if(isset($_POST['submit'])){
 
 }
 
-include '../vista/mapes.view.php';
+
 
 ?>

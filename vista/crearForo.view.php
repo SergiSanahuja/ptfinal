@@ -90,9 +90,9 @@
 
     <div>
         <?php
-        if (isset($_SESSION['error'])) {
-            echo '<div class="alert alert-danger error" role="alert">' . $_SESSION['error'] . '</div>';
-            unset($_SESSION['error']);
+        if (isset($_SESSION['errorArticle'])) {
+            echo '<div class="alert alert-danger error" role="alert">' . $_SESSION['errorArticle'] . '</div>';
+            
         }
         ?>
     </div>

@@ -44,8 +44,7 @@
 
             if(isset($_SESSION['error'])){
                 echo '<div class="error msgError">'.$_SESSION['error'].'</div>';
-             
-                unset($_SESSION['error']);
+                
             }
         ?>
         <form id="login-form" action="../controlador/login.controler.php" method="post">

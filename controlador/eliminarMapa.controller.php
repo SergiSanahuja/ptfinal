@@ -18,14 +18,13 @@ $mapa = $User->getMapa($id_Article);
 
 
 
-if(isset($_SESSION['error'])){
-    $error = $_SESSION['error'];
+if (isset($_SESSION['error'])) {
+    
+    unset($_SESSION['error']);
+} 
 
-}else{
-    $error = null;
-}
 
-if(!isset($_SESSION['user'])){
+if(!isset($_SESSION['errorLogin'])){
     $_SESSION['error'] = "No has iniciat sessió";
     header('Location: ../controlador/index.controler.php');
     exit();

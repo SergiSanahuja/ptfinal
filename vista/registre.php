@@ -36,8 +36,6 @@
 
             if(isset($_SESSION['error'])){
                 echo '<div class="error">'.$_SESSION['error'].'</div>';
-             
-                unset($_SESSION['error']);
             }
         ?>
         <form id="login-form" action="../controlador/registre.controler.php" method="post">

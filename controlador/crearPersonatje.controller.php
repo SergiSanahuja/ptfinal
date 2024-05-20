@@ -5,10 +5,15 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['error'] = 'Has de estar loguejat per crear un personatje';
+    $_SESSION['errorLogin'] = 'Has de estar loguejat per crear un personatje';
     header('Location: ../controlador/index.controler.php');
     die();
 }
+
+if (isset($_SESSION['error'])) {
+    
+    unset($_SESSION['error']);
+} 
 
 
 if (isset($_POST['submit'])) {

@@ -92,8 +92,8 @@
             <div>
                 <?php
                  
-                    if(isset($error)){
-                        echo '<div class="alert alert-danger msgError" role="alert">'.$error.'</div>';
+                    if(isset($_SESSION['errorLogin'])){
+                        echo '<div class="alert alert-danger msgError" role="alert">'.$_SESSION['errorLogin'].'</div>';
                     }
                 ?>
             </div>
@@ -131,8 +131,8 @@
                         </div>
                         <div class="modal-body">
                             <?php
-                                if(isset($error)){
-                                    echo '<div class="alert alert-danger msgError" role="alert">'.$error.'</div>';
+                                if(isset($_SESSION['error'])){
+                                    echo '<div class="alert alert-danger msgError" role="alert">'.$_SESSION['error'].'</div>';
                                 }
                                 
                             ?>

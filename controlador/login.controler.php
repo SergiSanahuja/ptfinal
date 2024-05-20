@@ -8,6 +8,8 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+
+
 //Verifica la respuesta de recapcha
 if (isset($_POST['g-recaptcha-response'])) {
     $recaptchaResponse = $_POST['g-recaptcha-response'];
@@ -45,7 +47,9 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             $_SESSION['useremail'] = $result['email'];
             $_SESSION['username'] = $result['nom'];
             $_SESSION['user'] = $result['id'];
+            $_SESSION['errorLogin'] = null;
             header('Location: ../controlador/index.controler.php');
+            exit();
         }else{
             $_SESSION['error'] = 'Contraseña incorrecta';
             

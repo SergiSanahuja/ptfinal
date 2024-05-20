@@ -49,7 +49,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/mapes.controller.php">Inici</a>
-                            <a class="dropdown-item" href="../controlador/mapesPropis.controller.php">Els teus mapes</a>
+                            <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus mapes</a>
                             <div class="dropdown-divider"></div>
                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#addImageModal">
                                 Afegir Mapa
@@ -73,6 +73,7 @@
 
 
                 <?php
+ 
                 if (isset($_SESSION['user'])) {
                     echo '<div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
@@ -107,16 +108,19 @@
 
     <div>
         <?php
+
         if (isset($_SESSION['error'])) {
             echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
+            
         }
         ?>
     </div>
 
     <div>
         <?php
-        if (isset($success)) {
-            echo '<div class="alert alert-success" role="alert">' . $success . '</div>';
+        if (isset($_SESSION['success'])) {
+            echo '<div class="alert alert-success" role="alert">' . $_SESSION['success'] . '</div>';
+           
         }
         ?>
     </div>
@@ -139,7 +143,7 @@
                 <input class="form-control" aria-label="Buscador de personatges pel nom" id="search" type="text">
             </div>
             <div class="col-6">
-                <button type="button" class="btn btn-danger afegirMapa"  data-toggle="modal" data-target="#addImageModal">
+                <button type="button" class="btn btn-primary afegirMapa"  data-toggle="modal" data-target="#addImageModal">
                     Afegir Mapa
                 </button>
 
@@ -156,7 +160,7 @@
                         <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top" width="200" height="170" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">' . $mapa['nom_mapa'] . '</h5>                            
-                            <a href="../controlador/eliminarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger ">Descargar</a>
+                            <a href="../controlador/eliminarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este mapa?\');">Eliminar</a>
                         </div> </div> </div>';                  
                     }
             ?>

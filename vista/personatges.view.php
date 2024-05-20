@@ -96,8 +96,8 @@
 
     <div>
         <?php
-        if (isset($error)) {
-            echo '<div class="alert alert-danger" role="alert">' . $error . '</div>';
+        if (isset($_SESSION['error'])) {
+            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
         }
         ?>
     </div>
@@ -142,6 +142,7 @@
                     <div class="col-sm-12 col-md-5  p-1 col-lg-5 cartaPersonatge">
                         
                             <div class="fitxaPersonatge row ">
+                            
                                 <div class="col-lg-3 col-sm-3 col-md-12 align-self-center">                                                    
                                     <img src="../img/avatar/' . $personatge['Img'] . '" class="rounded-circle imgPerfil"  alt="imatge de perfil">
                                 </div>
@@ -170,13 +171,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="row section-btn">
-                                <form action="../controlador/eliminarPersonatge.controller.php" method="POST">
-                                    <input type="hidden" id="getId" name="id" value="' . $personatge['id'] . '">
-                                    <button name="eliminarPersonatge" type="submit" class="btn">Eliminar</button>
-                                </form>
-                                <a class="btn editarPersonatge" data-toggle="modal"  tabindex="0" data-target="#modalPersonatge" id="'.$personatge['id'].'">Modificar</a>
                                 
+                            <div class="row section-btn">
+                                <form action="../controlador/eliminarPersonatge.controller.php" method="POST" onsubmit="return confirm(\'¿Estás seguro de que quieres eliminar este personaje?\');">
+                                <input type="hidden" id="getId" name="id" value="' . $personatge['id'] . '">
+                                <button name="eliminarPersonatge" type="submit" class="btn">Eliminar</button>
+                                </form>
+                                
+                                <a class="btn editarPersonatge" data-toggle="modal"  tabindex="0" data-target="#modalPersonatge" id="'.$personatge['id'].'">Modificar</a>
                             </div>
                         
                     </div>

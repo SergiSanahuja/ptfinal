@@ -20,7 +20,6 @@ if (isset($_SESSION['error'])) {
 
 
 
-
 if(!isset($_SESSION['user'])){
     $_SESSION['errorLogin'] = "No has iniciat sessió";
     header('Location: ../controlador/index.controler.php');
@@ -31,14 +30,14 @@ if(!isset($_SESSION['user'])){
 
 
     
-$mapes = $User->getMapes();
+$mapes = $User->getMapasUser($_SESSION['user']);
 
 
 
 
 
 
-include '../vista/mapes.view.php';
+include '../vista/mapesPropis.view.php';
 
 
 ?>

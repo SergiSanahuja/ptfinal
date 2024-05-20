@@ -5,18 +5,17 @@ if(session_status() === PHP_SESSION_NONE) {
 }
 
 
-if(isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
+if (isset($_SESSION['error'])) {
+    
     unset($_SESSION['error']);
-} else {
-    $error = null;
-}
+} 
+
 
 
 if(isset($_SESSION['user'])){
     $usuario = $_SESSION['user'];
 }else{
-    $_SESSION['error'] = "No has iniciat sessió";
+    $_SESSION['errorLogin'] = "No has iniciat sessió";
     $usuario = null;
 }
 

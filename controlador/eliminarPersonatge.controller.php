@@ -5,13 +5,9 @@ require_once '../model/personatje.php';
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-
-if(isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
+if (isset($_SESSION['error'])) {  
     unset($_SESSION['error']);
-} else {
-    $error = null;
-}
+} 
 
 $personatges = new Personatje();
 
