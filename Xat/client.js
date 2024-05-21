@@ -14,6 +14,7 @@
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
         });
+    
 
       
 

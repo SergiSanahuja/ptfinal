@@ -9,20 +9,28 @@
        
          // Local o remot
         //Canviar el mapa
-        $('#mapa').on('change', function() {
-            let mapa = document.getElementById("mapa").value;
+        // $('#mapa').on('change', function() {
+        //     let mapa = document.getElementById("mapa").value;
+            
+        //     $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.webp")');
+        //     $('#fondo').css('background-size', 'cover');
+
+            
+        //     connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
+
+            
+
+        // });
+
+        $('.mapa').on('click', function() {
+            let mapa = this.id
             
             $('#fondo').css('background-image', 'url("../img/mapa/' + mapa + '.webp")');
             $('#fondo').css('background-size', 'cover');
-
             
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
-            
-
         });
-
-        
        
 
 

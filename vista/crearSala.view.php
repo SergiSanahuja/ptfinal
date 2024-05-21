@@ -332,7 +332,7 @@
     </div>
 
 
-    <!-- Modal -->
+    <!-- Modal Pel canvi de mapa -->
     <div class="modal fade" id="changeMapModal" tabindex="-1" role="dialog" aria-labelledby="changeMapModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -356,17 +356,17 @@
                         <div id="mapPreview">
                             <!-- Aquí se mostrará la previsualización del mapa -->
                             <div class="row d-flex justify-content-arround">
-                                <div class="col">
+                                <div class="col mapa" id="mar">
                                     <img src="../img/mapa/mar.webp" alt="mapa mar" aria-label="Mar" height="200" width="300">
                                     <p>Mar</p>
                                 </div>
-                                <div class="col">
-                                    <img src="../img/mapa/volcan.webp" alt="mapa volcan" aria-label="Volcà" height="200" width="300" >
+                                <div class="col mapa" id="volcan">
+                                    <img src="../img/mapa/volcan.webp" alt="mapa volcan"  aria-label="Volcà" height="200" width="300" >
                                     <p>Volcà</p>
 
                                 </div>
-                                <div class="col">
-                                    <img src="../img/mapa/llanura.webp" alt="mapa llanura" aria-label="Esplanada" height="200" width="300">
+                                <div class="col mapa" id="llanura">
+                                    <img src="../img/mapa/llanura.webp" alt="mapa llanura"  aria-label="Esplanada" height="200" width="300">
                                     <p>Esplanada</p>
                                 </div>
 
@@ -381,8 +381,8 @@
                                             
                                             continue;
                                         }else{
-                                            echo '<div class="col">
-                                            <img src="../img/mapa/' . $mapa['nom_mapa'] . '.webp" alt="mapa ' . $mapa['nom_mapa'] . '" aria-label="' . $mapa['nom_mapa'] . '" height="200" width="300">
+                                            echo '<div class="col mapa" id="'.$mapa['titol'].'">
+                                            <img src="../img/mapa/' . $mapa['titol'] . '.webp" alt="mapa ' . $mapa['nom_mapa'] . '" aria-label="' . $mapa['nom_mapa'] . '" height="200" width="300">
                                                 <p>' . $mapa['nom_mapa'] . '</p>
                                             </div>';
                                         }
