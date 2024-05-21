@@ -155,9 +155,9 @@
 
                 foreach ($mapes as $mapa) {
                     
-                    echo '<div class="col-md-3 col-sm-12">
+                    echo '<div class="col-md-4 col-sm-12">
                     <div class="card">
-                        <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top" width="200" height="170" alt="...">
+                        <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top"  height="270" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">' . $mapa['nom_mapa'] . '</h5>                            
                             <a href="../controlador/eliminarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este mapa?\');">Eliminar</a>

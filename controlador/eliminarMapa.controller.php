@@ -29,12 +29,12 @@ if($mapa['id_usuari'] == $id_Usuari){
 
     $_SESSION['error'] = null;
 
-    $rutaImagen = "../img/mapa/".$mapa['titol'].".webp";
+    // $rutaImagen = "../img/mapa/".$mapa['titol'].".webp";
 
-     // Elimina la imagen
-     if (file_exists($rutaImagen)) {
-        unlink($rutaImagen);
-    }
+    //  // Elimina la imagen
+    // if (file_exists($rutaImagen)) {
+    //     unlink($rutaImagen);
+    // }
 
     $User->eliminarMapa($id_Article);
     header('Location: ../controlador/mapes.controller.php');

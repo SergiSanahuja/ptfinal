@@ -59,7 +59,7 @@ if(isset($_POST['submit'])){
             $mapa = $UnicName;
 
             $User->guardarMapa($id_Usuari, $nom, $mapa);
-            header('Location: ../controlador/mapes.controller.php');
+            header('Location: ../controlador/mapesPropis.controller.php');
             exit();
         }
 

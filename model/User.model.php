@@ -29,13 +29,18 @@ class User extends DB{
     }
 
     public function getMapes(){
-        $sql = "SELECT * FROM mapas";
+        $sql = "SELECT * FROM mapas Group by titol";
         $stmt = $this->connect()->query($sql);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
     public function guardarMapa($id, $nomMapa, $titol){
+        $sql = "INSERT INTO mapas (id_Usuari, nom_mapa, titol) VALUES ('$id', '$nomMapa', '$titol')";
+        $this->connect()->query($sql);
+    }
+
+    public function descarregarMapa($id, $nomMapa, $titol){
         $sql = "INSERT INTO mapas (id_Usuari, nom_mapa, titol) VALUES ('$id', '$nomMapa', '$titol')";
         $this->connect()->query($sql);
     }
