@@ -32,7 +32,7 @@
         </a>
 
 
-        <div class="container-fluid justify-content-center">
+        <div >
             <span class="navbar-brand mb-0 h1">Sala</span>
         </div>
 
@@ -156,13 +156,8 @@
                     <div id="fondo" width="auto" height="auto" style="border: 1px solid black;">
 
                     </div>
-
-
-
                 </div>
-
             </div>
-
         </div>
     </div>
 
@@ -211,7 +206,7 @@
                                 <div class="row">
 
                                     <i class="bi bi-heart-fill mr-1"></i>
-                                    <div class=""><label for="vida">Vida:</label></div>
+                                    <div><label for="vida">Vida:</label></div>
                                     <div id="Vida">5</div>
                                 </div>
 
@@ -351,16 +346,16 @@
                             <!-- Aquí se mostrará la previsualización del mapa -->
                             <div class="row d-flex justify-content-arround">
                                 <div class="col mapa" id="mar">
-                                    <img src="../img/mapa/mar.webp" alt="mapa mar" aria-label="Mar" height="200" width="300">
+                                    <img src="../img/mapa/mar.webp" alt="mapa mar" class="imgMapa" aria-label="Mar" height="200" width="300">
                                     <p>Mar</p>
                                 </div>
                                 <div class="col mapa" id="volcan">
-                                    <img src="../img/mapa/volcan.webp" alt="mapa volcan"  aria-label="Volcà" height="200" width="300" >
+                                    <img src="../img/mapa/volcan.webp" alt="mapa volcan"  class="imgMapa" aria-label="Volcà" height="200" width="300" >
                                     <p>Volcà</p>
 
                                 </div>
                                 <div class="col mapa" id="llanura">
-                                    <img src="../img/mapa/llanura.webp" alt="mapa llanura"  aria-label="Esplanada" height="200" width="300">
+                                    <img src="../img/mapa/llanura.webp" alt="mapa llanura"  class="imgMapa" aria-label="Esplanada" height="200" width="300">
                                     <p>Esplanada</p>
                                 </div>
 
@@ -374,7 +369,7 @@
                                             continue;
                                         }else{
                                             echo '<div class="col mapa" id="'.$mapa['titol'].'">
-                                            <img src="../img/mapa/' . $mapa['titol'] . '.webp" alt="mapa ' . $mapa['nom_mapa'] . '" aria-label="' . $mapa['nom_mapa'] . '" height="200" width="300">
+                                            <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="imgMapa" alt="mapa ' . $mapa['nom_mapa'] . '" aria-label="' . $mapa['nom_mapa'] . '" height="200" width="300">
                                                 <p>' . $mapa['nom_mapa'] . '</p>
                                             </div>';
                                         }

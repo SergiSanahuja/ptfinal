@@ -28,7 +28,7 @@ if(isset($_POST['eliminarPersonatge'])){
     $nomAvarar = $personatges->getPersonatge($id);
 
     if($nomAvarar['Img'] != "avatar.png"){
-        unlink("../img/".$nomAvarar['Img']);
+        unlink("../img/avatar/".$nomAvarar['Img']);
     }
 
     $personatges->deletePersonatje($id);
