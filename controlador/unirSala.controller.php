@@ -7,6 +7,7 @@ if(session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$_SESSION['errorLogin'] = null;
 
 
 if(isset($_POST['codigoSala'])){
@@ -19,7 +20,7 @@ if(isset($_POST['codigoSala'])){
 
 
     if($salas->getSala($codigoSala) == null){
-        $_SESSION['error'] = "La sala no existeix";
+        $_SESSION['errorLogin'] = "La sala no existeix";
          header("Location: index.controler.php");
         exit();
     }else{
@@ -27,11 +28,11 @@ if(isset($_POST['codigoSala'])){
         $salas = new Sala();
 
         if($Personatges->getPersonatge($idPersonaje) == null){
-            $_SESSION['error'] = "El personatge no existeix";
+            $_SESSION['errorLogin'] = "El personatge no existeix";
             header("Location: index.controler.php");
             exit();
         }else if($Personatges->getPersonatge($idPersonaje)['id_Usuari'] != $_SESSION['user']){
-            $_SESSION['error'] = "No pots unirte amb un personatge que no és teu";
+            $_SESSION['errorLogin'] = "No pots unirte amb un personatge que no és teu";
             header("Location: index.controler.php");
             exit();
         }

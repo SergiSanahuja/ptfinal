@@ -130,12 +130,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <?php
-                                if(isset($_SESSION['error'])){
-                                    echo '<div class="alert alert-danger msgError" role="alert">'.$_SESSION['error'].'</div>';
-                                }
-                                
-                            ?>
+                          
                             <form action="../controlador/unirSala.controller.php" method="post">
                             <div class="form-group">
                                 

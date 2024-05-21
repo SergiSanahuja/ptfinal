@@ -7,6 +7,20 @@
         margin: 0px;
     }   
 
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 60%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'IM Fell English', serif;
+    
+        left: 15%;
+        top: 5%;
+      
+    }
+
     #fondo{
         background-image:url('../img/mapa/llanura.webp');
         border-radius: 5px;
@@ -36,13 +50,16 @@
     
 }
 
-.modal{
-    font-family: 'IM Fell English', serif;
+#quantity{
+    width: 23%;
 }
+
 
 .imgMapa{
     cursor: pointer;
 }
+
+
 
 
 #missatge{
@@ -80,11 +97,12 @@
         border-radius: 10px;
         font-family: 'IM Fell English', serif;
     
-        left: 15%;
+        left: 20%;
         top: 5%;
-        bottom: 5%;
+        /* bottom: 5%; */
     }
 
+  
     #changeMapModal{
         width: 80%;
         left:  10%;
@@ -95,7 +113,7 @@
         width: 40px;
         border: none;
         color: white;
-        background-color: #851212;
+        background-color: #A81414;
         border-bottom: #ddd 2px solid;
         border-radius: 5px;
     }
@@ -104,7 +122,7 @@
         width: 100px;
         border: none;
         color: white;
-        background-color: #851212;
+        background-color: #A81414;
         border-bottom: #ddd 2px solid;
         border-radius: 5px;
     }
@@ -116,7 +134,7 @@ input[type="number"] {
     width: 40px;
     border: none;
     color: white;
-    background-color: #851212;
+    background-color: #A81414;
     border-bottom: #ddd 2px solid;
     border-radius: 5px;
 }
@@ -164,7 +182,7 @@ h1{
         width: 40px;
         border: none;
         color: white;
-        background-color: #851212;
+        background-color: #A81414;
         border-bottom: #ddd 2px solid;
     }
 }
@@ -175,7 +193,7 @@ select {
     width: 100px;
     border: none;
     color: white;
-    background-color: #851212;
+    background-color: #A81414;
     border-bottom: #ddd 2px solid;
     border-radius: 5px;
 }
@@ -184,10 +202,12 @@ select {
     width: 200px;
     border: none;
     color: white;
-    background-color: #851212;
+    background-color: #A81414;
     border-bottom: #ddd 2px solid;
     border-radius: 5px;
 }
+
+
 
 /*Tabla de usuarios conectados*/
 .table-personajes {
@@ -201,7 +221,7 @@ select {
 }
 
 .table-personajes th {
-    background-color: #851212;
+    background-color: #A81414;
     color: white;
     text-align: left;
 }

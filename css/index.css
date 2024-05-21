@@ -60,7 +60,6 @@ h1{
 .btn{
     background-color: #c30f0f;
     color: white;
-
     width: 100%;
 }
 
@@ -105,12 +104,7 @@ h1{
         width: 100%;
     }
 
-    .btn{
-        background-color: #8572725c;
-        color: white;
-    
-        width: 100%;
-    }
+ 
 
     .mercat{
         background-image: url("../img/fondos/drac2.png");

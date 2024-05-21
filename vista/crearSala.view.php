@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="../css/index.css"> 
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/sala.css">
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
@@ -32,7 +32,7 @@
         </a>
 
 
-        <div >
+        <div>
             <span class="navbar-brand mb-0 h1">Sala</span>
         </div>
 
@@ -135,8 +135,8 @@
                             </button>
                             <div class="dropdown-menu">
                                 <!-- Dropdown menu links -->
-                                
-                                <button type="button" class="dropdown-item" data-toggle="modal" data-target="#afegirObjecteModal">
+
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addObjectModal">
                                     Afegir Objecte
                                 </button>
                                 <button type="button" class="dropdown-item" data-toggle="modal" data-target="#changeMapModal">
@@ -201,9 +201,9 @@
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-sm-4 h4">
+                            <div class="col-sm-6 h4">
 
-                                <div class="row">
+                                <div class="row justify-content-center">
 
                                     <i class="bi bi-heart-fill mr-1"></i>
                                     <div><label for="vida">Vida:</label></div>
@@ -212,7 +212,7 @@
 
                             </div>
                             <div class="col-sm-6 h4">
-                                <div class="row">
+                                <div class="row justify-content-center">
 
                                     <i class="bi bi-activity"></i>
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
@@ -226,6 +226,7 @@
                     <div id="infoPersonatge" class="row justify-content-center align-items-center ">
                         <div class="col-md-4 col-sm-6 h4">
                             <div class="row">
+                                
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
                                     <defs>
                                     </defs>
@@ -235,7 +236,10 @@
                                 </svg>
 
                                 <div><label for="Fuerza">Força:</label></div>
-                                <input type="number" name="Strenght" id="Fuerza"></input>
+                                <div>
+
+                                    <input type="number" name="Strenght" id="Fuerza"></input>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 h4">
@@ -283,14 +287,7 @@
                             </div>
                             <hr>
                             <div>
-                                <p>espasa</p>
-                                <p>arc</p>
-                                <p>punyal</p>
-                                <p>daga</p>
-                                <p>daga</p>
-                                <p>daga</p>
-                                <p>daga</p>
-                                <p>daga</p>
+
                             </div>
 
                         </div>
@@ -318,9 +315,11 @@
                 </div>
 
                 <div class="modal-footer">
-
-                    <button type="button" id="updateCharacter" class="btn btn-primary">Guardar canvis</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addObjectModal">
+                        Afegir Objecte
+                    </button>
                     <button type="button" id="expulsarJugador" class="btn btn-primary">Expulsar</button>
+                    <button type="button" id="updateCharacter" class="btn btn-primary">Guardar canvis</button>
                 </div>
             </div>
         </div>
@@ -333,70 +332,115 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="changeMapModalLabel">Canvxiar Mapa</h5>
-                   
-                   
+
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <!-- Aquí puedes poner el formulario o los controles para cambiar el mapa -->
-                  
-                        <div id="mapPreview">
-                            <!-- Aquí se mostrará la previsualización del mapa -->
-                            <div class="row d-flex justify-content-arround">
-                                <div class="col mapa" id="mar">
-                                    <img src="../img/mapa/mar.webp" alt="mapa mar" class="imgMapa" aria-label="Mar" height="200" width="300">
-                                    <p>Mar</p>
-                                </div>
-                                <div class="col mapa" id="volcan">
-                                    <img src="../img/mapa/volcan.webp" alt="mapa volcan"  class="imgMapa" aria-label="Volcà" height="200" width="300" >
-                                    <p>Volcà</p>
 
-                                </div>
-                                <div class="col mapa" id="llanura">
-                                    <img src="../img/mapa/llanura.webp" alt="mapa llanura"  class="imgMapa" aria-label="Esplanada" height="200" width="300">
-                                    <p>Esplanada</p>
-                                </div>
+                    <div id="mapPreview">
+                        <!-- Aquí se mostrará la previsualización del mapa -->
+                        <div class="row d-flex justify-content-arround">
+                            <div class="col mapa" id="mar">
+                                <img src="../img/mapa/mar.webp" alt="mapa mar" class="imgMapa" aria-label="Mar" height="200" width="300">
+                                <p>Mar</p>
+                            </div>
+                            <div class="col mapa" id="volcan">
+                                <img src="../img/mapa/volcan.webp" alt="mapa volcan" class="imgMapa" aria-label="Volcà" height="200" width="300">
+                                <p>Volcà</p>
 
-                                <?php
-                                
+                            </div>
+                            <div class="col mapa" id="llanura">
+                                <img src="../img/mapa/llanura.webp" alt="mapa llanura" class="imgMapa" aria-label="Esplanada" height="200" width="300">
+                                <p>Esplanada</p>
+                            </div>
 
-                                    foreach ($mapas as $mapa) {
+                            <?php
 
-                                        if($mapa['nom_mapa'] == '' || $mapa['nom_mapa'] == 'null'){
-                                            
-                                            continue;
-                                        }else{
-                                            echo '<div class="col mapa" id="'.$mapa['titol'].'">
+
+                            foreach ($mapas as $mapa) {
+
+                                if ($mapa['nom_mapa'] == '' || $mapa['nom_mapa'] == 'null') {
+
+                                    continue;
+                                } else {
+                                    echo '<div class="col mapa" id="' . $mapa['titol'] . '">
                                             <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="imgMapa" alt="mapa ' . $mapa['nom_mapa'] . '" aria-label="' . $mapa['nom_mapa'] . '" height="200" width="300">
                                                 <p>' . $mapa['nom_mapa'] . '</p>
                                             </div>';
-                                        }
+                                }
+                            }
 
-                                  
-                                    }
+                            ?>
 
-                                ?>
-                                
-                            </div>
-
-
-                        
                         </div>
+
+
+
                     </div>
-                
+                </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 
 
+    <!-- Modal para añadir objetos -->
 
+    <div class="modal fade" id="addObjectModal" tabindex="-1" role="dialog" aria-labelledby="addObjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addObjectModalLabel">Añadir objeto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para añadir objeto -->
+                    <form id="addObjectForm">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
 
+                                    <label for="objectType">Tipus d'objecte</label>
+                                    <select class="form-control" id="objectType" name="objectType">
+                                        <option value="arma">Arma</option>
+                                        <option value="armadura">Armadura</option>
+                                        <option value="pocio">Poció</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+
+                                    <label for="quantity">Quantitat</label>
+                                    <input type="number" class="form-control" id="quantity" name="quantity" min="1"  value="1">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label for="objectName">Nom de l'objecte</label>
+                                    <input type="text" class="form-control" id="objectName" name="objectName" placeholder="Introdueix el nom de l'objecte ">
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Aquí puedes añadir más campos si es necesario -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Afegir Objecte</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 </body>
