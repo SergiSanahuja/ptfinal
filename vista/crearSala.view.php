@@ -337,15 +337,9 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="changeMapModalLabel">Cambiar Mapa</h5>
+                    <h5 class="modal-title" id="changeMapModalLabel">Canvxiar Mapa</h5>
                    
-                    <div class="col align-self-center ">
-                        <select name="mapa" id="mapa">
-                            <option value="llanura">Esplanada</option>
-                            <option value="volcan">Volcà</option>
-                            <option value="mar">Mar</option>
-                        </select>
-                    </div>
+                   
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -374,8 +368,6 @@
                                 
 
                                     foreach ($mapas as $mapa) {
-
-                                     
 
                                         if($mapa['nom_mapa'] == '' || $mapa['nom_mapa'] == 'null'){
                                             
