@@ -88,8 +88,21 @@ wsServer.on('connection', (client, peticio) => {
 
 							//buscar la informació del personatge
 							const [rows, fields] = await con.execute("SELECT u.id,p.id as IdPersonaje,u.nom,p.nom as NomPersonatge,p.raza,p.clase,p.nivel,p.Vida,p.Iniciativa,p.Fuerza,p.Destreza,p.Constitucion,p.Inteligencia,p.Sabiduria,p.Carisma,p.Img FROM usuaris u INNER JOIN personatges p ON p.id_Usuari = u.id WHERE p.id = ?", [missatge.pesontage]);
-							const infoClient = rows[0];
 							
+							const infoClient = rows[0];
+
+							
+							//buscar l'inventari del personatge
+							const [rows2, fields2] = await con.execute("SELECT nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='arma'", [missatge.pesontage]);
+							infoClient.armes = rows2;
+
+							const [rows3, fields3] = await con.execute("SELECT nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='armadura'", [missatge.pesontage]);
+							infoClient.armadures = rows3;
+
+							const [rows4, fields4] = await con.execute("SELECT nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='pocio'", [missatge.pesontage]);
+							infoClient.objetos = rows4;
+
+
 							console.log(infoClient);
 
 							//guardar tota la informació del personatge al client propietari
@@ -229,6 +242,51 @@ wsServer.on('connection', (client, peticio) => {
 
 					// broadcast(JSON.stringify({mapa: missatge.mapa, accio: "CanviMapa"}), client);
 					break;
+
+				case 'addObject':
+					
+					if (client.sala && salas[client.sala]) {
+						
+						
+						
+						con.execute("INSERT INTO inventario (id_Personaje, nom_Objeto, descripcion, cantidad,categoria) VALUES (?, ?, ?, ?, ?)", [missatge.id, missatge.objecte, missatge.descripcio, missatge.quantitat,missatge.categoria], function(err) {	
+							if (err) {	
+								console.error(err.message);
+							}
+						});
+
+						
+
+						salas[client.sala].forEach((clients) => {
+							if (clients.character && clients.character.IdPersonaje == missatge.id) {
+								if (missatge.categoria == "arma") {
+									clients.character.armes.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+								}else if (missatge.categoria == "armadura") {
+									clients.character.armadures.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+								}else if (missatge.categoria == "pocio") {
+									clients.character.objetos.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+								}
+								
+								for (let i = 0; i < salas[client.sala].length; i++) {
+									salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
+								}	
+								
+							}}
+
+
+						);
+							
+
+						
+
+
+						
+					}
+
+					break;
+
+					
+					
 
 				case 'desconectarJugador':
 						// Enviar missatge a tots de la sala

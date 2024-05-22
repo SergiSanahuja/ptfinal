@@ -31,7 +31,7 @@
             </a>
             
         
-        <div class="container-fluid justify-content-center">
+        <div class="justify-content-center">
             <span class="navbar-brand mb-0 h1">Sala</span>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,14 +100,7 @@
             <div id="ContenidorMapa" class="col-md-9   col-sm-7">
                 <div class="">
 
-                    <div class="row mt-2">
-                        <div class="col">
-                            <h1>Sala</h1>
-
-                        </div>
-
-
-                    </div>
+                 
 
 
                     <div id="fondo" width="auto" height="auto" style="border: 1px solid black;">
@@ -246,9 +239,36 @@
                         </div>
                     </div>
                     <div id="inventari">
-                        <div id="arma"></div>
-                        <div id="armadura"></div>
-                        <div id="pocio"></div>
+                        <div id="arma">
+                            <div>
+                                <h2>Arma</h2>
+                            </div>
+                            <hr>
+                            <div id="armes">
+
+                            </div>
+
+                        </div>
+
+
+                        <div id="armadura">
+                            <div>
+                                <h2>Armadura</h2>
+                            </div>
+                            <hr>
+                            <div id="armadures">
+
+                            </div>
+                        </div>
+                        <div id="pocio">
+                            <div>
+                                <h2>Poció</h2>
+                            </div>
+                            <hr>
+                            <div id="objetos">
+
+                            </div>
+                        </div>
                     </div>
 
                     <div class="modal-footer">

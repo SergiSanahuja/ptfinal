@@ -135,10 +135,6 @@
                             </button>
                             <div class="dropdown-menu">
                                 <!-- Dropdown menu links -->
-
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addObjectModal">
-                                    Afegir Objecte
-                                </button>
                                 <button type="button" class="dropdown-item" data-toggle="modal" data-target="#changeMapModal">
                                     Cambiar Mapa
                                 </button>
@@ -173,6 +169,9 @@
                 </div>
                 <div class="modal-body">
                     <div id="id" hidden>
+
+                    </div>
+                    <div id="IdPersonaje" hidden>
 
                     </div>
 
@@ -286,7 +285,7 @@
                                 <h2>Arma</h2>
                             </div>
                             <hr>
-                            <div>
+                            <div id="armes">
 
                             </div>
 
@@ -298,18 +297,18 @@
                                 <h2>Armadura</h2>
                             </div>
                             <hr>
-                            <p>Casc</p>
-                            <p>pantalons</p>
-                            <p>camisa</p>
-                            <p>gorra</p>
+                            <div id="armadures">
+
+                            </div>
                         </div>
                         <div id="pocio">
                             <div>
                                 <h2>Poció</h2>
                             </div>
                             <hr>
-                            <p>Varí</p>
-                            <p>Hp</p>
+                            <div id="objetos">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -405,7 +404,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario para añadir objeto -->
-                    <form id="addObjectForm">
+                    
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-6">
@@ -430,14 +429,22 @@
                                 </div>
 
                             </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="objectDescription">Descripció de l'objecte</label>
+                                    <textarea class="form-control" id="objectDescription" name="objectDescription" rows="3" placeholder="Introdueix la descripció de l'objecte"></textarea>
+                                </div>
+
+
+                            </div>
                         </div>
                         <!-- Aquí puedes añadir más campos si es necesario -->
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Afegir Objecte</button>
+                        <button type="submit" id="addObject" class="btn btn-primary">Afegir Objecte</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
-                </form>
+            
             </div>
         </div>
     </div>

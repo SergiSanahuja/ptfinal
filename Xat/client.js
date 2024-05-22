@@ -152,6 +152,22 @@
                             $('#Img').attr('src', '../img/avatar/' + data.info.Img);
 
 
+                            $('#armes').empty();
+                            data.info.armes.forEach(arme => {
+                                $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
+                            });
+
+                            $('#armadures').empty();
+                            data.info.armadures.forEach(armure => {
+                                $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
+                            }
+                            );
+
+                            $('#objetos').empty();
+                            data.info.objetos.forEach(objeto => {
+                                $('#objetos').append('<div>'+objeto.nom_Objeto+" "+objeto.cantidad+'</div>');
+                            }
+                            );
                         }
                     
                         
@@ -187,8 +203,6 @@
                             moveAt(event.pageX, event.pageY);
                         }
 
-                       
-
                         //moure el div a la posicio absoluta sote el ratolí
                         document.addEventListener('mousemove', onMouseMove);
 
@@ -211,10 +225,7 @@
 
                     div.textContent = data.info.NomPersonatge;
             
-                    document.getElementById('fondo').appendChild(div);        
-            
-                
-
+                    document.getElementById('fondo').appendChild(div);
                 
                 break;
                 

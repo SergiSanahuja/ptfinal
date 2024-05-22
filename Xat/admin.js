@@ -22,6 +22,8 @@
 
         // });
 
+        //Funció per a canviar el mapa
+
         $('.mapa').on('click', function() {
             let mapa = this.id
             
@@ -30,6 +32,27 @@
             
             connexio.send(JSON.stringify({mapa: mapa, accio: "CanviMapa"}));
 
+        });
+
+        //Funcio per afegir un objecte a un personatge
+        $('#addObject').on('click', function() {
+            let id = $('#IdPersonaje').text();
+            let objecte = $('#objectName').val();
+            $('#objectName').empty();
+            let quantitat = $('#quantity').val();
+            $('#quantity').val(1);
+            let categoria = $('#objectType').val();
+            let descripcio = $('#objectDescription').val();
+            $('#objectDescription').empty();
+            
+            $("#addObjectModal").modal('hide');
+            
+
+            // let text ='Estas segur que vols afegir aquest objecte a aquest jugador?'       
+
+            connexio.send(JSON.stringify({id: id, objecte: objecte,quantitat: quantitat,descripcio:descripcio ,categoria: categoria, accio: "addObject"}));
+            
+       
         });
        
 
@@ -187,6 +210,7 @@
                             $('#NomPersonatge').text(data.info.NomPersonatge);
 
                             $('#id').text(data.info.id);
+                            $('#IdPersonaje').text(data.info.IdPersonaje);
                             $('#raza').text(data.info.raza);
                             $('#clase').text(data.info.clase);
                             $('#nivel').val(data.info.nivel);
@@ -199,6 +223,26 @@
                             $('#Sabiduria').val(data.info.Sabiduria);
                             $('#Carisma').val(data.info.Carisma);
                             $('#Img').attr('src', '../img/avatar/' + data.info.Img);
+
+                          
+                            $('#armes').empty();
+                            data.info.armes.forEach(arme => {
+                                $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
+                            });
+
+                            $('#armadures').empty();
+                            data.info.armadures.forEach(armure => {
+                                $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
+                            }
+                            );
+
+                            $('#objetos').empty();
+                            data.info.objetos.forEach(objeto => {
+                                $('#objetos').append('<div>'+objeto.nom_Objeto+" "+objeto.cantidad+'</div>');
+                            }
+                            );
+
+
 
 
                         }
@@ -288,7 +332,9 @@
                     break;
 
 
-
+                case 'addObject':
+                    
+                    break;
          
 
                 default:
