@@ -165,7 +165,7 @@
 
                             $('#objetos').empty();
                             data.info.objetos.forEach(objeto => {
-                                $('#objetos').append('<div>'+objeto.nom_Objeto+" "+objeto.cantidad+'</div>');
+                                $('#objetos').append('<div>'+objeto.nom_Objeto+" - "+objeto.cantidad+'</div>');
                             }
                             );
                         }

@@ -34,6 +34,20 @@
 
         });
 
+
+        $(".openModalAddObject").on('click', function() {
+
+            if($("#expulsarJugador").prop('disabled') == false){
+                $('#expulsarJugador').prop('disabled', true);
+                $('#updateCharacter').prop('disabled', true);
+            }else{
+                $('#expulsarJugador').prop('disabled', false);
+                $('#updateCharacter').prop('disabled', false);
+            }
+            // $('.openModalAddObject').prop('disabled', true);
+        });
+
+
         //Funcio per afegir un objecte a un personatge
         $('#addObject').on('click', function() {
             let id = $('#IdPersonaje').text();
@@ -47,6 +61,8 @@
             
             $("#addObjectModal").modal('hide');
             
+            
+            
 
             // let text ='Estas segur que vols afegir aquest objecte a aquest jugador?'       
 
@@ -55,12 +71,22 @@
        
         });
        
+        $(".closeAddObjectModal").on('click', function() {
+
+            $('#expulsarJugador').prop('disabled', false);
+            $('#updateCharacter').prop('disabled', false);
+            $('.openModalAddObject').prop('disabled', false);
+
+        });
+
 
 
         /**
          * Mostrar/ocultar modal
          */
         $('.close').on('click', function() {
+            $('#expulsarJugador').prop('disabled', false);
+            $('#updateCharacter').prop('disabled', false);
             $('#modal').css('display', 'none');
         }
         );
@@ -238,9 +264,22 @@
 
                             $('#objetos').empty();
                             data.info.objetos.forEach(objeto => {
-                                $('#objetos').append('<div>'+objeto.nom_Objeto+" "+objeto.cantidad+'</div>');
-                            }
-                            );
+                               let div = document.createElement('div');
+                                
+                                 div.textContent = objeto.nom_Objeto+' - '+objeto.cantidad;
+                                 div.className = 'object';
+                                 div.tabIndex = 0;
+
+                                 div.addEventListener('click', function() {
+                                    $("#useObjectModal").modal('show');
+                                    $('#objectNameUse').text(objeto.nom_Objeto);
+                                    $('#quantityUse').text(objeto.cantidad);
+                                    $('#objectDescriptionUse').text(objeto.descripcion);
+                                 });
+
+
+                                $('#objetos').append(div);
+                            });
 
 
 
