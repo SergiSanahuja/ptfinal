@@ -91,13 +91,13 @@
 
                 case 'denegarSala':
                     alert("Sala no trobada");
-                    window.location.href = "index.controler.php";
+                    window.location.href = "../index.php";
                     break;
 
 
                 case 'TancarSala':
                     alert("Sala tancada");
-                    window.location.href = "index.controler.php";
+                    window.location.href = "../index.php";
                     break;
 
 
@@ -231,7 +231,7 @@
                 
                 case 'TancarConexio':
                     alert("S'ha tancat la connexió");
-                    window.location.href = "index.controler.php";
+                    window.location.href = "../index.php";
                     break;
                     
 
@@ -241,18 +241,13 @@
                         
                     while (document.getElementById(data.id)) {
                        
-                        document.getElementById(data.id).remove();
-
-                        
-
-
-                        
+                        document.getElementById(data.id).remove();                        
 
                     }
 
                     if (data.id == idJugador) {
                         alert("Has sigut desconectat de la sala");
-                        window.location.href = "index.controler.php";
+                        window.location.href = "../index.php";
                     }
                     
                     
@@ -277,7 +272,7 @@
 
         connexio.onclose = () => {
             alert("Connexió tancada");
-            window.location.href = "index.controler.php";
+            window.location.href = "../index.php";
         }
         
         // Quan es produeix un error, mostrar-lo per consola
