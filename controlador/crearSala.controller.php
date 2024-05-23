@@ -23,7 +23,7 @@ $idSala =  crearCodigo();
 
 if($_SESSION['user'] == 0 || $_SESSION['user'] == null){
     $_SESSION['errorLogin'] = "No has iniciat sessió";
-    header("Location: index.controler.php");
+    header("Location: ../index.php");
     exit();
 }
 

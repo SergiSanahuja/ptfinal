@@ -24,7 +24,7 @@
             <div class="col-10">
                 </div>
                 <div class="col-1 d-flex" style="    display: flex!important; flex-direction: row; align-items: center;">
-                    <a href="../vista/index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
+                    <a href="../../index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
                 </div>
             </div>
         <h2>Registre</h2>

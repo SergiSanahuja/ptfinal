@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/personatje.php';
+require_once './model/personatje.php';
 
 
 if(session_status() === PHP_SESSION_NONE) {
@@ -14,11 +14,9 @@ $_SESSION['successArticle'] = null;
 $_SESSION['errorPersonatge'] = null;
 $_SESSION['successPersonatge'] = null; 
 
+$usuario = null;
 if(isset($_SESSION['user'])){
     $usuario = $_SESSION['user'];
-}else{
-    $_SESSION['errorLogin'] = "No has iniciat sessió";
-    $usuario = null;
 }
 
 // if(isset($_SESSION['error'])){
@@ -30,7 +28,7 @@ $Personatge = new Personatje();
 
 $llistaPersonatges = $Personatge->getPersonatgeByUser($usuario);
 
-include_once '../vista/index.php'
+include_once './vista/index.php'
 
 
 ?>

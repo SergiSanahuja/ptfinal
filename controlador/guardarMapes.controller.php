@@ -21,7 +21,7 @@ if (isset($_SESSION['error'])) {
 
 if(!isset($_SESSION['user'])){
     $_SESSION['errorLogin'] = "No has iniciat sessió";
-    header('Location: ../controlador/index.controler.php');
+    header('Location: ../index.php');
     exit();
 }
 

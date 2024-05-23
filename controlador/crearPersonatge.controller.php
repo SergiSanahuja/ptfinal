@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 if (!isset($_SESSION['username'])) {
     $_SESSION['errorLogin'] = 'Has de estar loguejat per crear un personatje';
-    header('Location: ../controlador/index.controler.php');
+    header('Location: ../index.php');
     die();
 }
 
@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
             $personatje = new Personatje();
             $personatje->crearPersonatge($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
             $_SESSION['success'] = 'Personatge creat correctament';
-            header('Location: ../controlador/index.controler.php');
+            header('Location: ../index.php');
             die();
         }
         

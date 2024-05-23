@@ -3,12 +3,14 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/fondos/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/fondos/favicon.ico" type="image/x-icon">
     <title>Home</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="../css/index.css">
+
     <!-- CSS -->
         <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -25,19 +27,19 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
-        <a class="Inici  " href="../vista/index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici nav-link active " href="../controlador/index.controler.php ">FinalD</a>
+        <a class="Inici  " href="./../index.php "> <img src="./img/fondos/favicon.ico" alt="logo"></a>
+        <a class="Inici nav-link active " href="./index.php ">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link ">Personatges </a>
+                        <a href="./controlador/personatges.controller.php" class="Personatges  nav-link ">Personatges </a>
                         
                     </li>
                     <li class="nav-item">
-                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
+                        <a href="./controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
                         
                     </li>
                     <li class="nav-item dropdown">
@@ -45,10 +47,10 @@
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
+                            <a class="dropdown-item" href="./controlador/foro.controller.php">Inici</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="../controlador/crearArticle.controller.php">Crear missatge</a>
-                            <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus articles</a>
+                            <a class="dropdown-item" href="./controlador/crearArticle.controller.php">Crear missatge</a>
+                            <a class="dropdown-item" href="./controlador/articlesPropis.controller.php">Els teus articles</a>
                         </div>
                     </li>            
                     
@@ -63,7 +65,7 @@
                     <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                    <a class="nav-link" href="./controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
                     </div>';
@@ -71,10 +73,10 @@
                     echo '<div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <a class="nav-link" href="../vista/login.php">Login</a>
+                    <a class="nav-link" href="./vista/login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../vista/registre.php">Register</a>
+                    <a class="nav-link" href="./vista/registre.php">Register</a>
                     
                     </li>
                     </ul>
@@ -109,12 +111,9 @@
                     <?php
                     
 
-                    if (isset($_SESSION['username'])) {
-                        echo '<a href="crearSala.controller.php" class="btn">Crear Sala</a>';
-                    }else{
-                        echo '<a href="../controlador/index.controler.php" class="btn">Crear Sala</a>';
-                    }
-
+                    
+                        echo '<a href="./controlador/crearSala.controller.php" class="btn">Crear Sala</a>';
+                    
                     ?>
                     
                     
@@ -131,7 +130,7 @@
                         </div>
                         <div class="modal-body">
                           
-                            <form action="../controlador/unirSala.controller.php" method="post">
+                            <form action="./controlador/unirSala.controller.php" method="post">
                             <div class="form-group">
                                 
 
@@ -158,7 +157,7 @@
                         if (isset($_SESSION['username'])) {
                             echo '<a href="#" class="btn" data-toggle="modal" data-target="#modalUnirSala">Unir Sala</a>';
                         }else{
-                            echo '<a href="../controlador/index.controler.php" class=" btn">Unir Sala</a>';
+                            echo '<a href="./index.php" class=" btn">Unir Sala</a>';
                         }
                     ?>
                 </div>
@@ -166,11 +165,11 @@
                 <?php
                     if (isset($_SESSION['username'])) {
                        echo "<div class='col-4'>
-                        <a href='../controlador/crearPersonatge.controller.php' class='btn'>Crear Personatge</a>
+                        <a href='./controlador/crearPersonatge.controller.php' class='btn'>Crear Personatge</a>
                         </div>";
                     }else{
                         echo "<div class='col-4'>
-                        <a href='../controlador/index.controler.php' class='btn'>Crear Personatge</a>
+                        <a href='./index.php' class='btn'>Crear Personatge</a>
                         </div>";
                     }
                     
@@ -181,8 +180,8 @@
 
         <!-- <div >
             <button class="btncrearPersonatge">
-                <a href="../controlador/crearPersonatge.controller.php">
-                    <img src="../img/fondos/Crearpersonaje.png" class="crearPersonatge" title="Crear Personaje" alt="Crear Personaje">
+                <a href="./controlador/crearPersonatge.controller.php">
+                    <img src="./img/fondos/Crearpersonaje.png" class="crearPersonatge" title="Crear Personaje" alt="Crear Personaje">
                 </a>
             </button>
         </div> -->
@@ -197,7 +196,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a href="../controlador/foro.controller.php" class="btn">Entrar</a>
+                    <a href="./controlador/foro.controller.php" class="btn">Entrar</a>
                 </div>
             </div> 
         </div>

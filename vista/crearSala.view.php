@@ -26,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
 
-        <a href="../controlador/index.controler.php" class="navbar-brand">
+        <a href="../index.php" class="navbar-brand">
             <img src="../img/fondos/favicon.ico" alt="logo" class="d-inline-block align-text-center">
             FinalD
         </a>
@@ -157,8 +157,9 @@
         </div>
     </div>
 
+    <!-------------------------------------------------Modal de personatge ------------------------------------------------------------->
 
-    <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal " id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -314,7 +315,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addObjectModal">
+                    <button type="button" class="btn  openModalAddObject" data-toggle="modal" data-target="#addObjectModal">
                         Afegir Objecte
                     </button>
                     <button type="button" id="expulsarJugador" class="btn btn-primary">Expulsar</button>
@@ -325,7 +326,8 @@
     </div>
 
 
-    <!-- Modal Pel canvi de mapa -->
+    <!-------------------------------------------------Modal Pel canvi de mapa ------------------------------------------------------------->
+
     <div class="modal fade" id="changeMapModal" tabindex="-1" role="dialog" aria-labelledby="changeMapModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -383,7 +385,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
 
                 </div>
             </div>
@@ -441,10 +443,50 @@
                         <!-- Aquí puedes añadir más campos si es necesario -->
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" id="addObject" class="btn btn-primary">Afegir Objecte</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" id="addObject" class="btn ">Afegir Objecte</button>
+                        <button type="button" class="btn btn-secondary closeAddObjectModal" data-dismiss="modal">Tancar</button>
                     </div>
             
+            </div>
+        </div>
+    </div>
+
+
+    <!---------------------------------------------- Modal para usar un objeto ------------------------------------------------------------->
+
+    <div class="modal fade" id="useObjectModal" tabindex="-1" role="dialog" aria-labelledby="useObjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="useObjectModalLabel">Usar objeto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario para usar objeto -->
+                    <div class="form-group">
+                        <h2>Objecte</h2>
+                       <div id="objectNameUse">
+
+                       </div>
+                       <div>
+                            
+                            <input type="number" min="1" max="10" value="1">
+
+                       </div>
+                       <hr>
+                       <div>
+                            <h2>Descripció</h2>
+                            <div id="objectDescriptionUse" name="objectDescriptionUse"></div>
+                       </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="useObject" class="btn ">Utilitzar Objecte</button>
+                    <button type="button" class="btn btn-secondary closeUseObjectModal" data-dismiss="modal">Tancar</button>
+                </div>
             </div>
         </div>
     </div>

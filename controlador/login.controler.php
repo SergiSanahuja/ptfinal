@@ -48,7 +48,7 @@ if(isset($_POST['email']) && isset($_POST['password'])){
             $_SESSION['username'] = $result['nom'];
             $_SESSION['user'] = $result['id'];
             $_SESSION['errorLogin'] = null;
-            header('Location: ../controlador/index.controler.php');
+            header('Location: ../index.php');
             exit();
         }else{
             $_SESSION['error'] = 'Contraseña incorrecta';
