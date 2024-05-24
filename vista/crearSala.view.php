@@ -472,7 +472,7 @@
                        </div>
                        <div>
                             
-                            <input type="number" min="1" max="10" value="1">
+                            <input type="number" id="QuantityObjectsUseing" min="1"  value="1">
 
                        </div>
                        <hr>

@@ -140,6 +140,16 @@
         });
 
 
+        //Funcio per a eliminar la catitat d'objectes que ha sigut utilitzada
+        $("#useObject").on('click', function() {
+
+           let cantitat =  $("#QuantityObjectsUseing").val()
+           
+
+        });
+
+
+
         //coneixió amb el servidor mjs
         let domini;
         if (window.location.protocol == "file:") domini = "localhost";

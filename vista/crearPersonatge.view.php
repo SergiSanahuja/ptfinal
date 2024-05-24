@@ -28,7 +28,7 @@
                 <h1>Crear Personatje</h1>
             </div>
             <div>
-                <a href="index.controler.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
+                <a href="../index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
             </div>
         </div>
   
