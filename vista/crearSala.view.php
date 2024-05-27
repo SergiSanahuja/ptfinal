@@ -96,18 +96,18 @@
                     </div>
                 </div>
 
-                <div>
-
+                <div >
+<!-- 
                     <input type="checkbox" id="closeRoom" name="closeRoom">
-                    <label for="closeRoom">Tancar Sala</label>
+                    <label for="closeRoom">Tancar Sala</label> -->
                     <input type="checkbox" id="ChatHidden" name="ChatHidden">
-                    <label for="ChatHidden">Amagar xat</label>
-
+                    <label for="ChatHidden" style="color: white;">Amagar xat</label>
+ 
                 </div>
                 <div>
                     <table class="table-personajes" id="Users">
                         <tr>
-                            <th>Personatges</th>
+                            <th >Personatges</th>
                         </tr>
 
                     </table>
@@ -318,8 +318,8 @@
                     <button type="button" class="btn  openModalAddObject" data-toggle="modal" data-target="#addObjectModal">
                         Afegir Objecte
                     </button>
-                    <button type="button" id="expulsarJugador" class="btn btn-primary">Expulsar</button>
-                    <button type="button" id="updateCharacter" class="btn btn-primary">Guardar canvis</button>
+                    <button type="button" id="expulsarJugador" class="btn ">Expulsar</button>
+                    <button type="button" id="updateCharacter" class="btn">Guardar canvis</button>
                 </div>
             </div>
         </div>

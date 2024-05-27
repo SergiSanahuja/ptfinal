@@ -26,10 +26,12 @@
             $query = $this->db->connect()->query($sql);
 
             if($query){
-                $_SESSION['success'] = 'Usuario registrado correctamente';
+                $_SESSION['success'] = 'Usuari registrat correctament';
+                $_SESSION['error'] = null;
                 header('Location: ../vista/login.php');
+                exit();
             }else{
-                $_SESSION['error'] = 'Error al registrar el usuario';
+                $_SESSION['error'] = 'Error al registrar el usuari';
                 // header('Location: ../vista/registre.php');
             }
         }
@@ -59,24 +61,29 @@
         $password = $_POST['password'];
         $confirmPsw = $_POST['confirmPsw'];
 
-
-        if($password == $confirmPsw){
-            $login = new Login();
-
-            if($login->comprovaEmail($email)){
-                $_SESSION['error'] = 'El email ya está registrado';
-                // header('Location: ../vista/registre.php');
-            }else{
-
-                $login->registre($username, $email, $password);
-            }
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $_SESSION['error'] = 'Format del correu incorrecte';
+            
         }else{
-            $_SESSION['error'] = 'Las contraseñas no coinciden';
-            // header('Location: ../vista/registre.php');
+
+            if($password == $confirmPsw){
+                $login = new Login();
+
+                if($login->comprovaEmail($email)){
+                    $_SESSION['error'] = 'El email ja està registrat';
+                    // header('Location: ../vista/registre.php');
+                }else{
+
+                    $login->registre($username, $email, $password);
+                }
+            }else{
+                $_SESSION['error'] = 'Las contrasenyas no coincideixen';
+                // header('Location: ../vista/registre.php');
+            }
         }
     
     }else{
-        $_SESSION['error'] = 'Rellena todos los campos';
+        $_SESSION['error'] = 'Has d\'omplir tots els camps';
         // header('Location: ../vista/registre.php');
     }
 

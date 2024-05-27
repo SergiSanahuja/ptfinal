@@ -38,10 +38,15 @@
                 echo '<div class="error">'.$_SESSION['error'].'</div>';
             }
         ?>
+        <hr>
         <form id="login-form" action="../controlador/registre.controler.php" method="post">
+            <label for="username">Usuari</label>
             <input type="text" id="username" name="username" placeholder="Usuario" required>
-            <input type="text" id="email" name="email" placeholder="Email" required>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email@gmail.com" required>
+            <label for="password">Contrasenya</label>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <label for="confitmPsw">Confirmar Contrasenya</label>
             <input type="password" id="confirmPsw" name="confirmPsw" placeholder="Confirmar Contrasenya" required>
             
             <hr>

@@ -46,10 +46,26 @@
             }
             // $('.openModalAddObject').prop('disabled', true);
         });
+        $(".closeUseObjectModal").on('click', function() {
+
+         
+            $('#expulsarJugador').prop('disabled', false);
+            $('#updateCharacter').prop('disabled', false);
+            $('.openModalAddObject').prop('disabled', false);
+    
+            // $('.openModalAddObject').prop('disabled', true);
+        });
+     
 
 
         //Funcio per afegir un objecte a un personatge
         $('#addObject').on('click', function() {
+
+            $('#expulsarJugador').prop('disabled', false);
+            $('#updateCharacter').prop('disabled', false);
+            $('.openModalAddObject').prop('disabled', false);
+
+
             let id = $('#IdPersonaje').text();
             let objecte = $('#objectName').val();
             $('#objectName').empty();
@@ -285,6 +301,18 @@
                                     $('#objectNameUse').text(objeto.nom_Objeto);
                                     $('#quantityUse').text(objeto.cantidad);
                                     $('#objectDescriptionUse').text(objeto.descripcion);
+
+                                    if($("#expulsarJugador").prop('disabled') == false){
+                                        $('#expulsarJugador').prop('disabled', true);
+                                        $('#updateCharacter').prop('disabled', true);
+                                        $('.openModalAddObject').prop('disabled', true);
+                                    }else{
+                                        $('#expulsarJugador').prop('disabled', false);
+                                        $('#updateCharacter').prop('disabled', false);
+                                        $('.openModalAddObject').prop('disabled', false);
+                                    }
+
+
                                  });
 
 

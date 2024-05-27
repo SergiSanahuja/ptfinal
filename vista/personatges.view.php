@@ -97,7 +97,7 @@
     <div>
         <?php
         if (isset($_SESSION['errorPersonatge'])) {
-            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
+            echo '<div class="alert alert-danger" role="alert">' . $_SESSION['errorPersonatge'] . '</div>';
         }
         if(isset($_SESSION['successPersonatge'])){
             echo '<div class="alert alert-danger" role="alert">' . $_SESSION['successPersonatge'] . '</div>';

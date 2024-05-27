@@ -369,6 +369,8 @@ wsServer.on('connection', (client, peticio) => {
 
 				salas[client.sala] = [];
 
+				
+
 			}else{
 
 				if(client.sala && salas[client.sala]) {
