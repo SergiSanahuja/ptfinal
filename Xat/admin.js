@@ -46,6 +46,7 @@
             }
             // $('.openModalAddObject').prop('disabled', true);
         });
+
         $(".closeUseObjectModal").on('click', function() {
 
          
@@ -101,6 +102,7 @@
          * Mostrar/ocultar modal
          */
         $('.close').on('click', function() {
+            $('.openModalAddObject').prop('disabled', false);
             $('#expulsarJugador').prop('disabled', false);
             $('#updateCharacter').prop('disabled', false);
             $('#modal').css('display', 'none');
@@ -159,7 +161,12 @@
         //Funcio per a eliminar la catitat d'objectes que ha sigut utilitzada
         $("#useObject").on('click', function() {
 
-           let cantitat =  $("#QuantityObjectsUseing").val()
+            let cantitat = parseInt($("#QuantityObjectsUseing").val())
+            let nom_Objeto = $('#objectNameUse').text();
+            let id = $('#IdPersonaje').text();
+
+            connexio.send(JSON.stringify({id: id, cantitat: cantitat, nom_Objeto: nom_Objeto, accio: "useObject"}));
+
            
 
         });

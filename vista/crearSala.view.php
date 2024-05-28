@@ -471,9 +471,7 @@
 
                        </div>
                        <div>
-                            
-                            <input type="number" id="QuantityObjectsUseing" min="1"  value="1">
-
+                            <input type="number" aria-label="Quantitat d'objectes" id="QuantityObjectsUseing" min="1"  value="1">
                        </div>
                        <hr>
                        <div>
@@ -484,7 +482,7 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" id="useObject" class="btn ">Utilitzar Objecte</button>
+                    <button type="submit" id="useObject" aria-label="utilitzar objecte" class="btn ">Utilitzar Objecte</button>
                     <button type="button" class="btn btn-secondary closeUseObjectModal" data-dismiss="modal">Tancar</button>
                 </div>
             </div>

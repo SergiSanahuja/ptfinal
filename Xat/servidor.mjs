@@ -244,51 +244,155 @@ wsServer.on('connection', (client, peticio) => {
 					break;
 
 				case 'addObject':
+					try {
 					
-					if (client.sala && salas[client.sala]) {
-						
-						
-						
-						con.execute("INSERT INTO inventario (id_Personaje, nom_Objeto, descripcion, cantidad,categoria) VALUES (?, ?, ?, ?, ?)", [missatge.id, missatge.objecte, missatge.descripcio, missatge.quantitat,missatge.categoria], function(err) {	
-							if (err) {	
-								console.error(err.message);
-							}
-						});
+						if (client.sala && salas[client.sala]) {
+							
+							if (client.sala && salas[client.sala]) {
+								const [rows, fields] =	await con.execute("SELECT * FROM inventario WHERE id_Personaje = ? AND nom_Objeto = ?", [missatge.id, missatge.objecte], function(err, result) {
+									if (err) {
+										throw err;
+									}
+								});
 
-						
-
-						salas[client.sala].forEach((clients) => {
-							if (clients.character && clients.character.IdPersonaje == missatge.id) {
-								if (missatge.categoria == "arma") {
-									clients.character.armes.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
-								}else if (missatge.categoria == "armadura") {
-									clients.character.armadures.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
-								}else if (missatge.categoria == "pocio") {
-									clients.character.objetos.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+								let inventario = rows;
+								//Comprovar si l'objecte ja existeix en l'inventari
+							
+								if (inventario.length > 0) {
+									// El objeto ya existe en el inventario, actualizar la cantidad
+									con.execute("UPDATE inventario SET cantidad = cantidad + ? WHERE id_Personaje = ? AND nom_Objeto = ?", [missatge.quantitat, missatge.id, missatge.objecte], function(err) {
+										if (err) {
+											throw err;
+										}
+									});
+								} else {
+									// El objeto no existe en el inventario, insertarlo
+									con.execute("INSERT INTO inventario (id_Personaje, nom_Objeto, descripcion, cantidad, categoria) VALUES (?, ?, ?, ?, ?)", [missatge.id, missatge.objecte, missatge.descripcio, missatge.quantitat, missatge.categoria], function(err) {
+										if (err) {
+											throw err;
+										}
+									});
 								}
-								
-								for (let i = 0; i < salas[client.sala].length; i++) {
-									salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
-								}	
-								
-							}}
+							
+								// con.execute("INSERT INTO inventario (id_Personaje, nom_Objeto, descripcion, cantidad,categoria) VALUES (?, ?, ?, ?, ?)", [missatge.id, missatge.objecte, missatge.descripcio, missatge.quantitat,missatge.categoria], function(err) {	
+								// 	if (err) {	
+								// 		console.error(err.message);
+								// 	}
+								// });
 
-
-						);
 							
 
-						
+								salas[client.sala].forEach((clients) => {
+									if (clients.character && clients.character.IdPersonaje == missatge.id) {
+										if (missatge.categoria == "arma") {
+											clients.character.armes.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+										}else if (missatge.categoria == "armadura") {
+											clients.character.armadures.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+										}else if (missatge.categoria == "pocio") {
+
+											// Comprovar si l'objecte ja existeix en l'inventari
+											let afegeix = true;
+
+											if (clients.character.objetos.length > 0) {
+												clients.character.objetos.forEach((objeto) => {
+
+													if (objeto.nom_Objeto == missatge.objecte) {
+
+														objeto.cantidad =  parseInt(objeto.cantidad) + parseInt(missatge.quantitat);
+														afegeix = false;
+
+													}
+												});
+											}
+
+											if (afegeix) {
+
+												clients.character.objetos.push({nom_Objeto: missatge.objecte, descripcion: missatge.descripcio, cantidad: missatge.quantitat});
+											}
+
+											
+										}
+										
+										for (let i = 0; i < salas[client.sala].length; i++) {
+											salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
+										}	
+										
+									}}
 
 
-						
+								);
+								
+
+							
+							}
+
+							
+						}
+					} catch (err) {
+						console.log(err);
 					}
 
 					break;
 
-					
-					
+				case 'useObject':
+					try{
 
-				case 'desconectarJugador':
+						const [rows, fields] = await con.execute("SELECT cantidad FROM inventario WHERE id_Personaje = ? AND nom_Objeto = ? AND categoria = ?", [missatge.id, missatge.nom_Objeto,"pocio"], function(err, rows) {
+								if (err) {
+									throw err;
+								}
+							});
+
+						let cantidad = rows[0].cantidad;
+
+						if (cantidad > 0) {
+							con.execute("UPDATE inventario SET cantidad = ? WHERE id_Personaje = ? AND nom_Objeto = ? AND categoria = 'pocio'", [cantidad - missatge.cantitat, missatge.id, missatge.nom_Objeto], function(err) {
+								if (err) {
+									throw err;
+								}
+							});
+
+						}else{
+						
+							con.execute("DELETE FROM inventario WHERE id_Personaje = ? AND nom_Objeto = ? AND categoria = 'pocio'", [missatge.id, missatge.nom_Objeto], function(err) {
+								if (err) {
+									throw err;
+								}
+							});
+
+						};
+
+
+
+						if (client.sala && salas[client.sala]) {
+							salas[client.sala].forEach((clients) => {
+
+
+								if (clients.character && clients.character.IdPersonaje == missatge.id) {
+									clients.character.objetos.forEach((objeto) => {
+										if (objeto.nom_Objeto == missatge.nom_Objeto) {
+											objeto.cantidad -= missatge.cantitat;
+										}
+										if (objeto.cantidad <= 0) {
+											clients.character.objetos = clients.character.objetos.filter((obj) => {
+												return obj.nom_Objeto !== missatge.nom_Objeto;
+											});
+										}
+									});
+								}
+								for (let i = 0; i < salas[client.sala].length; i++) {
+									salas[client.sala][i].send(JSON.stringify({info: clients.character, accio: "infoJugador"}));
+								}	
+							});
+						}
+
+					}catch(err){
+						console.log(err);
+					}
+					break;
+
+
+					case 'desconectarJugador':
 						// Enviar missatge a tots de la sala
 						if (client.sala && salas[client.sala]) {
 							salas[client.sala].forEach((clients) => {
