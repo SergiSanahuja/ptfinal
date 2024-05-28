@@ -47,9 +47,6 @@
             connexio.send(JSON.stringify({nom: nomJugador,admin:false ,accio: "nouJugador"}));
             connexio.send(JSON.stringify({codi:Codi, pesontage: idPersonatge ,accio: "crearSala"}));
           
-
-           
-
             
         }
 
@@ -133,42 +130,7 @@
                 
                     cell.addEventListener('click', function() {
                         
-                        if (data.info.id == data.info.id) {
-                            $('#modal').css('display', 'block');
-                            $('#modal').show();
-                            
-                            $('#NomPersonatge').text(data.info.NomPersonatge);
-                            $('#raza').text(data.info.raza);
-                            $('#clase').text(data.info.clase);
-                            $('#nivel').text(data.info.nivel);
-                            $('#Vida').text(data.info.Vida);
-                            $('#Iniciativa').text(data.info.Iniciativa);
-                            $('#Fuerza').text(data.info.Fuerza);
-                            $('#Destreza').text(data.info.Destreza);
-                            $('#Constitucion').text(data.info.Constitucion);
-                            $('#Inteligencia').text(data.info.Inteligencia);
-                            $('#Sabiduria').text(data.info.Sabiduria);
-                            $('#Carisma').text(data.info.Carisma);
-                            $('#Img').attr('src', '../img/avatar/' + data.info.Img);
-
-
-                            $('#armes').empty();
-                            data.info.armes.forEach(arme => {
-                                $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
-                            });
-
-                            $('#armadures').empty();
-                            data.info.armadures.forEach(armure => {
-                                $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
-                            }
-                            );
-
-                            $('#objetos').empty();
-                            data.info.objetos.forEach(objeto => {
-                                $('#objetos').append('<div>'+objeto.nom_Objeto+" - "+objeto.cantidad+'</div>');
-                            }
-                            );
-                        }
+                        connexio.send(JSON.stringify({id: data.info.IdPersonaje, accio: "afegirInfo"}));
                     
                         
                     });
@@ -228,7 +190,48 @@
                     document.getElementById('fondo').appendChild(div);
                 
                 break;
-                
+
+                case 'afegirInfo':
+
+                    if (data.info.id == data.info.id) {
+                        $('#modal').css('display', 'block');
+                        $('#modal').show();
+                        
+                        $('#NomPersonatge').text(data.info.NomPersonatge);
+                        $('#raza').text(data.info.raza);
+                        $('#clase').text(data.info.clase);
+                        $('#nivel').text(data.info.nivel);
+                        $('#Vida').text(data.info.Vida);
+                        $('#Iniciativa').text(data.info.Iniciativa);
+                        $('#Fuerza').text(data.info.Fuerza);
+                        $('#Destreza').text(data.info.Destreza);
+                        $('#Constitucion').text(data.info.Constitucion);
+                        $('#Inteligencia').text(data.info.Inteligencia);
+                        $('#Sabiduria').text(data.info.Sabiduria);
+                        $('#Carisma').text(data.info.Carisma);
+                        $('#Img').attr('src', '../img/avatar/' + data.info.Img);
+
+
+                        $('#armes').empty();
+                        data.info.armes.forEach(arme => {
+                            $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
+                        });
+
+                        $('#armadures').empty();
+                        data.info.armadures.forEach(armure => {
+                            $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
+                        }
+                        );
+
+                        $('#objetos').empty();
+                        data.info.objetos.forEach(objeto => {
+                            $('#objetos').append('<div>'+objeto.nom_Objeto+" - "+objeto.cantidad+'</div>');
+                        }
+                        );
+                    }
+                    
+                    break;
+                    
                 case 'TancarConexio':
                     alert("S'ha tancat la connexió");
                     window.location.href = "../index.php";
