@@ -5,15 +5,16 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['errorLogin'] = 'Has de estar loguejat per crear un personatje';
+    $_SESSION['errorLogin'] = 'Has d\'iniciar sessió per crear un personatge';
     header('Location: ../index.php');
     die();
 }
 
 if (isset($_SESSION['error'])) {
-    
+
     unset($_SESSION['error']);
-} 
+}
+
 
 
 if (isset($_POST['submit'])) {
@@ -34,74 +35,81 @@ if (isset($_POST['submit'])) {
         $sabiduria = $_POST['Sabiduria'];
         $carisma = $_POST['Carisma'];
 
-        
-       
+        if(strlen($nombre) > 20){
+            $_SESSION['errorPersonatge'] = 'El nom no pot tenir més de 20 caràcters';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+
+        }
+
 
         //depenent de que la img hagi sigut pujada o no, guardem la ruta de la img
- 
+
 
         if (isset($_FILES['imgPerfil'])) {
             $imagen = $_FILES['imgPerfil'];
-            //var_dump($imagen);
             
-            $infoImagen = getimagesize($imagen['tmp_name'][0]);
-            $nameImage =$imagen['name'][0];
-            $fileType = pathinfo($nameImage, PATHINFO_EXTENSION);
 
-            // var_dump($fileType);
-            $allow = array("png","jpg", "jpeg");
+            if (empty($imagen['tmp_name'][0])) {
+                $_SESSION['errorPersonatge'] = 'Has de pujar una imatge';
+            } else {
 
-                    
-            if (!in_array($fileType, $allow)) {
-                 $_SESSION['error'] = 'El archivo debe ser una imagen JPEG o PNG';
-            }else{
 
-                $UnicName = uniqid() . $imagen['name'][0];
 
-                $ruta = '../img/avatar/' . $UnicName;
-                move_uploaded_file($imagen['tmp_name'][0], $ruta);
-            
-                $imagen = $UnicName;
+                $infoImagen = getimagesize($imagen['tmp_name'][0]);
+                $nameImage = $imagen['name'][0];
+                $fileType = pathinfo($nameImage, PATHINFO_EXTENSION);
+
+                // var_dump($fileType);
+                $allow = array("png", "jpg", "jpeg");
+
+
+                if (!in_array($fileType, $allow)) {
+                    $_SESSION['errorPersonatge'] = 'El archivo debe ser una imagen JPEG o PNG';
+                } else {
+
+                    $UnicName = uniqid() . $imagen['name'][0];
+
+                    $ruta = '../img/avatar/' . $UnicName;
+                    move_uploaded_file($imagen['tmp_name'][0], $ruta);
+
+                    $imagen = $UnicName;
+                }
             }
+        } else if (isset($_POST['nomImgPerfil'])) {
 
-                
-        }else if(isset($_POST['nomImgPerfil'])){
-
-            if($_POST['nomImgPerfil'] == ''){
-                $_SESSION['error'] = 'Has de seleccionar una imatge de perfil';
-            }   
+            if ($_POST['nomImgPerfil'] == '') {
+                $_SESSION['errorPersonatge'] = 'Has de seleccionar una imatge de perfil';
+            }
             $imagen = $_POST['nomImgPerfil'];
-        }else{
-            $_SESSION['error'] = 'Has de tenir una imatge de perfil';
+        } else {
+            $_SESSION['errorPersonatge'] = 'Has de tenir una imatge de perfil';
         }
 
-           
-
-        if($raza == 'Raza'){
-            $_SESSION['error'] = 'Has de seleccionar una raza';
+        if ($raza == 'Raza') {
+            $_SESSION['errorPersonatge'] = 'Has de seleccionar una raça';
         }
 
-        if($clase == 'Class'){
-            $_SESSION['error'] = 'Has de seleccionar una clase';
+        if ($clase == 'Class') {
+            $_SESSION['errorPersonatge'] = 'Has de seleccionar una clase';
         }
 
         if ($nombre == '') {
-            $_SESSION['error'] = 'El nombre no puede estar vacio';
-                     
+            $_SESSION['errorPersonatge'] = 'El nom no pot estar buit';
         }
 
-        if(!isset($_SESSION['error'])){
-            require_once '../model/personatje.php';
-            $personatje = new Personatje();
-            $personatje->crearPersonatge($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
-            $_SESSION['success'] = 'Personatge creat correctament';
+        if (!isset($_SESSION['errorPersonatge'])) {
+            require_once '../model/personatge.php';
+            $personatge = new personatge();
+            $personatge->crearPersonatge($id, $raza, $clase, $nombre, $fuerza, $vida, $iniciativa, $constitucion, $destreza, $inteligencia, $sabiduria, $carisma, $imagen);
+            $_SESSION['successMapes'] = 'Personatge creat correctament';
+            $_SESSION['errorPersonatge'] = null;
             header('Location: ../index.php');
             die();
         }
-        
-        
     } else {
-        $_SESSION['error'] = 'Falta seleccionar la raza y la clase';
+        $_SESSION['errorPersonatge'] = 'Falta seleccionar la raza y la clase';
         header('Location: ../vista/crearPersonatge.view.php');
         die();
     }

@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/personatje.php';
+require_once '../model/personatge.php';
 
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -9,7 +9,7 @@ if (isset($_SESSION['errorPersonatge'])) {
     unset($_SESSION['errorPersonatge']);
 } 
 
-$personatges = new Personatje();
+$personatges = new personatge();
 
 
 
@@ -31,7 +31,7 @@ if(isset($_POST['eliminarPersonatge'])){
         unlink("../img/avatar/".$nomAvarar['Img']);
     }
 
-    $personatges->deletePersonatje($id);
+    $personatges->deletepersonatge($id);
     $_SESSION['successPersonatge'] = "Personatge eliminat correctament";
     header("Location: personatges.controller.php");
     exit();

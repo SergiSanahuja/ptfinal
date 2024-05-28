@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/personatje.php';
+require_once '../model/personatge.php';
 
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -23,8 +23,8 @@ if(isset($_SESSION['user'])){
 
 
 
-//Creem un objecte de la classe Personatje
-$personatges = new Personatje();
+//Creem un objecte de la classe personatge
+$personatges = new personatge();
 
 //Cridem a la funció getPersonatgeByUser per a que ens retorni tots els personatges de l'usuari
 $llistaPersonatges = $personatges->getPersonatgeByUser($usuario);

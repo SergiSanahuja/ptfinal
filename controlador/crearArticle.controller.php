@@ -24,7 +24,7 @@
 
     $foro = new Foro();
     if(empty($id)){
-        $_SESSION['errorArticle'] = 'No pots crear un article sense estar loguejat';
+        $_SESSION['errorArticle'] = 'No pots crear un article sense iniciar sessió';
         header('Location: ../controlador/foro.controller.php');
         exit();
     }else{

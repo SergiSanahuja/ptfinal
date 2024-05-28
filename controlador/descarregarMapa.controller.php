@@ -6,15 +6,17 @@ if(session_status() == PHP_SESSION_NONE){
 
 require_once '../model/User.model.php';
 
+$_SESSION_['errorMapa'] = null;
 
 $usuario = new User();
 $idMapa = $_GET['id'];
+$titol = $usuario->getMapa($idMapa)['titol'];
 $id_usuario = $_SESSION['user'];
 $mapaDescarregat = false;
 $MapesUsuari = $usuario->getMapasUser($id_usuario);
 
 foreach($MapesUsuari as $mapa){
-    if($mapa['id'] == $idMapa){
+    if($mapa['titol'] == $titol){
         $mapaDescarregat = true;
         break;
     }else{
@@ -28,7 +30,7 @@ if($mapaDescarregat){
     $_SESSION['errorMapa'] = "Ja tens aquest mapa descarregat";
     $mapaDescarregat = false;
 
-    header("Location: ../cotrolador/mapes.controller.php");
+    header("Location: ../controlador/mapes.controller.php");
     exit();
 
 }else{

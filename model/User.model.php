@@ -6,7 +6,7 @@ require_once 'db.model.php';
 
 class User extends DB{
 
-    //agafa tots els personatjes de la base de dades
+    //agafa tots els personatges de la base de dades
     public function getUsers(){
         $sql = "SELECT * FROM users";
         $stmt = $this->connect()->query($sql);

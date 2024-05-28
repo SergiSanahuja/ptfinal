@@ -24,7 +24,7 @@ if(isset($_SESSION['successArticle'])){
 }
 
 if(empty($id)){
-    $_SESSION['errorArticle'] = 'No pots veure els teus articles sense estar loguejat';
+    $_SESSION['errorArticle'] = 'No pots veure els teus articles sense iniciar sessió';
     header('Location: ../controlador/foro.controller.php');
     exit();
 }else{

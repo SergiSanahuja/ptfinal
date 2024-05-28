@@ -1,7 +1,7 @@
 <?php
 
 require_once '../model/sala.php';
-require_once '../model/personatje.php';
+require_once '../model/personatge.php';
 
 if(session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -24,7 +24,7 @@ if(isset($_POST['codigoSala'])){
          header("Location: ../index.php");
         exit();
     }else{
-        $Personatges = new Personatje();      
+        $Personatges = new personatge();      
         $salas = new Sala();
 
         if($Personatges->getPersonatge($idPersonaje) == null){

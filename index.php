@@ -1,6 +1,6 @@
 <?php
 
-require_once './model/personatje.php';
+require_once './model/personatge.php';
 
 
 if(session_status() === PHP_SESSION_NONE) {
@@ -24,7 +24,7 @@ if(isset($_SESSION['user'])){
 // }
 
 
-$Personatge = new Personatje();
+$Personatge = new personatge();
 
 $llistaPersonatges = $Personatge->getPersonatgeByUser($usuario);
 

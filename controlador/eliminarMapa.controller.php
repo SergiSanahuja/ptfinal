@@ -37,13 +37,13 @@ if($mapa['id_usuari'] == $id_Usuari){
     // }
 
     $User->eliminarMapa($id_Article);
-    header('Location: ../controlador/mapes.controller.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit();
 
 
 }else{
     $_SESSION['errorMapa'] = "No tens permisos per eliminar aquest mapa";
-    header('Location: ../controlador/mapes.controller.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit();
 }
 

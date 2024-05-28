@@ -31,7 +31,7 @@ $article = new Foro();
 $contingut = $article->getContingutArticle($idArticle);
 
 if($idUsuari == null){
-    $_SESSION['errorLogin'] = 'Has d\'estar loguejat per editar un article';
+    $_SESSION['errorLogin'] = 'Has d\'inicaiar sessió per editar un article';
     header('Location: ../controlador/foro.controller.php');
     die();
 }

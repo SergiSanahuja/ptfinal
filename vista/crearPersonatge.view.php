@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/crearPersonatge.css">
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
-    <script type="module" src="../Personatje/personatje.js"></script>
+    <script type="module" src="../personatge/personatge.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -25,7 +25,7 @@
     <div class="character-container">
         <div class="row">
             <div class="col">
-                <h1>Crear Personatje</h1>
+                <h1>Crear personatge</h1>
             </div>
             <div>
                 <a href="../index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
@@ -42,8 +42,8 @@
                         
                         <?php  
                             
-                          if(isset($_SESSION['error'])) {
-                            echo '<div class="alert alert-danger">' . $_SESSION['error'] . '</div>';
+                          if(isset($_SESSION['errorPersonatge'])) {
+                            echo '<div class="alert alert-danger">' . $_SESSION['errorPersonatge'] . '</div>';
                           
                           }
                            
@@ -63,7 +63,8 @@
                     <div class="col-sm pt-3 pb-3 datos">
                         <div class="row mb-4">
                             <div class="col d-flex justify-content-center">
-                                <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                                <label for="nombre">Nom</label>
+                                <input type="text" name="nombre" id="nombre" maxlength="20" placeholder="Nombre">
 
                             </div>
                         </div>
