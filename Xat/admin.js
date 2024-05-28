@@ -261,76 +261,9 @@
                 
                     //Quan es fa click al div, mostrar la informació del jugador
                     cell.addEventListener('click', function() {
-                        
-                        if (data.info.id == data.info.id) {
-                            $('#modal').css('display', 'block');
-                            $('#modal').show();
-                            
-                            $('#NomPersonatge').text(data.info.NomPersonatge);
 
-                            $('#id').text(data.info.id);
-                            $('#IdPersonaje').text(data.info.IdPersonaje);
-                            $('#raza').text(data.info.raza);
-                            $('#clase').text(data.info.clase);
-                            $('#nivel').val(data.info.nivel);
-                            $('#Vida').text(data.info.Vida);
-                            $('#Iniciativa').text(data.info.Iniciativa);
-                            $('#Fuerza').val(data.info.Fuerza);
-                            $('#Destreza').val(data.info.Destreza);
-                            $('#Constitucion').val(data.info.Constitucion);
-                            $('#Inteligencia').val(data.info.Inteligencia);
-                            $('#Sabiduria').val(data.info.Sabiduria);
-                            $('#Carisma').val(data.info.Carisma);
-                            $('#Img').attr('src', '../img/avatar/' + data.info.Img);
-
-                          
-                            $('#armes').empty();
-                            data.info.armes.forEach(arme => {
-                                $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
-                            });
-
-                            $('#armadures').empty();
-                            data.info.armadures.forEach(armure => {
-                                $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
-                            }
-                            );
-
-                            $('#objetos').empty();
-                            data.info.objetos.forEach(objeto => {
-                               let div = document.createElement('div');
-                                
-                                 div.textContent = objeto.nom_Objeto+' - '+objeto.cantidad;
-                                 div.className = 'object';
-                                 div.tabIndex = 0;
-
-                                 div.addEventListener('click', function() {
-                                    $("#useObjectModal").modal('show');
-                                    $('#objectNameUse').text(objeto.nom_Objeto);
-                                    $('#quantityUse').text(objeto.cantidad);
-                                    $('#objectDescriptionUse').text(objeto.descripcion);
-
-                                    if($("#expulsarJugador").prop('disabled') == false){
-                                        $('#expulsarJugador').prop('disabled', true);
-                                        $('#updateCharacter').prop('disabled', true);
-                                        $('.openModalAddObject').prop('disabled', true);
-                                    }else{
-                                        $('#expulsarJugador').prop('disabled', false);
-                                        $('#updateCharacter').prop('disabled', false);
-                                        $('.openModalAddObject').prop('disabled', false);
-                                    }
-
-
-                                 });
-
-
-                                $('#objetos').append(div);
-                            });
-
-
-
-
-                        }
-                    
+                        connexio.send(JSON.stringify({id: data.info.IdPersonaje, accio: "afegirInfo"}));
+                                            
                         
                     });
                   
@@ -394,6 +327,43 @@
                     
                     break;
 
+                case 'addObject':
+
+                    //Aquesta part del codi es per a quan el GM afegix un objecte a un jugador, es vegi reflectit en la taula de la informació del jugador sense haver de recargar la fitxa
+
+                    if($('.'+data.nom_Objeto).length > 0){
+                        $('.'+data.nom_Objeto).text(data.nom_Objeto+ " - "+ data.quantitat);
+                    }else{
+                        let div = document.createElement('div');
+                        div.textContent = data.nom_Objeto+' - '+data.quantitat;
+                        div.className = 'object '+data.nom_Objeto;
+                        div.tabIndex = 0;
+
+                        div.addEventListener('click', function() {
+                            $("#useObjectModal").modal('show');
+                            $('#objectNameUse').text(data.nom_Objeto);
+                            $('#quantityUse').text(data.quantitat);
+                            $('#objectDescriptionUse').text(data.descripcio);
+                        });
+
+                        $('#objetos').append(div);
+                    }
+
+
+
+
+                case 'useObject':
+
+                    //Aquesta part del codi es per a quan el jugador utilitza un objecte, es vegi reflectit en la taula de la informació del jugador sense haver de recargar la fitxa
+
+                    if(data.info > 0){
+                        
+                        $('.'+data.clase).text(data.clase+ " - "+ data.info);
+                    }else{
+                        $('.'+data.clase).remove();
+                    }
+                        break;
+
                 case 'desconectarJugador':
                     
                     while (document.getElementById(data.id)) {
@@ -410,14 +380,90 @@
 
 
                 case 'moureJugador':
+
+                    /**
+                     * TODO: Moure el jugador
+                     */
+
                     let jugador = document.getElementById(data.id);
                     jugador.style.left = data.x + 'px';
                     jugador.style.top = data.y + 'px';
                     break;
 
 
-                case 'addObject':
-                    
+                case 'afegirInfo':
+
+                    /**
+                     * Mostrar la informació del jugador actualitzada cada cop que es fa click al nom del jugador a la taula
+                     */
+
+                    if (data.info.id == data.info.id) {
+                        $('#modal').css('display', 'block');
+                        $('#modal').show();
+                        
+                        $('#NomPersonatge').text(data.info.NomPersonatge);
+
+                        $('#id').text(data.info.id);
+                        $('#IdPersonaje').text(data.info.IdPersonaje);
+                        $('#raza').text(data.info.raza);
+                        $('#clase').text(data.info.clase);
+                        $('#nivel').val(data.info.nivel);
+                        $('#Vida').text(data.info.Vida);
+                        $('#Iniciativa').text(data.info.Iniciativa);
+                        $('#Fuerza').val(data.info.Fuerza);
+                        $('#Destreza').val(data.info.Destreza);
+                        $('#Constitucion').val(data.info.Constitucion);
+                        $('#Inteligencia').val(data.info.Inteligencia);
+                        $('#Sabiduria').val(data.info.Sabiduria);
+                        $('#Carisma').val(data.info.Carisma);
+                        $('#Img').attr('src', '../img/avatar/' + data.info.Img);
+
+                      
+                        $('#armes').empty();
+                        data.info.armes.forEach(arme => {
+                            $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
+                        });
+
+                        $('#armadures').empty();
+                        data.info.armadures.forEach(armure => {
+                            $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
+                        }
+                        );
+
+                        $('#objetos').empty();
+                        data.info.objetos.forEach(objeto => {
+                           let div = document.createElement('div');
+                            
+                             div.textContent = objeto.nom_Objeto+' - '+objeto.cantidad;
+                             div.className = 'object '+objeto.nom_Objeto;
+                             
+                             div.tabIndex = 0;
+
+                             div.addEventListener('click', function() {
+                                $("#useObjectModal").modal('show');
+                                $('#objectNameUse').text(objeto.nom_Objeto);
+                                $('#quantityUse').text(objeto.cantidad);
+                                $('#objectDescriptionUse').text(objeto.descripcion);
+
+                                if($("#expulsarJugador").prop('disabled') == false){
+                                    $('#expulsarJugador').prop('disabled', true);
+                                    $('#updateCharacter').prop('disabled', true);
+                                    $('.openModalAddObject').prop('disabled', true);
+                                }else{
+                                    $('#expulsarJugador').prop('disabled', false);
+                                    $('#updateCharacter').prop('disabled', false);
+                                    $('.openModalAddObject').prop('disabled', false);
+                                }
+
+
+                             });
+
+
+                            $('#objetos').append(div);
+                        });
+
+
+                    }
                     break;
          
 
