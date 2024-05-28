@@ -201,20 +201,23 @@
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-sm-6 h4">
+                            <div class="col-sm-3 col-md-6  h4">
 
                                 <div class="row justify-content-center">
-
-                                    <i class="bi bi-heart-fill mr-1"></i>
-                                    <div><label for="vida">Vida:</label></div>
+                                    <div >
+                                        <i class="bi bi-heart-fill mr-1"></i>
+                                    </div>
+                                    <div ><label for="vida">Vida:</label></div>
                                     <div id="Vida">5</div>
                                 </div>
 
                             </div>
-                            <div class="col-sm-6 h4">
+                            <div class="col-sm-3 col-md-6 h4">
                                 <div class="row justify-content-center">
+                                    <div>
 
-                                    <i class="bi bi-activity"></i>
+                                        <i class="bi bi-activity"></i>
+                                    </div>
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
                                     <div id="Iniciativa">5</div>
 
@@ -224,8 +227,8 @@
 
                     </div>
                     <div id="infoPersonatge" class="row justify-content-center align-items-center ">
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
                                     <defs>
@@ -242,37 +245,37 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row  d-flex justify-content-sm-center">
                                 <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
                                 <div><label for="Destreza">Destresa:</label></div>
 
                                 <input type="number" name="skill" id="Destreza"></input>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitució:</label></div>
                                 <input type="number" name="constitution" id="Constitucion"></input>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">Intel·ligència:</label></div>
                                 <input type="number" name="inteligence" id="Inteligencia"></input>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Saviesa:</label></div>
                                 <input type="number" name="wisdom" id="Sabiduria"></input>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
                                 <input type="number" name="charisma" id="Carisma"></input>

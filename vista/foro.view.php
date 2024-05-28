@@ -62,7 +62,7 @@
                  
                 <?php
                 if(isset($_SESSION['user'])){
-                    echo '<div class="collapse navbar-collapse" id="navbarNav">
+                    echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                     <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
@@ -71,9 +71,9 @@
                     <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
-                    </div>';
+                    ';
                 }else{
-                    echo '<div class="collapse navbar-collapse" id="navbarNav">
+                    echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                     <a class="nav-link" href="../vista/login.php">Login</a>
@@ -83,7 +83,7 @@
                     
                     </li>
                     </ul>
-                    </div>';
+                    ';
                 }
                 
                 ?>

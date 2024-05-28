@@ -156,20 +156,22 @@
                     <div class="modal-body ">
                         <div class="row justify-content-around">
 
-                            <div class="col-sm-3  h4">
+                            <div class="col-sm-3 col-md-6  h4">
 
                                 <div class="row justify-content-center">
-
-                                    <i class="bi bi-heart-fill mr-1"></i>
+                                    <div>
+                                        <i class="bi bi-heart-fill mr-1"></i>
+                                    </div>
                                     <div class=""><label for="vida">Vida:</label></div>
                                     <div id="Vida">5</div>
                                 </div>
 
                             </div>
-                            <div class="col-sm-3 h4">
+                            <div class="col-sm-3 col-md-6 h4">
                                 <div class="row justify-content-center">
-
-                                    <i class="bi bi-activity"></i>
+                                    <div>
+                                        <i class="bi bi-activity"></i>
+                                    </div>
 
                                     <div><label for="Iniciativa">Iniciativa:</label></div>
 
@@ -180,9 +182,9 @@
                         </div>
 
                     </div>
-                    <div id="infoPersonatge" class="row justify-content-center align-items-center ">
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                    <div id="infoPersonatge" class="row justify-content-sm-center align-items-center ">
+                        <div class="col-sm-6 col-xl-4 h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
                                     <defs>
                                     </defs>
@@ -197,39 +199,38 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class=" col-sm-6 col-xl-4 h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 <!-- <i class="bi bi-lightning-fill"></i> -->
 
                                 <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="imagen de destreza">
                                 <div><label for="Destreza">Habilitat:</label></div>
-
                                 <div id="Destreza"></div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class=" col-sm-6 col-xl-4 h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitució:</label></div>
                                 <div id="Constitucion"></div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class=" col-sm-6 col-xl-4 h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">intel·ligència:</label></div>
                                 <div id="Inteligencia"></div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class=" col-sm-6 col-xl-4 h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Saviesa:</label></div>
                                 <div id="Sabiduria"></div>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-6 h4">
-                            <div class="row">
+                        <div class=" col-sm-6 col-xl-4h4">
+                            <div class="row d-flex justify-content-sm-center">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
                                 <div id="Carisma"></div>

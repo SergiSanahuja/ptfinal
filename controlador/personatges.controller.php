@@ -26,6 +26,7 @@ if(isset($_SESSION['user'])){
 //Creem un objecte de la classe personatge
 $personatges = new personatge();
 
+
 //Cridem a la funció getPersonatgeByUser per a que ens retorni tots els personatges de l'usuari
 $llistaPersonatges = $personatges->getPersonatgeByUser($usuario);
 

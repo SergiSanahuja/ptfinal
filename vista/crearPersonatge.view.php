@@ -21,6 +21,7 @@
 
 <body>
 
+    
 
     <div class="character-container">
         <div class="row">
@@ -54,7 +55,7 @@
                             Arrastra una imagen aquí
                         </div>
 
-                          <input type="file" class="form-control mt-2 mb-2 imgPerfil" accept="image/jpeg, image/png" id="inputFile" name="imgPerfil[]">
+                          <input type="file" class="form-control mt-2 mb-2 imgPerfil" accept="image/jpeg, image/png" id="inputFile" aria-label="Introduir una imatge" name="imgPerfil[]">
                           <input type="text" class="form-control mt-2 mb-2 imgPerfil" id="nomImgPerfil" name="nomImgPerfil" hidden> 
                         
 
@@ -63,14 +64,14 @@
                     <div class="col-sm pt-3 pb-3 datos">
                         <div class="row mb-4">
                             <div class="col d-flex justify-content-center">
-                                <label for="nombre">Nom</label>
+                                <label for="nombre" class="h2 mr-2">Nom:</label>
                                 <input type="text" name="nombre" id="nombre" maxlength="20" placeholder="Nombre">
 
                             </div>
                         </div>
                         <div class="row mb-3 ">
                             <div class="col d-flex justify-content-center">
-                                <select name="raza" id="raza">
+                                <select name="raza" id="raza" aria-label="selecciona una raça">
                                     <option value="Raza" default>Raza</option>
                                     <option value="Humà">Humà</option>
                                     <option value="Elf">Elf</option>
@@ -79,7 +80,7 @@
                                 </select>
                             </div>
                             <div class="col d-flex justify-content-center">
-                                <select name="clase" id="clase">
+                                <select name="clase" id="clase" aria-label="selecciona una clase">
                                     <option value="Class">Clase</option>
                                     <option value="Guerrer">Guerrer</option>
                                     <option value="Mag">Mag</option>
@@ -90,25 +91,22 @@
                         </div>
 
 
-                        <div class="stats">
-                            <div class="row bg-secondary pt-1 mb-4">
-                                <div class="col-6 col-md-3 align-content-center">
-                                    <label for="vida">Vida:</label>
-                                </div>
-                                <div class="col-6  col-md-3 align-content-center" id="vida">
-                                    <input type="number" value="<?php echo isset($_POST['vida']) ? $_POST['vida'] : 5 ?>" name="vida" min=0 max=20 class="bg-secondary" style="border: none; color:white;">
-                                </div>
-                               
-                                <div class="col-6 col-md-3" >
-                                    <label for="iniciativa">Iniciativa:</label>
-                                </div>
-                               
-                                <div class="col-6 col-md-3"  id="iniciativa">
-                                    <input type="number" value="<?php echo isset($_POST['iniciativa']) ? $_POST['iniciativa'] : 5 ?>" name="iniciativa" min=0 max=20 class="bg-secondary" style="border: none; color:white;">
-                                    
-                                </div>
-
+                        <div class="row bg-secondary justify-content-center pt-1 mb-4">
+                           
+                            <div class="col-sm-12 col-xl-6 col-12 d-flex justify-content-center" id="vida">
+                                <label for="vida" class="h2">Vida:</label>
+                                <input type="number" value="<?php echo isset($_POST['vida']) ? $_POST['vida'] : 5 ?>" name="vida" min=0 max=20 class="bg-secondary" aria-label="Vida" style="border: none; color:white;">
                             </div>
+                            
+                            
+                            <div class="col-sm-12 col-xl-6 col-12 d-flex justify-content-center"  id="iniciativa">
+                                <label for="iniciativa" class="h3">Iniciativa:</label>                          
+                                <input type="number" value="<?php echo isset($_POST['iniciativa']) ? $_POST['iniciativa'] : 5 ?>" name="iniciativa" min=0 max=20 class="bg-secondary" aria-label="Iniciativa" style="border: none; color:white;">
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="stats">
                             <div class="row mb-5">
                                 <div class="col">
                                     <div class="row justify-content-center">
@@ -118,7 +116,7 @@
                                     <div class="row justify-content-center">
 
                                         <div id="Fuerza">
-                                          <input type="number" value="<?php echo isset($_POST['Fuerza']) ? $_POST['Fuerza'] : 5 ?>" name="Fuerza" min=0 max=20 style="border: none; color:white;">
+                                          <input type="number" value="<?php echo isset($_POST['Fuerza']) ? $_POST['Fuerza'] : 5 ?>" name="Fuerza" min=0 max=20 aria-label="Força" style="border: none; color:white;">
                                         </div>
                                     </div>
 
@@ -131,7 +129,7 @@
                         
                                     <div class="row justify-content-center">
                                         <div id="Destreza">
-                                            <input type="number" value="<?php echo isset($_POST['Destreza']) ? $_POST['Destreza'] : 5 ?>" name="Destreza" min=0 max=20 style="border: none; color:white;">
+                                            <input type="number" value="<?php echo isset($_POST['Destreza']) ? $_POST['Destreza'] : 5 ?>" name="Destreza" min=0 max=20 aria-label="Habilitat" style="border: none; color:white;">
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +142,7 @@
                                 
                                     <div class="row justify-content-center">
                                         <div id="Constitucion">
-                                            <input type="number" value="<?php echo isset($_POST['Constitucion']) ? $_POST['Constitucion'] : 5 ?>" name="Constitucion" min=0 max=20 style="border: none; color:white;">
+                                            <input type="number" value="<?php echo isset($_POST['Constitucion']) ? $_POST['Constitucion'] : 5 ?>" name="Constitucion" min=0 max=20 aria-label="Constitucio" style="border: none; color:white;">
                                         </div>
                                     </div>
 
@@ -160,7 +158,7 @@
                                     
                                     <div class="row justify-content-center">
                                         <div id="Inteligencia">
-                                            <input type="number" value="<?php echo isset($_POST['Inteligencia']) ? $_POST['Inteligencia'] : 5 ?>" name="Inteligencia" min=0 max=20 style="border: none; color:white;">
+                                            <input type="number" value="<?php echo isset($_POST['Inteligencia']) ? $_POST['Inteligencia'] : 5 ?>" name="Inteligencia" min=0 max=20 aria-label="Intel·ligencia" style="border: none; color:white;">
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +170,7 @@
                               
                                     <div class="row justify-content-center">
                                         <div id="Sabiduria">
-                                            <input type="number" value="<?php echo isset($_POST['Sabiduria']) ? $_POST['Sabiduria'] : 5 ?>" name="Sabiduria" min=0 max=20 style="border: none; color:white;">
+                                            <input type="number" value="<?php echo isset($_POST['Sabiduria']) ? $_POST['Sabiduria'] : 5 ?>" name="Sabiduria" min=0 max=20 aria-label="Saviesa" style="border: none; color:white;">
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +182,7 @@
                                   
                                     <div class="row justify-content-center">
                                         <div id="Carisma">
-                                            <input type="number" value="<?php echo isset($_POST['Carisma']) ? $_POST['Carisma'] : 5 ?>" name="Carisma" min=0 max=20 style="border: none; color:white;">
+                                            <input type="number" value="<?php echo isset($_POST['Carisma']) ? $_POST['Carisma'] : 5 ?>" name="Carisma" min=0 max=20 aria-label="Carisma" style="border: none; color:white;">
                                         </div>
                                     </div>
                                 </div>
