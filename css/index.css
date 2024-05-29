@@ -5,7 +5,7 @@ body{
     background-color: #4C5B5C;
 }
 
-h1{
+h1, h2{
     color: rgb(252, 252, 252); 
     text-align: center;
     font-family: 'IM Fell English', serif;
@@ -33,15 +33,15 @@ h1{
 }
 
 .Inici{
-    color: rgb(160, 158, 158);
+
     text-decoration: none;
 
 }
 
-.Inici:hover{
-    color: white;
+/* .Inici:hover{
+    color: rgb(2, 2, 2);
     text-decoration: none;
-}
+} */
 
 .Personatges{
     color: rgb(160, 158, 158);
@@ -64,9 +64,17 @@ h1{
 }
 
 .btn:hover{
-    background-color: #a81414;
-    color: rgb(255, 200, 3);
+   animation: agrandar 0.2s linear forwards;
+   color: white;
 }
+
+@keyframes agrandar {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.1);}
+    
+}
+
+
 .footer{
     background-color: #A81414;
     color: white;

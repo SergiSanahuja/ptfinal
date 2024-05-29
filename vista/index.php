@@ -27,23 +27,22 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
-        <a class="Inici" href="./index.php "> <img src="./img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici nav-link active " href="./index.php ">FinalD</a>
+        <b><a class="Inici nav-link active text-light " href="./index.php "> <img src="./img/fondos/favicon.ico" alt="És el logo de la pàgina">FinalD</a></b>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="./controlador/personatges.controller.php" class="Personatges  nav-link ">Personatges </a>
+                        <a href="./controlador/personatges.controller.php" class="Personatges  nav-link text-light">Personatges </a>
                         
                     </li>
                     <li class="nav-item">
-                        <a href="./controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
+                        <a href="./controlador/mapes.controller.php" class="Personatges  nav-link text-light"> Mapes </a>
                         
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,10 +61,10 @@
                     echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                    <div id="name"  class="nav-link text-light" ">'.$_SESSION['username'].'</div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="./controlador/logout.controller.php">Logout</a>
+                    <a class="nav-link text-light" href="./controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
                     ';
@@ -102,7 +101,7 @@
 
         <div class="card">
             <div class="row justify-content-center">
-                <h1>Sala de JOC</h1>
+                <h2>Sala de JOC</h2>
 
             </div>
 
@@ -121,7 +120,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modalUnirSalaLabel">Unirse a Sala</h5>
+                            <p class="modal-title" id="modalUnirSalaLabel">Unirse a Sala</p>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -190,7 +189,7 @@
         <div class="card ">
 
             <div class="row p-3 justify-content-center">
-                <h1>Fòrum</h1>        
+                <h2>Fòrum</h2>        
             </div>
             <div class="row">
                 <div class="col-12">
