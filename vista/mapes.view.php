@@ -30,32 +30,22 @@
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-    <div class="container-fluid ">  
-        
-        <a class="Inici  " href="../index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici mr-3 " href="../index.php "> FinalD</a>
-
+    <div class="container-fluid">  
+        <a class="Inici nav-link  text-light pb-1" href="../index.php "> <img src="../img/fondos/favicon.ico" alt="És el logo de la pàgina">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link">Personatges </a>
+                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link text-light">Personatges </a>
                         
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMapes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Mapes
-                        </a>
-                        <div class="dropdown-menu" aria-label="navbarDropdownMapes">
-                            <a class="dropdown-item" href="../controlador/mapes.controller.php"> Mapes </a>
-                            <a class="dropdown-item" href="../controlador/mapesPropis.controller.php"> Mapes propis </a>
-                            
-                        </div>
+                    <li class="nav-item">
+                        <b><a href="../controlador/mapes.controller.php" class="Personatges  nav-link text-light"> Mapes </a></b>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,10 +64,10 @@
                     echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                    <div id="name"  class="nav-link text-light" ">'.$_SESSION['username'].'</div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                    <a class="nav-link text-light" href="../controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
                     ';
@@ -150,9 +140,9 @@
                     
                     echo '<div class="col-md-4 col-sm-12 mt-1">
                     <div class="card">
-                        <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top" height="270" alt="...">
+                        <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top" height="270" alt="Imatge del mapa'.$mapa['titol'].'">
                         <div class="card-body">
-                            <h5 class="card-title">' . $mapa['nom_mapa'] . '</h5>                            
+                            <h2 >' . $mapa['nom_mapa'] . '</h2>                            
                             <a href="../controlador/descarregarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger ">Descargar</a>
                         </div> </div> </div>';                  
                     }
@@ -168,7 +158,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addImageModalLabel">Afegir imatge</h5>
+                        <p class="modal-title" id="addImageModalLabel">Afegir imatge</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -180,8 +170,8 @@
                             <input type="text" class="form-control" id="imageTitle" max="20" name="nomMapa" placeholder="Introduce el título de la imagen">
                         </div>
                         <div class="form-grorp">
-                            <label for="nomMapa">Nom Mapa</label>
-                            <input type="file" class="form-control" name="imgMapa" id="imgMapa[]">
+                            <label for="imgMapa">Nom Mapa</label>
+                            <input type="file" class="form-control" name="imgMapa" id="imgMapa">
                         </div>
                     </div>
                     <div class="modal-footer">
