@@ -30,26 +30,23 @@
 </header>
 
 <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-    <div class="container-fluid ">  
-        
-        <a class="Inici  " href="../index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici mr-3 " href="../index.php "> FinalD</a>
-
+    <div class="container-fluid">  
+        <a class="Inici nav-link  text-light pb-1" href="../index.php "> <img src="../img/fondos/favicon.ico" alt="És el logo de la pàgina">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges active nav-link">Personatges </a>
+                        <b><a href="../controlador/personatges.controller.php" class="Personatges  nav-link text-light">Personatges </a></b>
                         
                     </li>
                     <li class="nav-item">
-                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
+                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link text-light"> Mapes </a>
                         
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -68,10 +65,10 @@
                     echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                    <div id="name"  class="nav-link text-light" ">'.$_SESSION['username'].'</div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                    <a class="nav-link text-light" href="../controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
                     ';
@@ -149,12 +146,12 @@
                             <div class="fitxaPersonatge row ">
                             
                                 <div class="col-lg-3 col-sm-3 col-md-12 align-self-center">                                                    
-                                    <img src="../img/avatar/' . $personatge['Img'] . '" class="rounded-circle imgPerfil"  alt="imatge de perfil">
+                                    <img src="../img/avatar/' . $personatge['Img'] . '" class="rounded-circle imgPerfil"  alt="imatge de perfil del personatge '.$personatge['nom'].'">
                                 </div>
                                 <div class="col-lg-9 col-sm-9 col-md-12">
                                     <div class="row">
                                         <div class="mt-lg-4 mt-sm-4 mt-md-3 col-sm-12 col-md-12 col-lg-12 nomPersonatge ">
-                                            <h3 class="card-title mt-2 ">' . $personatge['nom'] . '</h3>
+                                            <h2 class="card-title mt-2 ">' . $personatge['nom'] . '</h2>
                                         </div>
                                         
                                         <hr>
@@ -207,7 +204,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal">Fulla de personatge</h5>
+                    <h3 class="modal-title" id="modal">Fulla de personatge</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -224,21 +221,21 @@
                         <div class="row">
 
                             <div class="col-6 col-md-6">
-                                <label for="NomPersonatge">Nom</label>
-                                <h3 class="modal-title" id="NomPersonatge"></h3>
+                                <h3 for="NomPersonatge">Nom</h3>
+                                <h4 class="modal-title" name="NomPersonatge" id="NomPersonatge"></h4>
                             </div>
                             <div class="col-6 col-md-3">
-                                <label for="Raza">Raça</label>
+                                <h3 >Raça</h3>
                                 <h4 class="modal-title" id="raza"></h4>
                             </div>
                             <div class="col-6 col-md-2">
-                                <label for="clase">Clase</label>
+                                <h3 >Clase</h3>
                                 <h4 class="modal-title" name='clase' id="clase"></h4>
                             </div>
-                            <div class="col-6 col-md-3">
+                            <div class="col-6 col-md-3 mt-3">
                                 <label for="nivel">LV:</label>
                                 <!-- <h4 class="modal-title" name='nivel' id="nivel">LV</h4> -->
-                                <input type="number" min="0" max="20" name='nivel' id="nivel">
+                                <input type="number" min="0" max="20" name="nivel" id="nivel">
                             </div>
                         </div>
                     </div>
@@ -250,7 +247,7 @@
                                 <div class="row">
 
                                     <i class="bi bi-heart-fill mr-1"></i>
-                                    <div class=""><label for="vida">Vida:</label></div>
+                                    <div class=""><label for="Vida">Vida:</label></div>
                                     <!-- <div id="Vida"></div> -->
                                     <input type="number" min="0" max="20" name="Vida" id="Vida">
                                 </div>
