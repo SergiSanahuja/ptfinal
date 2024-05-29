@@ -44,12 +44,18 @@
                         <a href="../controlador/personatges.controller.php" class="Personatges  nav-link">Personatges </a>
                         
                     </li>
-                    <li class="nav-item">
-                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
-                        
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMapes" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Mapes
+                        </a>
+                        <div class="dropdown-menu" aria-label="navbarDropdownMapes">
+                            <a class="dropdown-item" href="../controlador/mapes.controller.php"> Mapes </a>
+                            <a class="dropdown-item" href="../controlador/mapesPropis.controller.php"> Mapes propis </a>
+                            
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

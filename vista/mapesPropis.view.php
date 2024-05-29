@@ -49,11 +49,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/mapes.controller.php">Inici</a>
-                            <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus mapes</a>
-                            <div class="dropdown-divider"></div>
-                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#addImageModal">
-                                Afegir Mapa
-                            </button>
+                            <a class="dropdown-item" href="../controlador/articlesPropis.controller.php">Els teus mapes</a>                      
 
                         </div>
                     </li>

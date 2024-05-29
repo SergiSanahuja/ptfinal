@@ -27,7 +27,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
-        <a class="Inici  " href="./index.php "> <img src="./img/fondos/favicon.ico" alt="logo"></a>
+        <a class="Inici" href="./index.php "> <img src="./img/fondos/favicon.ico" alt="logo"></a>
         <a class="Inici nav-link active " href="./index.php ">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -110,8 +110,6 @@
                 <div class="col-4 ">
                     <?php
                     
-
-                    
                         echo '<a href="./controlador/crearSala.controller.php" class="btn">Crear Sala</a>';
                     
                     ?>
@@ -119,7 +117,7 @@
                     
                 </div>
 
-                <div class="modal fade " id="modalUnirSala" tabindex="-1" role="dialog" aria-labelledby="modalUnirSalaLabel" aria-hidden="true">
+                <div class="modal fade" id="modalUnirSala" tabindex="-1" role="dialog" aria-labelledby="modalUnirSalaLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -196,7 +194,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <a href="./controlador/foro.controller.php" class="btn">Entrar</a>
+                    <a href="./controlador/foro.controller.php" class="btn">Fòrum</a>
                 </div>
             </div> 
         </div>

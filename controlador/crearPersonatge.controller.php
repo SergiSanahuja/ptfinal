@@ -45,17 +45,19 @@ if (isset($_POST['submit'])) {
 
 
         //depenent de que la img hagi sigut pujada o no, guardem la ruta de la img
-
+        
 
         if (isset($_FILES['imgPerfil'])) {
             $imagen = $_FILES['imgPerfil'];
+           
             
+            var_dump($imagen['tmp_name'][0]);
 
             if (empty($imagen['tmp_name'][0])) {
                 $_SESSION['errorPersonatge'] = 'Has de pujar una imatge';
             } else {
 
-
+                $_SESSION['errorPersonatge'] = null;
 
                 $infoImagen = getimagesize($imagen['tmp_name'][0]);
                 $nameImage = $imagen['name'][0];

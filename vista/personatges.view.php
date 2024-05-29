@@ -41,7 +41,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link">Personatges </a>
+                        <a href="../controlador/personatges.controller.php" class="Personatges active nav-link">Personatges </a>
                         
                     </li>
                     <li class="nav-item">
@@ -49,7 +49,7 @@
                         
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

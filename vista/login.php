@@ -15,7 +15,7 @@
 
 
        <!-- Bootstrap JS and jQuery -->
-       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-10">
                 </div>
-                <div class="col-1 d-flex" style="    display: flex!important; flex-direction: row; align-items: center;">
+                <div class="col-1 d-flex" style="display: flex!important; flex-direction: row; align-items: center;">
                     <a href="../index.php" class="mr-3" id="cross" style=" font-size:1.6rem;">&times;</a>
                 </div>
             </div>
