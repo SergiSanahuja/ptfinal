@@ -15,6 +15,11 @@ if(isset($_POST['codigoSala'])){
     $idPersonaje = $_POST['Personatge'];
     $_SESSION['idPersonatge'] = $idPersonaje;
     
+    if(!is_numeric($codigoSala)){
+        $_SESSION['errorLogin'] = "El codi de la sala ha de ser numérico";
+        header("Location: ../index.php");
+        exit();
+    }
     // var_dump($_SESSION['idPersonatge']);
     $salas = new Sala();
 

@@ -116,6 +116,8 @@
                     
                 </div>
 
+                <!-- Modal per unir-se a la sala -->
+
                 <div class="modal fade" id="modalUnirSala" tabindex="-1" role="dialog" aria-labelledby="modalUnirSalaLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -143,7 +145,7 @@
                                 <label for="codigoSala">Código de la Sala</label>
                                 <input type="text" class="form-control" id="codigoSala" name="codigoSala" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Unirse</button>
+                            <button type="submit" class="btn unrise">Unirse</button>
                             </form>
                         </div>
                         </div>

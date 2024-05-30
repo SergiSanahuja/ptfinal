@@ -7,7 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 if (!isset($_SESSION['username'])) {
     $_SESSION['errorLogin'] = 'Has d\'iniciar sessió per crear un personatge';
     header('Location: ../index.php');
-    die();
+    exit();
 }
 
 if (isset($_SESSION['error'])) {

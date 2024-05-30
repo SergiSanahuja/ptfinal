@@ -109,13 +109,13 @@ wsServer.on('connection', (client, peticio) => {
 
 							
 							//buscar l'inventari del personatge
-							const [rows2, fields2] = await con.execute("SELECT nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='arma'", [missatge.pesontage]);
+							const [rows2, fields2] = await con.execute("SELECT id, nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='arma'", [missatge.pesontage]);
 							infoClient.armes = rows2;
 
-							const [rows3, fields3] = await con.execute("SELECT nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='armadura'", [missatge.pesontage]);
+							const [rows3, fields3] = await con.execute("SELECT id, nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='armadura'", [missatge.pesontage]);
 							infoClient.armadures = rows3;
 
-							const [rows4, fields4] = await con.execute("SELECT nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='pocio'", [missatge.pesontage]);
+							const [rows4, fields4] = await con.execute("SELECT id, nom_Objeto, descripcion, cantidad FROM inventario WHERE id_Personaje = ? AND categoria='pocio'", [missatge.pesontage]);
 							infoClient.objetos = rows4;
 
 
@@ -415,6 +415,44 @@ wsServer.on('connection', (client, peticio) => {
 						console.log(err);
 					}
 					break;
+
+				case 'eliminarObjecte':
+					try {
+						// Eliminar l'objecte de l'inventari
+						con.execute("DELETE FROM inventario WHERE id_Personaje = ? AND nom_Objeto = ? AND categoria = ?", [missatge.id, missatge.nom_Objeto, missatge.categoria], function(err) {
+							if (err) {
+								throw err;
+							}
+						});
+
+						if (client.sala && salas[client.sala]) {
+							salas[client.sala].forEach((clients) => {
+								if (clients.character && clients.character.IdPersonaje == missatge.id) {
+									if (missatge.categoria == "arma") {
+										clients.character.armes = clients.character.armes.filter((objeto) => {
+											return objeto.nom_Objeto !== missatge.nom_Objeto;
+										});
+									} else if (missatge.categoria == "armadura") {
+										clients.character.armadures = clients.character.armadures.filter((objeto) => {
+											return objeto.nom_Objeto !== missatge.nom_Objeto;
+										});
+									}
+								}
+								for (let i = 0; i < salas[client.sala].length; i++) {
+									salas[client.sala][i].send(JSON.stringify({nom_Objeto: missatge.nom_Objeto, accio: "eliminarObjecte"}));
+								}
+							});
+						}
+
+						
+						
+			
+					} catch (err) {
+						console.log(err);
+					}
+
+					break;
+
 
 
 				case 'desconectarJugador':

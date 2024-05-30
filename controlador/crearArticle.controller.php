@@ -21,8 +21,8 @@
 
   
     $id = $_SESSION['user'];
-
     $foro = new Foro();
+
     if(empty($id)){
         $_SESSION['errorArticle'] = 'No pots crear un article sense iniciar sessió';
         header('Location: ../controlador/foro.controller.php');
@@ -53,6 +53,8 @@
         }else{
             $_SESSION['successArticle'] = "Article creat correctament";
             $_SESSION['errorArticle'] = null;
+
+            // pujar l'article a la base de dades
             $foro->crearArticle($id, $titulo, $contenido, $_FILES['img']['name'], date('Y-m-d H:i:s'));
             header('Location: ../controlador/foro.controller.php');
             exit();

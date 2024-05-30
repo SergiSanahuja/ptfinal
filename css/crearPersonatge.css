@@ -53,13 +53,6 @@ h1{
 
 }
 
-.footer{
-    background-color: #A81414;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 5px 5px 5px #888888;
-}
 
 
 input[type="text"] {
@@ -79,7 +72,7 @@ input[type="text"]:focus {
 }
 
 .character-container {
-    background-color: #606060;
+    background-color: #606060ab;
     background-size: cover;
     margin-top: 100px;
     /* margin-bottom: 50px; */
@@ -127,4 +120,3 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: inner-spin-button;
     opacity: 1;
 }
-

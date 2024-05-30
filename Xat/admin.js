@@ -34,6 +34,8 @@
 
         });
 
+        
+
 
         $(".openModalAddObject").on('click', function() {
 
@@ -120,8 +122,6 @@
             $('#message').toggle();
             $('#XatGlobal').toggle();
 
-           
-
         }
         );
 
@@ -142,8 +142,6 @@
          */
         $('#updateCharacter').on('click', function() {
             let id = $('#id').text();
-
-            
 
             let nivel = $('#nivel').val();
             let Vida = $('#Vida').text();
@@ -169,13 +167,7 @@
             let id = $('#IdPersonaje').text();
 
             confirm('Estas segur que vols utilitzar '+ cantitat+' de '+nom_Objeto+'?') ? connexio.send(JSON.stringify({id: id, cantitat: cantitat, nom_Objeto: nom_Objeto, accio: "useObject"})) : null;
-
-
-
-            
-            
-
-           
+      
 
         });
 
@@ -379,6 +371,13 @@
 
                         break;
 
+                
+                case 'eliminarObjecte':
+
+                    $('.'+data.nom_Objeto).remove();
+                 
+                    break;                   
+
                 case 'desconectarJugador':
                     
                     while (document.getElementById(data.id)) {
@@ -434,14 +433,40 @@
                         $('#Img').attr('src', '../img/avatar/' + data.info.Img);
 
                       
+                        // Per a cada arma posar un event listener per a eliminar-la
                         $('#armes').empty();
                         data.info.armes.forEach(arme => {
-                            $('#armes').append('<div>'+arme.nom_Objeto+'</div>');
+                            let div = document.createElement('div');
+                            div.textContent = arme.nom_Objeto;
+                            div.className = arme.nom_Objeto;
+                            
+                            div.tabIndex = 0;
+                        
+                            div.addEventListener('click', function() {
+                                // Aquí puedes añadir el código para eliminar la arma
+                                // Por ejemplo, puedes hacer una petición AJAX a tu servidor para eliminar la arma de la base de datos
+                                connexio.send(JSON.stringify({id: data.info.IdPersonaje,nom_Objeto: arme.nom_Objeto,categoria: "arma", accio: "eliminarObjecte"}));
+                            });
+                        
+                            $('#armes').append(div);
                         });
+
 
                         $('#armadures').empty();
                         data.info.armadures.forEach(armure => {
-                            $('#armadures').append('<div>'+armure.nom_Objeto+'</div>');
+                            let div = document.createElement('div');
+                            div.textContent = armure.nom_Objeto;
+                            div.className = armure.nom_Objeto;
+                            
+                            div.tabIndex = 0;
+                        
+                            div.addEventListener('click', function() {
+                                // Aquí puedes añadir el código para eliminar la armadura
+                                // Por ejemplo, puedes hacer una petición AJAX a tu servidor para eliminar la armadura de la base de datos
+                                connexio.send(JSON.stringify({id: data.info.IdPersonaje,nom_Objeto: armure.nom_Objeto,categoria: "armadura", accio: "eliminarObjecte"}));
+                            });
+                        
+                            $('#armadures').append(div);
                         }
                         );
 
