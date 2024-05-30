@@ -119,6 +119,9 @@
         $('#ChatHidden').on('click', function() {
             $('#message').toggle();
             $('#XatGlobal').toggle();
+
+           
+
         }
         );
 
@@ -165,7 +168,12 @@
             let nom_Objeto = $('#objectNameUse').text();
             let id = $('#IdPersonaje').text();
 
-            connexio.send(JSON.stringify({id: id, cantitat: cantitat, nom_Objeto: nom_Objeto, accio: "useObject"}));
+            confirm('Estas segur que vols utilitzar '+ cantitat+' de '+nom_Objeto+'?') ? connexio.send(JSON.stringify({id: id, cantitat: cantitat, nom_Objeto: nom_Objeto, accio: "useObject"})) : null;
+
+
+
+            
+            
 
            
 
@@ -346,6 +354,7 @@
                             $('#objectDescriptionUse').text(data.descripcio);
                         });
 
+                        
                         $('#objetos').append(div);
                     }
 
@@ -362,6 +371,12 @@
                     }else{
                         $('.'+data.clase).remove();
                     }
+
+                        $('.openModalAddObject').prop('disabled', false);
+                        $('#expulsarJugador').prop('disabled', false);
+                        $('#updateCharacter').prop('disabled', false);
+                        $('#useObjectModal').modal('hide');
+
                         break;
 
                 case 'desconectarJugador':

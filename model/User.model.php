@@ -28,8 +28,15 @@ class User extends DB{
         return $result;
     }
 
-    public function getMapes(){
-        $sql = "SELECT * FROM mapas Group by titol";
+    public function getQuantitatMapes(){
+        $sql = "SELECT COUNT(*) as total FROM mapas";
+        $stmt = $this->connect()->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getMapes($inicio, $mapasPorPagina){
+        $sql = "SELECT * FROM mapas Group by titol LIMIT $inicio, $mapasPorPagina";
         $stmt = $this->connect()->query($sql);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;

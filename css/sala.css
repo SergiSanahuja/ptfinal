@@ -37,6 +37,11 @@
     
 }
 
+h2{
+    color: #201e1e;
+    font-family: 'IM Fell English', serif;
+}
+
 /* Xat de text */
 #XatGlobal{
     background-color: #eceaea;
@@ -135,13 +140,16 @@
 
 }
 input[type="number"] {
-    width: 40px;
+    width: 47px;
     border: none;
     color: white;
     background-color: #A81414;
     border-bottom: #ddd 2px solid;
     border-radius: 5px;
+
+    font-size: xx-large;
 }
+
 
 h1{
     color: #201e1e;
@@ -183,7 +191,7 @@ h1{
     }
     
     input[type="number"] {
-        width: 40px;
+        width: 50px;
         border: none;
         color: white;
         background-color: #A81414;
@@ -279,3 +287,8 @@ select {
     
 }
 
+/*MODAL DE UTILITZAR OBJECTES */
+
+#objectDescriptionUse, #objectNameUse{
+    font-size: x-large;
+}

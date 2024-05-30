@@ -33,11 +33,17 @@ if(!isset($_SESSION['user'])){
 
 
     
-$mapes = $User->getMapes();
+$quantitatMapes = $User->getQuantitatMapes();
 
 
 
+// En tu controlador
+$mapasPorPagina = 10; // Cambia esto al número de mapas que quieres mostrar por página
+$paginaActual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+$inicio = ($paginaActual - 1) * $mapasPorPagina;
 
+$totalPagines = ceil($quantitatMapes['total'] / 10);
+$mapes = $User->getMapes($inicio, $mapasPorPagina);
 
 
 include '../vista/mapes.view.php';

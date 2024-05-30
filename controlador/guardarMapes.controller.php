@@ -11,6 +11,8 @@ $User = new User();
 
 $id_Usuari = $_SESSION['user'];
 var_dump($_FILES['imgMapa']);
+unset($_SESSION['errorMapa']);
+unset($_SESSION['successMapa']);
 
 
 if (isset($_SESSION['error'])) {

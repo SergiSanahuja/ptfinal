@@ -27,13 +27,13 @@
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
 
         <a href="../index.php" class="navbar-brand">
-            <img src="../img/fondos/favicon.ico" alt="logo" class="d-inline-block align-text-center">
+            <img src="../img/fondos/favicon.ico" alt="logo de la pàgina" class="d-inline-block align-text-center">
             FinalD
         </a>
 
 
         <div>
-            <span class="navbar-brand mb-0 h1">Sala</span>
+            <h1 class="navbar-brand mb-0 h1">Sala</h1>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +85,7 @@
                 <div id="XatGlobal"></div>
 
                 <form onsubmit="enviar(event)" id="message">
-                    <textarea id="missatge" rows="3" onkeypress="enter(event)" placeholder="Escriu aquí el missatge" autofocus></textarea>
+                    <textarea id="missatge" rows="3" onkeypress="enter(event)" aria-label="escrui aquí el missatge" placeholder="Escriu aquí el missatge" autofocus></textarea>
                 </form>
 
                 <div id="salaCodi">
@@ -163,7 +163,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modal">Fulla de personatge</h5>
+                    <h2 class="modal-title" id="modal">Fulla de personatge</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -181,15 +181,15 @@
                     </div>
                     <div class="modal-header">
                         <div>
-                            <label for="NomPersonatge">Nom</label>
+                            <p >Nom</p>
                             <h3 class="modal-title" id="NomPersonatge"></h3>
                         </div>
                         <div>
-                            <label for="Raza">Raça</label>
+                            <p >Raça</p>
                             <h4 class="modal-title" id="raza"></h4>
                         </div>
                         <div>
-                            <label for="clase">Classe</label>
+                            <p >Classe</p>
                             <h4 class="modal-title" name='clase' id="clase"></h4>
                         </div>
                         <div>
@@ -218,7 +218,7 @@
 
                                         <i class="bi bi-activity"></i>
                                     </div>
-                                    <div><label for="Iniciativa">Iniciativa:</label></div>
+                                    <div><p >Iniciativa:</p></div>
                                     <div id="Iniciativa">5</div>
 
                                 </div>
@@ -335,7 +335,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="changeMapModalLabel">Canvxiar Mapa</h5>
+                    <h2 class="modal-title" id="changeMapModalLabel">Canviar Mapa</h2>
 
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -402,7 +402,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addObjectModalLabel">Añadir objeto</h5>
+                    <h2 class="modal-title" id="addObjectModalLabel">Añadir objeto</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -461,7 +461,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="useObjectModalLabel">Usar objeto</h5>
+                    <h2 class="modal-title" id="useObjectModalLabel">Usar objeto</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -479,7 +479,9 @@
                        <hr>
                        <div>
                             <h2>Descripció</h2>
-                            <div id="objectDescriptionUse" name="objectDescriptionUse"></div>
+                            <div >
+                                <p id="objectDescriptionUse" name="objectDescriptionUse" ></p>
+                            </div>
                        </div>
                     </div>
                     

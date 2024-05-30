@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+
+
+
+.navegacio{
+    background-color: #A81414;
+    color: white;
+    
+    box-shadow: 5px 5px 5px #888888;
+
+}
+
+.titol{
+    font-family: 'IM Fell English', serif;
+    font-size: 2rem;
+    
+    color: #000000;
+}
+
+.Inici{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+
+}
+
+.Inici:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.Personatges{
+    color: rgb(160, 158, 158);
+    text-decoration: none;
+}
+.Personatges:hover{
+    color: white;
+    text-decoration: none;
+}
+
+body{
+    background-image: url("../img/fondos/papiro.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+.fitxaPersonatge{
+    background-color: #f1f1f1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-family: 'IM Fell English', serif;
+    font-size: 1.5rem;
+;}
+
+.llista-Personatges{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5%;
+  font-size: small;
+}
+
+.nomPersonatge{
+    /* background-color: #a81414; */
+    border-radius: 6px;
+    color: rgb(0, 0, 0);
+}
+
+.imgPerfil{
+    width: 5.2rem;
+    height: 5.2rem;
+   
+    margin: 5%;
+}
+
+
+
+.btn{
+    margin: none;
+    padding: 10px;
+    background-color: #A81414;
+    color: white;
+}
+
+.btn:hover{
+    background-color: #590a0a;
+    text-decoration: none;
+    color: white;
+}
+
+@keyframes agrandar {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.1);}
+    
+}
+
+#modificarPersonatge:hover{
+   cursor: pointer;
+
+}
+
+.editarPersonatge{
+    cursor: pointer;
+}
+
+.crearPersonatge{
+    background-color: #A81414;
+    color: white;
+    padding: 2px;
+    border-radius: 10px;
+    margin: 5%;
+    size: 10%;
+}
+
+.crearPersonatge:hover{
+    background-color: #590a0a;
+    text-decoration: none;
+    color: white;
+}
+
+.section-btn{
+    margin: none;
+    padding: 5px;
+    background-color: #A81414;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer{
+    
+    bottom: 0px;
+    background-color: #A81414;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #888888;
+
+
+}
+
+.afegirMapa{
+    padding: 5px;
+}
+
+
+#idPersonatge, #Img, #infoPersonatge, #inventari {
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+@media  (max-width: 1900px ){
+   
+
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 60%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 15%;
+        top: 5%;
+    }
+
+    input[type="number"] {
+        width: 40px;
+        border: none;
+        color: white;
+        background-color: #A81414;
+        border-bottom: #ddd 2px solid;
+        border-radius: 5px;
+    }
+
+    select {
+        width: 100px;
+        height: 100%;
+        border: none;
+        color: white;
+        background-color: #A81414;
+        border-bottom: #ddd 2px solid;
+        border-radius: 5px;
+    }
+
+    hr{
+        border: 1px solid #A81414;
+        width: 100%;
+        animation: cargarLinea 2s ;
+    
+    }
+   
+
+}
+
+@media (min-width: 768px){
+
+    
+
+    .imgPerfil{
+        width: 5.2rem;
+        height: 5.2rem;
+       
+        margin: 5%;
+
+        animation: opacity 3s;
+    }
+    hr{
+
+        border: 1px solid #A81414;
+        width: 90%;
+    
+    }
+
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 70%;
+        height: auto;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 15%;
+        top: 5%;
+    }
+    
+    input[type="number"] {
+        width: 40px;
+        border: none;
+        color: white;
+        background-color: #A81414;
+        border-bottom: #ddd 2px solid;
+    }
+}
+
+@media (max-width: 768px){
+    .titol{
+        font-family: 'IM Fell English', serif;
+        font-size: 2rem;
+        text-align: center;
+        color: #000000;
+    }
+
+    .modal {
+        background-color: #f4e8c1;
+        border: 2px solid #000;
+    
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    
+        left: 5%;
+        top: 5%;
+    }
+    
+}
+
+@media (max-width: 575px){
+    .imgPerfil{
+        width: 5.2rem;
+        height: 5.2rem;
+       
+        margin: 5%;
+    }
+    
+    .cartaPersonatge{
+        margin: 5%;
+        
+    }
+
+    .titol{
+        font-family: 'IM Fell English', serif;
+        font-size: 2rem;
+        text-align: center;
+        color: #000000;
+    }
+    .crearPersonatge{
+        margin: 5%;
+        size: 10%;
+    }
+
+    
+}
+
+
+@keyframes cargarLinea {
+
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+    
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

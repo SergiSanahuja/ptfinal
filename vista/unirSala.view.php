@@ -229,7 +229,7 @@
                                 <div id="Sabiduria"></div>
                             </div>
                         </div>
-                        <div class=" col-sm-6 col-xl-4h4">
+                        <div class=" col-sm-6 col-xl-4 h4">
                             <div class="row d-flex justify-content-sm-center">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>

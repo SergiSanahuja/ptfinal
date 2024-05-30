@@ -27,28 +27,30 @@
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark navegacio">
-    <div class="container-fluid ">  
-        
-        <a class="Inici  " href="../index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici mr-3 " href="../index.php "> FinalD</a>
-
+    <div class="container-fluid">  
+        <a class="Inici nav-link  text-light pb-1" href="../index.php "> <img src="../img/fondos/favicon.ico" alt="És el logo de la pàgina">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link">Personatges </a>
-                        
-                    </li>
-                    <li class="nav-item">
-                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
+                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link text-light">Personatges </a>
                         
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Fòrum
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdownMapa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Mapa
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMapa">
+                            <a class="dropdown-item" href="../controlador/mapes.controller.php">Inici</a>
+                            <a class="dropdown-item" href="../controlador/mapesPropis.controller.php">Els teus mapes</a>
+                        </div>
+                    </li>  
+                    <li class="nav-item dropdown">
+                      <b><a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Fòrum
+                        </a></b>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <div class="dropdown-divider"></div>
@@ -65,10 +67,10 @@
                     echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                    <div id="name"  class="nav-link text-light" ">'.$_SESSION['username'].'</div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                    <a class="nav-link text-light" href="../controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
                     ';
@@ -106,7 +108,7 @@
 
     ?>
 
-    <div class="container mt-2 h-100 ">
+    <div class="container mt-2 ">
         <h2>Últimes Publicacions</h2>       
         <?php
         
@@ -121,10 +123,10 @@
                 if(isset($_SESSION['user'])){
                     if($row['id_Usuari'] == $_SESSION['user']){
                         echo  '<div class="d-flex justify-content-end">';
-                        echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-none d-md-inline delete mr-3" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este artículo?\');">Eliminar</a>';
-                        echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn btn-danger d-inline d-md-none delete mr-3" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este artículo?\');"><i class="bi bi-trash"></i></a>';
-                        echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-none d-md-inline edit">Modificar</a>';
-                        echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn btn-primary d-inline d-md-none edit"><i class="bi bi-pencil"></i></a>';   
+                        echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn  d-none d-md-inline delete mr-3" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este artículo?\');">Eliminar</a>';
+                        echo '<a href="../controlador/eliminarArticle.controller.php?id='.$row['id'].'" class="btn  d-inline d-md-none delete mr-3" onclick="return confirm(\'¿Estás seguro de que quieres eliminar este artículo?\');"><i class="bi bi-trash"></i></a>';
+                        echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn  d-none d-md-inline edit">Editar</a>';
+                        echo '<a href="../controlador/editarArticle.controller.php?id='.$row['id'].'" class="btn  d-inline d-md-none edit"><i class="bi bi-pencil"></i></a>';   
                         echo '</div>';
                     };
                 }
@@ -139,7 +141,7 @@
 
    
     <footer class="footer">
-        <div class="container">
+        <div class="">
             <div class="row">
                 <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                     <p>&copy; FinalD&D</p>

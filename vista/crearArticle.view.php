@@ -25,23 +25,27 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark navegacio">
     <div class="container-fluid">  
-        <a class="Inici  " href="../../index.php "> <img src="../img/fondos/favicon.ico" alt="logo"></a>
-        <a class="Inici nav-link " href="../index.php ">FinalD</a>
+        <a class="Inici nav-link  text-light pb-1" href="../index.php "> <img src="../img/fondos/favicon.ico" alt="És el logo de la pàgina">FinalD</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link ">Personatges </a>
-                        
-                    </li>
-                    <li class="nav-item">
-                        <a href="../controlador/mapes.controller.php" class="Personatges  nav-link "> Mapes </a>
+                        <a href="../controlador/personatges.controller.php" class="Personatges  nav-link text-light">Personatges </a>
                         
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdownMapa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Mapa
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMapa">
+                            <a class="dropdown-item" href="../controlador/mapes.controller.php">Inici</a>
+                            <a class="dropdown-item" href="../controlador/mapesPropis.controller.php">Els teus mapes</a>
+                        </div>
+                    </li>  
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -57,18 +61,18 @@
                  
                 <?php
                 if(isset($_SESSION['user'])){
-                    echo '<div class="collapse navbar-collapse" id="navbarNav">
+                    echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <div id="name"  class="nav-link" ">'.$_SESSION['username'].'</div>
+                    <div id="name"  class="nav-link text-light" ">'.$_SESSION['username'].'</div>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.controller.php">Logout</a>
+                    <a class="nav-link text-light" href="../controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
-                    </div>';
+                    ';
                 }else{
-                    echo '<div class="collapse navbar-collapse" id="navbarNav">
+                    echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                     <a class="nav-link" href="../vista/login.php">Login</a>
@@ -78,7 +82,7 @@
                     
                     </li>
                     </ul>
-                    </div>';
+                    ';
                 }
                 
                 ?>

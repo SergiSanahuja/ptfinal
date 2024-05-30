@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="../css/personatges.css">
+    <link rel="stylesheet" href="../css/mapes.css">
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -41,9 +41,15 @@
                         <a href="../controlador/personatges.controller.php" class="Personatges  nav-link text-light">Personatges </a>
                         
                     </li>
-                    <li class="nav-item">
-                        <b><a href="../controlador/mapes.controller.php" class="Personatges  nav-link text-light"> Mapes </a></b>
-                    </li>
+                    <li class="nav-item dropdown">
+                       <b> <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdownMapa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         Mapa
+                        </a></b>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMapa">
+                            <a class="dropdown-item" href="../controlador/mapes.controller.php">Inici</a>
+                            <a class="dropdown-item" href="../controlador/mapesPropis.controller.php">Els teus mapes</a>
+                        </div>
+                    </li>  
                     <li class="nav-item dropdown">
                         <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
@@ -108,7 +114,7 @@
         ?>
     </div>
 
-    <div class="container h-100">
+    <div class="container ">
 
         <div class="row">
             <div class="col-md-8 mt-2 col-sm-12 titol justify-content-sm-center">
@@ -140,13 +146,19 @@
                     
                     echo '<div class="col-md-4 col-sm-12 mt-1">
                     <div class="card">
-                        <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top" height="270" alt="Imatge del mapa'.$mapa['titol'].'">
+                        <img src="../img/mapa/' . $mapa['titol'] . '.webp" class="card-img-top"  height="270" alt="Imatge del mapa'.$mapa['titol'].'">
                         <div class="card-body">
                             <h2 >' . $mapa['nom_mapa'] . '</h2>                            
                             <a href="../controlador/descarregarMapa.controller.php?id=' . $mapa['id'] . '" class="btn btn-danger ">Descargar</a>
                         </div> </div> </div>';                  
                     }
             ?>
+        </div>
+        <div class="pagination mb-5">
+            <?php for ($i = 1; $i <= $totalPagines; $i++): ?>
+                <a href="?pagina=<?php echo $i; ?>"><?php echo $i; ?></a>
+            <?php endfor; ?>
+
         </div>
 
     </div>
@@ -184,20 +196,18 @@
 
         </form>
     </div>
-
-
-</body>
-
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                <p>FinalD&D</p>
+    
+    <footer class="footer">
+        <div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                    <p>FinalD&D</p>
+                </div>
             </div>
         </div>
-    </div>
-
-</footer>
-
+        
+    </footer>
+    
+</body>
 
 </html>
