@@ -1,13 +1,13 @@
 <?php
 
-require '../model/User.model.php';
+require '../model/Mapa.model.php';
 
 if(session_status () == PHP_SESSION_NONE){
     session_start();
 }
 
 
-$User = new User();
+$User = new Mapa();
 
 $id_Usuari = $_SESSION['user'];
 var_dump($_FILES['imgMapa']);

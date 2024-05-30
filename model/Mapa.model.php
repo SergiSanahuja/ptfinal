@@ -4,7 +4,7 @@
 require_once 'db.model.php';
 
 
-class User extends DB{
+class Mapa extends DB{
 
     //agafa tots els personatges de la base de dades
     public function getUsers(){

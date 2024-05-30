@@ -2,13 +2,13 @@
 
 
 require_once '../model/db.model.php';
-require_once '../model/User.model.php';
+require_once '../model/Mapa.model.php';
 
 if(session_status () == PHP_SESSION_NONE){
     session_start();
 }
 
-$User = new User();
+$User = new Mapa();
 $id_Usuari = $_SESSION['user'];
 
 

@@ -134,15 +134,11 @@ body{
 }
 
 .footer{
-    
-    bottom: 0px;
     background-color: #A81414;
     color: white;
     padding: 10px;
     text-align: center;
     box-shadow: 5px 5px 5px #888888;
-
-
 }
 
 .afegirMapa{
@@ -154,6 +150,36 @@ body{
     border: 1px solid #000;
     padding: 10px;
     margin: 10px 0;
+}
+
+
+/* Paginacio */
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: #A81414;
+    color: white;
+    border: 1px solid #A81414;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
 }
 
 @media  (max-width: 1900px ){
@@ -314,3 +340,4 @@ body{
         opacity: 1;
     }
 }
+

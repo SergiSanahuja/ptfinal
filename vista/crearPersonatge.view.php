@@ -93,7 +93,7 @@
                            
                             <div class="col-sm-12 col-xl-6 col-12 d-flex justify-content-center" >
                                 <label for="vida" class="h2 mb-0">Vida:</label>
-                                <input type="number" value="<?php echo isset($_POST['vida']) ? $_POST['vida'] : 5 ?>" name="vida" id="vida" min=0 max=20 class="bg-secondary" aria-label="Vida" style="border: none; color:white;">
+                                <input type="number" value="<?php echo isset($_POST['vida']) ? $_POST['vida'] : 5 ?>" name="vida" id="vida" min=0 max=9999 class="bg-secondary" aria-label="Vida" style="border: none; color:white;">
                             </div>
                             
                             

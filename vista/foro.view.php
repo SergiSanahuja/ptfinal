@@ -48,9 +48,9 @@
                         </div>
                     </li>  
                     <li class="nav-item dropdown">
-                      <b><a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Fòrum
-                        </a></b>
+                      <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <b>Fòrum</b>
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../controlador/foro.controller.php">Inici</a>
                             <div class="dropdown-divider"></div>
@@ -139,9 +139,10 @@
         ?>
     </div>
 
+</body>
    
     <footer class="footer">
-        <div class="">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 d-flex justify-content-center">
                     <p>&copy; FinalD&D</p>
@@ -153,5 +154,4 @@
 
 
    
-</body>
 </html>

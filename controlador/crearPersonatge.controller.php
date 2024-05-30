@@ -43,6 +43,64 @@ if (isset($_POST['submit'])) {
 
         }
 
+        
+        if($fuerza < 0 || $fuerza > 20){
+            $_SESSION['errorPersonatge'] = 'La força ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+    
+        if($vida < 0 || $vida > 9999){
+            $_SESSION['errorPersonatge'] = 'La vida ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        if($iniciativa < 0 || $iniciativa > 20){
+            $_SESSION['errorPersonatge'] = 'La iniciativa ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        if($constitucion < 0 || $constitucion > 20){
+            $_SESSION['errorPersonatge'] = 'La constitució ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        if($destreza < 0 || $destreza > 20){
+            $_SESSION['errorPersonatge'] = 'La destresa ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        if($inteligencia < 0 || $inteligencia > 20){
+            $_SESSION['errorPersonatge'] = 'La intel·ligència ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        if($sabiduria < 0 || $sabiduria > 20){
+            $_SESSION['errorPersonatge'] = 'La saviesa ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        if($carisma < 0 || $carisma > 20){
+            $_SESSION['errorPersonatge'] = 'El carisma ha d\'estar entre 0 i 20';
+
+            header('Location: ../controlador/crearPersonatge.controller.php');
+            exit();
+        }
+
+        
 
         //depenent de que la img hagi sigut pujada o no, guardem la ruta de la img
         

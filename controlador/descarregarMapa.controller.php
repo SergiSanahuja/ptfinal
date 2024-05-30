@@ -4,11 +4,11 @@ if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
 
-require_once '../model/User.model.php';
+require_once '../model/Mapa.model.php';
 
 $_SESSION_['errorMapa'] = null;
 
-$usuario = new User();
+$usuario = new Mapa();
 $idMapa = $_GET['id'];
 $titol = $usuario->getMapa($idMapa)['titol'];
 $id_usuario = $_SESSION['user'];

@@ -453,6 +453,7 @@ wsServer.on('connection', (client, peticio) => {
 
 					break;
 
+				
 
 
 				case 'desconectarJugador':
@@ -507,6 +508,31 @@ wsServer.on('connection', (client, peticio) => {
 
 					
 					break;
+
+					case 'canviarVida':
+
+						try {
+
+							if (client.sala && salas[client.sala]) {
+								salas[client.sala].forEach((clients) => {
+									if (clients.character && clients.character.id == missatge.id) {
+										clients.character.Vida += parseInt(missatge.vida);
+										let vida = clients.character.Vida;
+										con.execute("UPDATE personatges SET Vida = ? WHERE id = ?", [clients.character.Vida, clients.character.IdPersonaje], function(err) {
+											if (err) {
+												console.error(err.message);
+											}
+										});
+										for (let i = 0; i < salas[client.sala].length; i++) {
+											salas[client.sala][i].send(JSON.stringify({info: vida, accio: "canviarVida"}));
+										}
+									}
+								});
+							}
+						} catch (err) {
+							console.log(err);
+						}
+						break;
 
 					case 'moureJugador':
 						// Enviar missatge a tots de la sala

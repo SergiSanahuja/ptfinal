@@ -16,7 +16,7 @@
     <!-- CSS -->
     <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
@@ -97,18 +97,18 @@
                     </div>
                 </div>
 
-                <div >
-<!-- 
+                <div>
+                    <!-- 
                     <input type="checkbox" id="closeRoom" name="closeRoom">
                     <label for="closeRoom">Tancar Sala</label> -->
                     <input type="checkbox" id="ChatHidden" name="ChatHidden">
                     <label for="ChatHidden" style="color: white;">Amagar xat</label>
- 
+
                 </div>
                 <div>
                     <table class="table-personajes" id="Users">
                         <tr>
-                            <th >Personatges</th>
+                            <th>Personatges</th>
                         </tr>
 
                     </table>
@@ -182,21 +182,21 @@
                     </div>
                     <div class="modal-header">
                         <div>
-                            <p >Nom</p>
+                            <p>Nom</p>
                             <h3 class="modal-title" id="NomPersonatge"></h3>
                         </div>
                         <div>
-                            <p >Raça</p>
+                            <p>Raça</p>
                             <h4 class="modal-title" id="raza"></h4>
                         </div>
                         <div>
-                            <p >Classe</p>
+                            <p>Classe</p>
                             <h4 class="modal-title" name='clase' id="clase"></h4>
                         </div>
                         <div>
                             <label for="nivel">LV:</label>
                             <!-- <h4 class="modal-title" name='nivel' id="nivel">LV</h4> -->
-                            <input type="number" min="0" name="nivel" id="nivel">
+                            <input type="number" min="0" max="99" name="nivel" id="nivel">
                         </div>
                     </div>
                     <div class="modal-body ">
@@ -205,10 +205,12 @@
                             <div class="col-sm-3 col-md-6  h4">
 
                                 <div class="row justify-content-center">
-                                    <div >
+                                    <div>
                                         <i class="bi bi-heart-fill mr-1"></i>
                                     </div>
-                                    <div ><label for="vida">Vida:</label></div>
+                                    <div>
+                                        <p>Vida</p>
+                                    </div>
                                     <div id="Vida">5</div>
                                 </div>
 
@@ -219,18 +221,27 @@
 
                                         <i class="bi bi-activity"></i>
                                     </div>
-                                    <div><p >Iniciativa:</p></div>
+                                    <div>
+                                        <p>Iniciativa:</p>
+                                    </div>
                                     <div id="Iniciativa">5</div>
 
                                 </div>
                             </div>
                         </div>
 
+                        <div>
+                            <!-- Botón para abrir el modal de vida -->
+                            <button type="button" class="btn" data-toggle="modal" data-target="#vidaModal">
+                                Ajustar Vida
+                            </button>
+                        </div>
+
                     </div>
                     <div id="infoPersonatge" class="row justify-content-center align-items-center ">
                         <div class="col-sm-6 col-xl-4 h4">
                             <div class="row d-flex justify-content-sm-center">
-                                
+
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="mr-1" width="40" height="40" viewBox="0 0 256 256" xml:space="preserve">
                                     <defs>
                                     </defs>
@@ -242,7 +253,7 @@
                                 <div><label for="Fuerza">Força:</label></div>
                                 <div>
 
-                                    <input type="number" name="Strenght" id="Fuerza"></input>
+                                    <input type="number" name="Strenght" id="Fuerza" min="0" max="9999"></input>
                                 </div>
                             </div>
                         </div>
@@ -251,35 +262,35 @@
                                 <img src="..\img\fondos\noun-agility-4494012.svg" width="25" height="25" alt="">
                                 <div><label for="Destreza">Destresa:</label></div>
 
-                                <input type="number" name="skill" id="Destreza"></input>
+                                <input type="number" name="skill" id="Destreza" min="0" max="9999"></input>
                             </div>
                         </div>
                         <div class="col-sm-6 col-xl-4 h4">
                             <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-shield mr-1"></i>
                                 <div><label for="Constitucion">Constitució:</label></div>
-                                <input type="number" name="constitution" id="Constitucion"></input>
+                                <input type="number" name="constitution" id="Constitucion" min="9999"></input>
                             </div>
                         </div>
                         <div class="col-sm-6 col-xl-4 h4">
                             <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-lightbulb mr-1"></i>
                                 <div><label for="Inteligencia">Intel·ligència:</label></div>
-                                <input type="number" name="inteligence" id="Inteligencia"></input>
+                                <input type="number" name="inteligence" id="Inteligencia" min="9999"></input>
                             </div>
                         </div>
                         <div class="col-sm-6 col-xl-4 h4">
                             <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-book mr-1"></i>
                                 <div><label for="Sabiduria">Saviesa:</label></div>
-                                <input type="number" name="wisdom" id="Sabiduria"></input>
+                                <input type="number" name="wisdom" id="Sabiduria" min="9999"></input>
                             </div>
                         </div>
                         <div class="col-sm-6 col-xl-4 h4">
                             <div class="row  d-flex justify-content-sm-center">
                                 <i class="bi bi-emoji-smile mr-1"></i>
                                 <div><label for="Carisma">Carisma:</label></div>
-                                <input type="number" name="charisma" id="Carisma"></input>
+                                <input type="number" name="charisma" id="Carisma" min="9999"></input>
                             </div>
                         </div>
 
@@ -410,47 +421,47 @@
                 </div>
                 <div class="modal-body">
                     <!-- Formulario para añadir objeto -->
-                    
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-6">
 
-                                    <label for="objectType">Tipus d'objecte</label>
-                                    <select class="form-control" id="objectType" name="objectType">
-                                        <option value="arma">Arma</option>
-                                        <option value="armadura">Armadura</option>
-                                        <option value="pocio">Poció</option>
-                                    </select>
-                                </div>
-                                <div class="col-6">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
 
-                                    <label for="quantity">Quantitat</label>
-                                    <input type="number" class="form-control" id="quantity" name="quantity" min="1"  value="1">
-                                </div>
+                                <label for="objectType">Tipus d'objecte</label>
+                                <select class="form-control" id="objectType" name="objectType">
+                                    <option value="arma">Arma</option>
+                                    <option value="armadura">Armadura</option>
+                                    <option value="pocio">Poció</option>
+                                </select>
                             </div>
-                            <div class="row mt-3">
-                                <div class="col-12">
-                                    <label for="objectName">Nom de l'objecte</label>
-                                    <input type="text" class="form-control" id="objectName" name="objectName" placeholder="Introdueix el nom de l'objecte ">
-                                </div>
+                            <div class="col-6">
 
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <label for="objectDescription">Descripció de l'objecte</label>
-                                    <textarea class="form-control" id="objectDescription" name="objectDescription" rows="3" placeholder="Introdueix la descripció de l'objecte"></textarea>
-                                </div>
-
-
+                                <label for="quantity">Quantitat</label>
+                                <input type="number" class="form-control" min="0" id="quantity" name="quantity" min="1" max="9999" value="1">
                             </div>
                         </div>
-                        <!-- Aquí puedes añadir más campos si es necesario -->
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <label for="objectName">Nom de l'objecte</label>
+                                <input type="text" class="form-control" id="objectName" name="objectName" minlength="15" placeholder="Introdueix el nom de l'objecte ">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="objectDescription">Descripció de l'objecte</label>
+                                <textarea class="form-control" id="objectDescription" name="objectDescription" rows="3" placeholder="Introdueix la descripció de l'objecte"></textarea>
+                            </div>
+
+
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" id="addObject" class="btn ">Afegir Objecte</button>
-                        <button type="button" class="btn btn-secondary closeAddObjectModal" data-dismiss="modal">Tancar</button>
-                    </div>
-            
+                    <!-- Aquí puedes añadir más campos si es necesario -->
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="addObject" class="btn ">Afegir Objecte</button>
+                    <button type="button" class="btn btn-secondary closeAddObjectModal" data-dismiss="modal">Tancar</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -471,21 +482,21 @@
                     <!-- Formulario para usar objeto -->
                     <div class="form-group">
                         <h2>Objecte</h2>
-                       <div id="objectNameUse">
+                        <div id="objectNameUse">
 
-                       </div>
-                       <div>
-                            <input type="number" aria-label="Quantitat d'objectes" id="QuantityObjectsUseing" min="1"  value="1">
-                       </div>
-                       <hr>
-                       <div>
+                        </div>
+                        <div>
+                            <input type="number" aria-label="Quantitat d'objectes" id="QuantityObjectsUseing" min="1" max="9999" value="1">
+                        </div>
+                        <hr>
+                        <div>
                             <h2>Descripció</h2>
-                            <div >
-                                <p id="objectDescriptionUse" name="objectDescriptionUse" ></p>
+                            <div>
+                                <p id="objectDescriptionUse" name="objectDescriptionUse"></p>
                             </div>
-                       </div>
+                        </div>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="submit" id="useObject" aria-label="utilitzar objecte" class="btn ">Utilitzar Objecte</button>
@@ -496,6 +507,29 @@
     </div>
 
 
+    <!-- Modal de vida -->
+
+    <!-- Modal para ajustar la vida -->
+    <div class="modal fade" id="vidaModal" tabindex="-1" role="dialog" aria-labelledby="vidaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="vidaModalLabel">Ajustar Vida</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Tancar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex justify-content-center">
+                    <button type="button" id="augmentarVida" class="btn ">Curar</button>
+                    <input type="number" id="vidaInput" min="0" aria-label="quantitat de vida guanyada/perduda" min="1" max="9999" value="1" class="mx-3">
+                    <button type="button" id="disminuirVida" class="btn btn-primary">Danys</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Tancar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

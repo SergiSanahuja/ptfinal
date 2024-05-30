@@ -81,6 +81,12 @@
             $("#addObjectModal").modal('hide');
             
             
+            if (quantitat < 1 || quantitat > 9999) {
+                alert('Has de posar un número entre el 1 i el 9999');
+                return;
+            }
+
+            
             
 
             // let text ='Estas segur que vols afegir aquest objecte a aquest jugador?'       
@@ -154,8 +160,68 @@
             let Carisma = $('#Carisma').val();
             let text ='Estas segur que vols actualitzar aquest jugador?'
 
+            if (nivel < 1 || nivel > 99) {
+                alert('El nivel ha de ser un número entre 1 i 99');
+                return;
+            }
+
+            if (Fuerza < 1 || Fuerza > 99) {
+                alert('La fuerza ha de ser un número entre 1 i 99');
+                return;
+            }
+
+            if (Destreza < 1 || Destreza > 99) {
+                alert('La destreza ha de ser un número entre 1 i 99');
+                return;
+            }
+
+
+            if (Constitucion < 1 || Constitucion > 99) {
+                alert('La constitucion ha de ser un número entre 1 i 99');
+                return;
+            }
+
+            if (Inteligencia < 1 || Inteligencia > 99) {
+                alert('La inteligencia ha de ser un número entre 1 i 99');
+                return;
+            }
+
+            if (Sabiduria < 1 || Sabiduria > 99) {
+                alert('La sabiduria ha de ser un número entre 1 i 99');
+                return;
+            }   
+
+            if (Carisma < 1 || Carisma > 99) {
+                alert('El carisma ha de ser un número entre 1 i 99');
+                return;
+            }
+
             confirm( text) ? connexio.send(JSON.stringify({id: id, nivel: nivel, Vida: Vida, Iniciativa: Iniciativa, Fuerza: Fuerza, Destreza: Destreza, Constitucion: Constitucion, Inteligencia: Inteligencia, Sabiduria: Sabiduria, Carisma: Carisma, accio: "updateCharacter"})) : null;
        
+        });
+
+        // Canviar vida
+
+        $('#augmentarVida').on('click', function() {
+
+            let id = $('#id').text();
+            let vida = $('#vidaInput').val();
+
+            if (vida < 9999) {
+                alert('Has de posar un número entre el 1 i el 9999');
+                return;
+            }
+
+
+            connexio.send(JSON.stringify({id: id, vida: vida, accio: "canviarVida"}));
+        });
+
+        $('#disminuirVida').on('click', function() {
+
+            let id = $('#id').text();
+            let vida = $('#vidaInput').val();
+
+            connexio.send(JSON.stringify({id: id, vida: -vida, accio: "canviarVida"}));
         });
 
 
@@ -165,6 +231,16 @@
             let cantitat = parseInt($("#QuantityObjectsUseing").val())
             let nom_Objeto = $('#objectNameUse').text();
             let id = $('#IdPersonaje').text();
+
+            if (cantitat < 1 || cantitat > 9999) {
+                alert('Has de posar un número entre el 1 i el 9999');
+                return;
+            }
+
+            if (nom_Objeto.length == 0) {
+                alert('Has de posar un nom d\'objecte');
+                return;
+            }
 
             confirm('Estas segur que vols utilitzar '+ cantitat+' de '+nom_Objeto+'?') ? connexio.send(JSON.stringify({id: id, cantitat: cantitat, nom_Objeto: nom_Objeto, accio: "useObject"})) : null;
       
@@ -325,6 +401,15 @@
 
 
                     
+                    break;
+
+                case 'canviarVida':
+                    /**
+                     * Actualitzar la vida del jugador
+                     */
+                    $('#Vida').text(data.info);
+                    $('#vidaModal').modal('hide');
+
                     break;
 
                 case 'addObject':

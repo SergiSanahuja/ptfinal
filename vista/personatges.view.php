@@ -104,7 +104,7 @@
         ?>
     </div>
 
-    <div class="container h-100">
+    <div class="container ">
         
             <div class="row">
                 <div class="col-md-8 mt-2 col-sm-12 titol justify-content-sm-center">

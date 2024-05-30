@@ -292,3 +292,53 @@ select {
 #objectDescriptionUse, #objectNameUse{
     font-size: x-large;
 }
+
+
+
+/* Modal vida */
+
+#vidaModal{
+    
+    left: 20%;
+    width: auto;
+    height: auto;
+}
+
+#augmentarVida, #disminuirVida{
+    cursor: pointer;
+}
+
+#augmentarVida{
+
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+
+}
+
+#vidaInput{
+    width: 100px;
+    border: none;
+    color: white;
+    background-color: #A81414;
+    border-bottom: #ddd 2px solid;
+    border-radius: 5px;
+    font-size: xx-large;
+    text-align: center;
+    margin: 5px;
+}
+
+#disminuirVida{
+    background-color: #f44336;
+    color: white;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+

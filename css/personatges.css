@@ -46,7 +46,11 @@ body{
 }
 
 
+#Vida, #Iniciativa{
 
+    width: 100px;
+
+}
 
 .fitxaPersonatge{
     background-color: #f1f1f1;
@@ -140,6 +144,7 @@ body{
     margin: 10px 0;
 }
 
+
 @media  (max-width: 1900px ){
    
 
@@ -157,12 +162,13 @@ body{
     }
 
     input[type="number"] {
-        width: 40px;
+        width: 50px;
         border: none;
         color: white;
         background-color: #A81414;
         border-bottom: #ddd 2px solid;
         border-radius: 5px;
+        font-size: xx-large;
     }
 
     select {
@@ -218,12 +224,18 @@ body{
     }
     
     input[type="number"] {
-        width: 40px;
+        width: 50px;
         border: none;
         color: white;
         background-color: #A81414;
         border-bottom: #ddd 2px solid;
+        border-radius: 5px;
+        
+        font-size: xx-large ;
+        
     }
+
+   
 }
 
 @media (max-width: 768px){

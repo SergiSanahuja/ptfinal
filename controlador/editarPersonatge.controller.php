@@ -22,6 +22,7 @@ if(isset($_SESSION['user'])){
 
 if(isset($_POST['PersonatgeID'])) {
     $personatgeID = $_POST['PersonatgeID'];
+
     require_once '../model/personatge.php';
 
     $personatges = new personatge();

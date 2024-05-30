@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/User.model.php';
+require_once '../model/Mapa.model.php';
 
 
 if(session_status () == PHP_SESSION_NONE){
@@ -9,7 +9,7 @@ if(session_status () == PHP_SESSION_NONE){
 
 
 
-$User = new User();
+$User = new Mapa();
 
 $id_Usuari = $_SESSION['user'];
 $id_Article = $_GET['id'];
@@ -37,6 +37,8 @@ if($mapa['id_usuari'] == $id_Usuari){
     // }
 
     $User->eliminarMapa($id_Article);
+
+    unlink("../img/mapa/".$mapa['titol'].".webp");
     header('Location: ' . $_SERVER['HTTP_REFERER']);
     exit();
 

@@ -42,16 +42,16 @@
                         
                     </li>
                     <li class="nav-item dropdown">
-                       <b> <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdownMapa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         Mapa
-                        </a></b>
+                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdownMapa" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <b>Mapa</b>
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMapa">
                             <a class="dropdown-item" href="../controlador/mapes.controller.php">Inici</a>
                             <a class="dropdown-item" href="../controlador/mapesPropis.controller.php">Els teus mapes</a>
                         </div>
                     </li>  
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                          Fòrum
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -197,17 +197,18 @@
         </form>
     </div>
     
-    <footer class="footer">
-        <div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 d-flex justify-content-center">
-                    <p>FinalD&D</p>
-                </div>
+</body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 d-flex justify-content-center">
+                <p>FinalD&D</p>
             </div>
         </div>
-        
-    </footer>
+    </div>
+
+</footer>
     
-</body>
 
 </html>
