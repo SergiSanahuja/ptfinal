@@ -16,7 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         update_token($token,$correu);
 
-        $url = "http://localhost/Proyecto/ptfinal/index.php?code=". $token;
+        $url = "http://localhost/Proyecto/ptfinal/vista/canviarContrasenya.php?code=". $token;
 
         $assumpte = "Recuperacio de contrasenya";
 

@@ -105,10 +105,13 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <form action="../controlador/recuperarContrasenya.controller.php" method="POST">
+                <form action="../controlador/canviarContrasenya.controller.php" method="POST">
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="text" hidden aria-label="token" name="token" value="<?php echo $_GET['code']?>">
+                        <label for="newPassword">Nova Contrasenya</label>
+                        <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                        <label for="confirmPassword">Confirmar Contrasenya</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" require>
                     </div>
                     <button type="submit" name="submit" class="btn ">Recuperar contrasenya</button>
                 </form>

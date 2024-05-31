@@ -31,10 +31,10 @@ class userDAO extends DB{
         $query = $this->connect()->prepare('UPDATE usuaris SET token = :token, expiracio = :expiracio WHERE email = :email');
         $query->execute(['token' => $token, 'expiracio' => $expiracio, 'email' => $email]);
     }
-    
+
 
     public function setUser($nom, $cognom, $email, $usuari, $contrasenya){
-        $query = $this->connect()->prepare('INSERT INTO usuaris (nom, cognom, email, usuari, contrasenya) VALUES (:nom, :cognom, :email, :usuari, :contrasenya)');
+        $query = $this->connect()->prepare('INSERT INTO usuaris (nom, email, Password) VALUES (:nom, :cognom, :email, :usuari, :contrasenya)');
         $query->execute(['nom' => $nom, 'cognom' => $cognom, 'email' => $email, 'usuari' => $usuari, 'contrasenya' => $contrasenya]);
     }
 
@@ -53,7 +53,7 @@ class userDAO extends DB{
     }
 
     public function updatePassword($id, $password){
-        $query = $this->connect()->prepare('UPDATE usuaris SET contrasenya = :contrasenya WHERE id = :id');
+        $query = $this->connect()->prepare('UPDATE usuaris SET Password = :contrasenya WHERE id = :id');
         $query->execute(['contrasenya' => $password, 'id' => $id]);
     }
 
