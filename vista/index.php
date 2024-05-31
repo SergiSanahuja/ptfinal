@@ -61,10 +61,10 @@
                     echo '
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <div id="name"  class="nav-link text-light" ">'.$_SESSION['username'].'</div>
+                        <a id="name" href="./controlador/perfil.controller.php"  class="nav-link text-light" ">'.$_SESSION['username'].'</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link text-light" href="./controlador/logout.controller.php">Logout</a>
+                        <a class="nav-link text-light" href="./controlador/logout.controller.php">Logout</a>
                     </li>
                     </ul>
                     ';
