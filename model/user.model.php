@@ -6,8 +6,6 @@ require_once '../model/personatge.php';
 
 class User extends DB{
     private $id;
-    private $nom;
-    private $cognom;
     private $email;
     private $usuari;
     private $contrasenya;
@@ -16,9 +14,8 @@ class User extends DB{
         parent::__construct();
     }
 
-    public function setUser($nom, $cognom, $email, $usuari, $contrasenya){
-        $this->nom = $nom;
-        $this->cognom = $cognom;
+    public function setUser($email, $usuari, $contrasenya){
+    
         $this->email = $email;
         $this->usuari = $usuari;
         $this->contrasenya = $contrasenya;
@@ -30,7 +27,6 @@ class User extends DB{
 
         foreach($query as $currentUser){
             $this->id = $currentUser['id'];
-            $this->nom = $currentUser['nom'];
             $this->email = $currentUser['email'];
             $this->contrasenya = $currentUser['Password'];
         }
@@ -71,14 +67,6 @@ class User extends DB{
 
     public function getId(){
         return $this->id;
-    }
-
-    public function getNom(){
-        return $this->nom;
-    }
-
-    public function getCognom(){
-        return $this->cognom;
     }
 
     public function getEmail(){
