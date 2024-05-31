@@ -132,6 +132,7 @@
                         <a href="editarPerfil.view.php" class="btn btn-warning">Editar perfil</a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarPerfilModal">Eliminar perfil</button>
                         
+                        
                     </div>
                 </div>
             </div>
@@ -162,6 +163,7 @@
         </div>
     </div>
 </div>
+
     
 </body>
 </html>

@@ -53,7 +53,8 @@
             <!-- <div class="g-recaptcha" data-sitekey="6LdlFtgpAAAAAEoSuX1wBSbC-O194jDPkZwFezEa"></div> -->
             <hr>
 
-            <a href="../vista/registre.php">Regístrate</a>
+                <a href="../vista/registre.php">Regístrate</a>
+                <a href="../vista/recuperarContrasenya.view.php">¿Has oblidat la teva contrasenya?</a>
             <hr>
 
             <button type="submit">Iniciar sesión</button>
