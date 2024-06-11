@@ -52,8 +52,6 @@
     }
 
 
-    require_once '../model/login.model.php';
-
 
     if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirmPsw'])){
         $username = $_POST['username'];

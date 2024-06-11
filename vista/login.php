@@ -50,7 +50,7 @@
         <form id="login-form" action="../controlador/login.controler.php" method="post">
             <input type="text" id="email" name="email" placeholder="Email" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" required>
             <input type="password" id="password" name="password" placeholder="Contraseña" required>
-            <div class="g-recaptcha" data-sitekey="6LdlFtgpAAAAAEoSuX1wBSbC-O194jDPkZwFezEa"></div>
+            <!-- <div class="g-recaptcha" data-sitekey="6LdlFtgpAAAAAEoSuX1wBSbC-O194jDPkZwFezEa"></div> -->
             <hr>
                 <div class="d-flex flex-column">
 
