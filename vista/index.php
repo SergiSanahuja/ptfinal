@@ -162,15 +162,10 @@
                 </div>
 
                 <?php
-                    if (isset($_SESSION['username'])) {
+                   
                        echo "<div class='col-4'>
                         <a href='./controlador/crearPersonatge.controller.php' class='btn'>Crear Personatge</a>
                         </div>";
-                    }else{
-                        echo "<div class='col-4'>
-                        <a href='./index.php' class='btn'>Crear Personatge</a>
-                        </div>";
-                    }
                     
                 ?>
 

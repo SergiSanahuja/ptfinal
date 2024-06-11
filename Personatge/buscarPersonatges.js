@@ -30,50 +30,62 @@ $('#FiltrarClasse').change(function(){
 
 $("eliminarPersonatge").click(function(){
     var id = $(this).attr("id");
-    $.ajax({
-        url: "eliminarPersonatge.php",
-        method: "POST",
-        data: {id: id},
-        success: function(data){
-            $("#"+id).remove();
-        }
-    });
+
+    if(id == null){
+        alert("No s'ha pogut eliminar el personatge");
+
+    }else{
+
+        $.ajax({
+            url: "eliminarPersonatge.php",
+            method: "POST",
+            data: {id: id},
+            success: function(data){
+                $("#"+id).remove();
+            }
+        });
+    }
 });
 
 
 $(".editarPersonatge").click(function(){
     var idPersonatge = $(this).attr("id");
 
-    $.ajax({
-        url: "editarPersonatge.controller.php",
-        method: "POST",
-        data: {PersonatgeID: idPersonatge},
-        success: function(data){
-            // console.log(JSON.stringify(data));
+    if(idPersonatge == null){
+        alert("No s'ha pogut editar el personatge");
+    }else{
 
-            var Personatge = JSON.parse(data);
+        $.ajax({
+            url: "editarPersonatge.controller.php",
+            method: "POST",
+            data: {PersonatgeID: idPersonatge},
+            success: function(data){
+                // console.log(JSON.stringify(data));
 
-            console.log(Personatge);
+                var Personatge = JSON.parse(data);
 
-           
-            $('#id').text(Personatge.id);
-            $('#NomPersonatge').text(Personatge.nom);
-            $('#raza').text(Personatge.raza);
-            $('#clase').text(Personatge.clase);
-            $('#nivel').val(Personatge.nivel);
-            $('#Vida').val(Personatge.Vida);
-            $('#Iniciativa').val(Personatge.Iniciativa);
-            $('#Fuerza').val(Personatge.Fuerza);
-            $('#Destreza').val(Personatge.Destreza);
-            $('#Constitucion').val(Personatge.Constitucion);
-            $('#Inteligencia').val(Personatge.Inteligencia);
-            $('#Sabiduria').val(Personatge.Sabiduria);
-            $('#Carisma').val(Personatge.Carisma);
-           
+                console.log(Personatge);
 
             
-        }
-    });
+                $('#id').text(Personatge.id);
+                $('#NomPersonatge').text(Personatge.nom);
+                $('#raza').text(Personatge.raza);
+                $('#clase').text(Personatge.clase);
+                $('#nivel').val(Personatge.nivel);
+                $('#Vida').val(Personatge.Vida);
+                $('#Iniciativa').val(Personatge.Iniciativa);
+                $('#Fuerza').val(Personatge.Fuerza);
+                $('#Destreza').val(Personatge.Destreza);
+                $('#Constitucion').val(Personatge.Constitucion);
+                $('#Inteligencia').val(Personatge.Inteligencia);
+                $('#Sabiduria').val(Personatge.Sabiduria);
+                $('#Carisma').val(Personatge.Carisma);
+            
+
+                
+            }
+        });
+    }
 });
 
 

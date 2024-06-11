@@ -55,7 +55,7 @@
             $_SESSION['errorArticle'] = null;
 
             // pujar l'article a la base de dades
-            $foro->crearArticle($id, $titulo, $contenido, $_FILES['img']['name'], date('Y-m-d H:i:s'));
+            $foro->crearArticle($id, $titulo, $contenido, date('Y-m-d H:i:s'));
             header('Location: ../controlador/foro.controller.php');
             exit();
         }
